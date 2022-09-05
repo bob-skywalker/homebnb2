@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+}
+
+.header-icon{
+    object-fit: contain;
+    height: 100px;
+    margin-left: 25px;
+}
+
+.magnifying-glass{
+    height:20px;
+    width: 20px;
+}
