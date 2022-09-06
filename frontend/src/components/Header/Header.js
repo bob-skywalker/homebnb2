@@ -26,10 +26,21 @@ const Header = () => {
             <div className='header-right'>
               <p className='header-text'>Become a Host</p>
               <LanguageIcon className='header-globe'/>
-              <div className='header-profile'>
-                <ViewHeadlineIcon /> 
-                <Avatar className='header-avatar'/>
+
+              <div className='dropdown'>
+                  <button className='link'>
+                    <ViewHeadlineIcon />
+                    <Avatar />
+                  </button>
+                  <div className='dropdown-menu'>
+                    <a href='#'>Sign up</a>
+                    <a href='#'>Log in</a>
+                    <a href='#'>Demo user</a>
+                  </div>
               </div>
+
+
+
               {/* <Navigation /> */}
             </div>
         </div>
