@@ -7,6 +7,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ViewHeadlineIcon from '@mui/icons-material/ViewHeadline';
 import { Avatar } from '@mui/material';
+import { Link, Router } from 'react-router-dom';
+
 
 
 const Header = () => {
@@ -33,8 +35,8 @@ const Header = () => {
                     <Avatar />
                   </button>
                   <div className='dropdown-menu'>
-                    <a href='#'>Sign up</a>
-                    <a href='#'>Log in</a>
+                    <Link to={`/signup`}>Sign up</Link>
+                    <Link to={`/login`}>Log in</Link>
                     <a href='#'>Demo user</a>
                   </div>
               </div>

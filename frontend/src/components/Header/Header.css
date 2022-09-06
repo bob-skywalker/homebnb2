@@ -9,9 +9,11 @@
     width: 100%;
 }
 
+
+
 .header-center{
     display: flex;
-    flex: 1;
+    flex: 1 ;
     align-items: center;
     max-width: fit-content;
     padding: 10px;
