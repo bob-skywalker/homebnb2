@@ -33,6 +33,12 @@ export const login = ({ credential, password }) => async dispatch => {
   return response;
 };
 
+
+//user state selector
+export const getCurrentUser = state => {
+  return state.session.user
+}
+
 export const restoreSession = () => async dispatch => {
   const response = await csrfFetch("/api/session");
   storeCSRFToken(response);
@@ -67,7 +73,7 @@ export const logout = () => async (dispatch) => {
   return response;
 };
 
-const initialState = { 
+const initialState = {
   user: JSON.parse(sessionStorage.getItem("currentUser"))
 };
 
