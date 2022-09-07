@@ -5,17 +5,19 @@ import LoginFormPage from "./components/LoginFormPage";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
 
 
 function App() {
   return (
     <>
       <Header />
-        {/* <Navigation/> */}
+        <Home/>
+        <Banner/>
           <Switch>
-            <Route exact path='/'>
+            {/* <Route exact path='/'>
               <Home/>
-            </Route>
+            </Route> */}
             <Route exact path="/login" >
               <LoginFormPage />
             </Route>
