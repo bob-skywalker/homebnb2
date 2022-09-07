@@ -1,0 +1,40 @@
+.container{
+    margin: 0;
+    padding: 50px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    display: flex;
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
+    border-radius: 12px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.container .title{
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.container .user-details{
+    padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% / 1.5 - 10px);
+    justify-content: space-between;
+}
+
+.container .user-details input{
+    height: 45px;
+    width:100%
+}
+
+.user-details .input-box{
+    border-radius: 5px;
+    outline:none;
+}
