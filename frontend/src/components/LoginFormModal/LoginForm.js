@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import "./LoginForm.css";
 import { getCurrentUser } from "../../store/session";
 import { Redirect } from "react-router-dom";
+import SignupFormModal from "../SignupFormModal";
 
-function LoginForm() {
+function LoginForm({setShowLogIn,setSignUp}) {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
@@ -18,6 +19,7 @@ function LoginForm() {
     e.preventDefault();
     setErrors([]);
     return dispatch(sessionActions.login({ credential, password }))
+      .then(()=>{setShowLogIn(false)})
       .catch(async (res) => {
         let data;
         try {
@@ -34,10 +36,18 @@ function LoginForm() {
 
   const demoUser = (e) => {
     e.preventDefault();
+    setShowLogIn(false);
+    setSignUp(false);
     dispatch(sessionActions.login({
       credential:"Demo-lition",
       password:'password'
     }))
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setShowLogIn(false);
+    setSignUp(true)
   }
 
   return (
@@ -71,6 +81,8 @@ function LoginForm() {
           <div className="buttons">
           <button className="login-button" type="submit">Log In</button>
           <button className="demo-button"  onClick={demoUser}>Demo User</button>
+          </div>
+          <div className="new-user-link">No Account? <span onClick={handleClick}>Create one</span>
           </div>
         </form>
       </div>

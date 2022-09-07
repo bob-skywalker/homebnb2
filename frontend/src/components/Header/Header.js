@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navigation from '../Navigation'
 import './Header.css'
 import SearchIcon from '@mui/icons-material/Search';
@@ -21,6 +21,8 @@ import ProfileButton from '../Navigation/ProfileButton';
 const Header = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
+  const [showSignUp, setSignUp] = useState(false);
+  const [showLogIn,setShowLogIn] = useState(false);
 
 
 
@@ -52,7 +54,7 @@ const Header = () => {
                   </button>
                   <div className='dropdown-menu'>
                     {
-                      sessionUser ? (<button onClick={logout}>Log Out</button>) : ([<LoginFormModal/>,<SignupFormModal/>])
+                      sessionUser ? (<button onClick={logout}>Log Out</button>) : ([<LoginFormModal showLogIn={showLogIn} setShowLogIn={setShowLogIn} setSignUp={setSignUp}/>,<SignupFormModal showSignUp={showSignUp}  setSignUp={setSignUp} setShowLogIn={setShowLogIn}/>])
                     }
                   </div>
               </div>

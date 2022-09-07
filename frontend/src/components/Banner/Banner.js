@@ -18,7 +18,7 @@ const Banner = () => {
       <div className='banner-info'>
         <h1>Explore the Unthinkable</h1>
           <h4>
-            Plan your next travel and find your favourite hideout places near you.
+            Find your favourite hideout places near you.
           </h4>
           <Button variant='contained'>Let's Explore</Button>
       </div>
