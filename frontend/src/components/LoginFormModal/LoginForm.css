@@ -6,7 +6,7 @@
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
     display: flex;
-    background: linear-gradient(135deg,#d17177,#ffc19d);
+    background: linear-gradient(135deg,#71b7e6,#9b59b6);
     border-radius: 12px;
 }
 
@@ -40,4 +40,3 @@
     border-radius: 5px;
     outline:none;
 }
-

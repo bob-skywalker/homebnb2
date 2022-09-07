@@ -38,49 +38,55 @@ function SignupFormPage() {
 
   return (
     <>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <ul>
-          {errors.map((error) => <li key={error}>{error}</li>)}
-        </ul>
-        <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Username
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          Confirm Password
-          <input
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Sign Up</button>
-      </form>
+      <div className="container">
+        <form onSubmit={handleSubmit} className='form'>
+        <h1 className="title">Sign Up</h1>
+          <ul>
+            {errors.map((error) => <li key={error}>{error}</li>)}
+          </ul>
+          <label className="user-details">
+            Email
+            <input
+              className="input-box"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label className="user-details">
+            Username
+            <input
+              className="input-box"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </label>
+          <label className="user-details">
+            Password
+            <input
+              className="input-box"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <label className="user-details">
+            Confirm Password
+            <input
+              className="input-box"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
     </>
   );
 }

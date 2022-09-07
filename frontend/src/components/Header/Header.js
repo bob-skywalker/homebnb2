@@ -13,6 +13,7 @@ import SignupFormModal from '../SignupFormModal';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+import ProfileButton from '../Navigation/ProfileButton';
 
 
 
@@ -51,7 +52,7 @@ const Header = () => {
                   </button>
                   <div className='dropdown-menu'>
                     {
-                      sessionUser ? <button onClick={logout}>Log Out</button> : ([<LoginFormModal/>,<SignupFormModal/>])
+                      sessionUser ? (<button onClick={logout}>Log Out</button>) : ([<LoginFormModal/>,<SignupFormModal/>])
                     }
                   </div>
               </div>
