@@ -33,8 +33,8 @@ const Header = () => {
     <>
         <div className='header'>
             <div className='header-left'>
-              <img className='header-icon'
-              src='https://i.postimg.cc/nVXJ207G/kisspng-airbnb-logo-coupon-privately-held-company-airbnb-logo-5b167f0c91db57-0436925715282009725974.png' alt='header-img'/>
+              <img src="https://i.postimg.cc/tCtkWdYC/homebnb.png" className='header-icon'
+              alt='header-img'/>
             </div>
 
             <div className='header-center'>
