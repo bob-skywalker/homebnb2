@@ -40,3 +40,14 @@
     border-radius: 5px;
     outline:none;
 }
+
+.new-user-link{
+    padding-top: 20px;
+
+}
+
+
+.new-user-link span{
+    color: rgb(7, 7, 184);
+    font-weight: bold;
+}

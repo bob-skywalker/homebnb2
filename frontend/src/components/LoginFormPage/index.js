@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import './LoginForm.css';
 
-function LoginFormPage() {
+function LoginFormPage({setShowLogIn,setSignUp}) {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [credential, setCredential] = useState("");
@@ -30,6 +30,12 @@ function LoginFormPage() {
         else setErrors([res.statusText]);
       });
   };
+
+  const handleClick = e => {
+    e.preventDefault();
+    setShowLogIn(false);
+    setSignUp(true);
+  }
 
   return (
     <>

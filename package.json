@@ -5,5 +5,30 @@
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.3",
     "react-date-range": "^1.4.0"
-  }
+  },
+  "name": "homebnb2",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bob-skywalker/homebnb2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bob-skywalker/homebnb2/issues"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "homepage": "https://github.com/bob-skywalker/homebnb2#readme"
 }

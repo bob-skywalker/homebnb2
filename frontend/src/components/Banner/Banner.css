@@ -3,6 +3,7 @@
     height: 60vh;
     position: relative;
     background-size: 100% ;
+    background-position: 0% 20%;
 }
 
 .banner-info{

@@ -67,6 +67,7 @@
     width: 190px;
     opacity: 0;
     transition: opacity;
+
 }
 
 .dropdown > .link:focus + .dropdown-menu{
