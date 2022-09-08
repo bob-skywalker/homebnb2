@@ -23,13 +23,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_07_231158) do
     t.integer "zip_code", null: false
     t.string "country", null: false
     t.string "region", null: false
+    t.string "property_type", null: false
     t.float "lat", null: false
     t.float "lng", null: false
     t.string "currency", default: "USD", null: false
     t.float "price", null: false
     t.float "other_fees"
-    t.float "other_fees_type"
-    t.integer "num_bedrooms", null: false
+    t.string "other_fees_type"
     t.integer "num_beds", null: false
     t.integer "num_baths", null: false
     t.bigint "host_id"
