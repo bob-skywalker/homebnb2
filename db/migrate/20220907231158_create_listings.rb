@@ -14,12 +14,11 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.string :currency, null: false, default: 'USD'
       t.float :price, null: false
       t.float :other_fees
-      t.float :other_fees_type
-      t.integer :num_bedrooms, null:false
+      t.string :other_fees_type
       t.integer :num_beds, null:false
       t.integer :num_baths, null: false
       t.references :host, foreign_key:{to_table: :users}
-      t.boolean :is_posted, null:false, default: false 
+      t.boolean :is_posted, null:false, default: false
       t.timestamps
     end
   end
