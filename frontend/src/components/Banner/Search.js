@@ -34,7 +34,7 @@ const Search = () => {
         defaultValue={2}
         type="number"
         />
-        <Button variant='outlined'>Search</Button>
+        <Button variant='outlined'></Button>
     </div>
   )
 }

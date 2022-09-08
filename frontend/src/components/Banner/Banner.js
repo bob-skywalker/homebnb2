@@ -10,9 +10,10 @@ const Banner = () => {
   return (
     <div className='banner'>
       <div className='banner-search'>
-        {searchBar && <Search/>}
+        {searchBar && <Search />}
         <Button className='banner-searchButton'
-          variant='outlined' onClick={()=>setSearchBar(!searchBar)}>Search Dates
+          variant='outlined' onClick={()=>setSearchBar(!searchBar)}>
+            {searchBar ? 'Hide': "Search Dates"}
         </Button>
       </div>
       <div className='banner-info'>

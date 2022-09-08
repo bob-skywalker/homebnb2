@@ -13,7 +13,6 @@ function App() {
     <>
       <Header />
         <Home/>
-        <Banner/>
           <Switch>
             {/* <Route exact path='/'>
               <Home/>
