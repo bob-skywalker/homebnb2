@@ -11,7 +11,6 @@ import Banner from "./components/Banner/Banner";
 function App() {
   return (
     <>
-      <Header />
         <Home/>
           <Switch>
             {/* <Route exact path='/'>

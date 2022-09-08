@@ -8,13 +8,12 @@
 }
 
 .card:hover{
-    transform: scale(1.03)
+    transform: scale(1.09)
 }
 
 .card-info{
     border-radius: 10px;
-    font-weight: 20px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family:Arial, Helvetica, sans-serif
 }
 
 .card > img{

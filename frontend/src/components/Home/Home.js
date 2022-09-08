@@ -1,13 +1,32 @@
-import { Card } from '@mui/material'
+import { Card, Tab, Tabs, TabScrollButton } from '@mui/material'
 import React from 'react'
 import Banner from '../Banner/Banner'
 import Cards from '../Card/Cards'
-import './Home.css'
-
+import Header from '../Header/Header'
+import LandscapeIcon from '@mui/icons-material/Landscape';
+import ForestIcon from '@mui/icons-material/Forest';
+import SurfingIcon from '@mui/icons-material/Surfing';
+import WindPowerIcon from '@mui/icons-material/WindPower';
+import CastleIcon from '@mui/icons-material/Castle';
+import WavesIcon from '@mui/icons-material/Waves';
+import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 const Home = () => {
   return (
     <>
+      <Header/>
+      <h1></h1>
+      <Tabs className='tabs' variant='scrollable'>
+        <div className='tabs-text'>
+        <Tab icon={<LandscapeIcon/>} label="Amazing views"  />
+        <Tab icon={<ForestIcon/>} label="Treehouses"  />
+        <Tab icon={<SurfingIcon/>} label="Surfing"  />
+        <Tab icon={<WindPowerIcon/>} label="Windmills"  />
+        <Tab icon={<CastleIcon/>}  label="Mansions"  />
+        <Tab icon={<WavesIcon/>} label="Lakefront"  />
+        <Tab icon={<BeachAccessIcon/>} label="Beach" />
+        </div>
+      </Tabs>
       <div className='home'>
         <Banner/>
         <div className='home_section'>

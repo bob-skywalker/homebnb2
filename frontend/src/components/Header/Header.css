@@ -52,13 +52,11 @@
 
 .dropdown{
     pointer-events: auto;
-    
 }
 
 .dropdown-menu{
     display: flex;
     flex-direction: column;
-    position: absolute;
     top: calc(100% + .30rem);
     background-color: white;
     padding: .75rem;
@@ -75,7 +73,6 @@
     opacity: 1;
     pointer-events:inherit;
     width: 90px;
-
 }
 
 
