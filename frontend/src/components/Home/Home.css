@@ -1,3 +1,4 @@
-.home{
-    
+.home_section{
+    display: flex;
+    padding-top: 20px;
 }
