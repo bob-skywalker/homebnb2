@@ -46,19 +46,19 @@ const Home = () => {
         </div>
         <div className='home_section'>
         <Cards
-                src="https://media.nomadicmatt.com/2019/airbnb_breakup3.jpg"
+                src="https://a0.muscache.com/im/pictures/56b2dc82-ed11-46a4-bf86-eb0bba5c2366.jpg?im_w=720"
                 title="3 Bedroom Flat in Los Angeles"
                 description="Get yourself a peace of mind with our Superhost listing in LA"
                 price="$130/night"
             />
             <Cards
-                src="https://thespaces.com/wp-content/uploads/2017/08/Courtesy-of-Airbnb.jpg"
+                src="https://a0.muscache.com/im/pictures/c31b1e0a-7a27-4593-bc99-112a0b9c5ab1.jpg?im_w=720"
                 title="Penthouse in San Francisco"
                 description="Enjoy the amazing sights of the bay with this stunning penthouse"
                 price="$350/night"
             />
             <Cards
-                src="https://media.nomadicmatt.com/2018/apartment.jpg"
+                src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-619648648726300172/original/a46428b5-0f2b-41cf-9aff-d9922d12e4c1.jpeg?im_w=720"
                 title="1 Bedroom apartment"
                 description="Superhost with great amenities and a fabolous shopping complex nearby"
                 price="$70/night"
