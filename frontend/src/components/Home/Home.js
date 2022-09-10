@@ -14,14 +14,15 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 const Home = () => {
   return (
     <>
-      <Tabs className='tabs'>
-      <Tab icon={<LandscapeIcon/>} label="Amazing views"  />
-        <Tab icon={<ForestIcon/>} label="Treehouses"  />
-        <Tab icon={<SurfingIcon/>} label="Surfing"  />
-        <Tab icon={<WindPowerIcon/>} label="Windmills"  />
-        <Tab icon={<CastleIcon/>}  label="Mansions"  />
-        <Tab icon={<WavesIcon/>} label="Lakefront"  />
-        <Tab icon={<BeachAccessIcon/>} label="Beach" />
+      <h1>I am Home component</h1>
+      <Tabs className='tabs' >
+      <Tab icon={<LandscapeIcon/>} label="Amazing views"  value="Amazing views"/>
+        <Tab icon={<ForestIcon/>} label="Treehouses"  value="Treehouses"/>
+        <Tab icon={<SurfingIcon/>} label="Surfing"  value="Surfing"/>
+        <Tab icon={<WindPowerIcon/>} label="Windmills"  value="Windmills"/>
+        <Tab icon={<CastleIcon/>}  label="Mansions"  value="Mansions"/>
+        <Tab icon={<WavesIcon/>} label="Lakefront"  value="Lakefront"/>
+        <Tab icon={<BeachAccessIcon/>} label="Beach" value="Beach"/>
       </Tabs>
       <div className='home'>
         <Banner/>
