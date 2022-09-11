@@ -35,7 +35,7 @@ const Header = () => {
     <>
         <div className='header'>
             <div className='header-left'>
-              <img src="https://i.postimg.cc/tCtkWdYC/homebnb.png" className='header-icon'
+              <img src="https://i.postimg.cc/SsWWb96D/worent-900-270-px.png" className='header-icon'
               alt='header-img'/>
             </div>
 
