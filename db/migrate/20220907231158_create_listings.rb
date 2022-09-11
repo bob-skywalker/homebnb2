@@ -7,11 +7,11 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.string :city, null: false
       t.string :state, null: false
       t.integer :zip_code, null:false
+      t.float :star, null:false 
       t.string :country, null: false
       t.string :region, null: false
       t.string :property_type, null: false
-      t.float :lat, null:false
-      t.float :lng, null:false
+      t.string :location, null:false 
       t.string :currency, null: false, default: 'USD'
       t.float :price, null: false
       t.float :other_fees
