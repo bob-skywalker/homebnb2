@@ -19,12 +19,12 @@ import ProfileButton from '../Navigation/ProfileButton';
 
 
 const Header = () => {
+
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [showSignUp, setSignUp] = useState(false);
   const [showLogIn,setShowLogIn] = useState(false);
-
-
+  const [searchInput, setSearchInput] = useState('');
 
   const logout = (e) => {
     e.preventDefault();
@@ -42,8 +42,12 @@ const Header = () => {
             </div>
 
             <div className='header-center'>
-              <input type='text'/>
-              <SearchIcon />
+              <input 
+              value={searchInput}
+              onChange={(e)=> setSearchInput(e.target.value)} 
+              type='text' 
+              placeholder='Start your search'/>
+              <SearchIcon className='searchIcon' />
             </div>
 
             <div className='header-right'>

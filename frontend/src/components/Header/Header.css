@@ -6,7 +6,6 @@
     /* position: sticky; */
     top: 0;
     background-color:white;
-    /* z-index: 100; */
     width: 100%;
 }
 
@@ -52,7 +51,6 @@
 
 .dropdown{
     pointer-events: auto;
-    
 }
 
 .dropdown-menu{
@@ -68,14 +66,12 @@
     width: 190px;
     opacity: 0;
     transition: opacity;
-
 }
 
 .dropdown > .link:focus + .dropdown-menu{
     opacity: 1;
     pointer-events:inherit;
     width: 90px;
-
 }
 
 
@@ -121,3 +117,4 @@ a{
 a:hover{
     background-color:rgb(246, 246, 246);
 }
+
