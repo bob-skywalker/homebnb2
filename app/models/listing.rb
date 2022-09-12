@@ -7,5 +7,8 @@ class Listing < ApplicationRecord
         foreign_key: :host_id,
         class_name: :User
 
-
+    has_many :reviews, 
+        foreign_key: :listing_id, 
+        class_name: :Review,
+        dependent: :destroy 
 end

@@ -14,6 +14,15 @@ class User < ApplicationRecord
   
   before_validation :ensure_session_token
 
+
+  has_many :reviews,
+    foreign_key: :reviewer_id,
+    class_name: :Review
+
+  has_many :listings,
+    foreign_key: :host_id,
+    class_name: :Listing
+
   def self.find_by_credentials(credential, password)
     field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username
     user = User.find_by(field => credential)
