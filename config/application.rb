@@ -13,6 +13,7 @@ require "action_controller/railtie"
 require "action_view/railtie"
 # require "action_cable/engine"
 # require "rails/test_unit/railtie"
+require "active_storage/engine"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -38,7 +39,7 @@ module Homebnb
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore,
       key: '_auth_me_session',
-      same_site: :lax, 
+      same_site: :lax,
       secure: Rails.env.production?
   end
 end
