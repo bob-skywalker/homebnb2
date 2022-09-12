@@ -1,18 +1,18 @@
 class Api::ReviewsController < ApplicationController
-  before_action :require_logged_in
+  # before_action :require_logged_in
 
   def create
     @review = Review.new(review_params)
-    @review[:review_id] = current_user.id 
+    @review[:review_id] = current_user.id
 
-    if @review.save 
+    if @review.save
       render :show
-    else 
-      render json: @review.errors.full_messages, status: 422 
-    end 
+    else
+      render json: @review.errors.full_messages, status: 422
+    end
   end
 
-  def update 
+  def update
     @review = current_user.reviews.find_by(id: params[:id])
 
     if !@review
@@ -22,30 +22,33 @@ class Api::ReviewsController < ApplicationController
     else
         render json: @review.errors.full_messages, status: 422
     end
+  end
 
-    def destroy 
+    def destroy
       @review = current_user.reivews.find_by(id: params[:id])
 
-      if @review 
-        @review.destroy 
-        render :show 
-      else 
-        render json: ["cannot delete this review"], status: 404 
-      end 
+      if @review
+        @review.destroy
+        render :show
+      else
+        render json: ["cannot delete this review"], status: 404
+      end
+    end
 
-    def show 
+    def show
       @review = Review.find(params[:id])
-    end 
+      render json:@review
+    end
 
-    def index 
+    def index
       @reviews = Review.all
-      render :index 
-    end 
+      render json: @reviews
+    end
 
     private
-  
+
     def review_params
-        snake_case_params!(params[:review])
+        snake_case_params!(params[:comment])
 
         params.require(:review).permit(:listing_id, :reviewer_id, :comment, :cleanliness, :accuracy, :communication, :location, :check_in, :value)
     end

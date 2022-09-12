@@ -7,6 +7,7 @@ ruby "3.1.1"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
 # Use postgresql as the database for Active Record
+gem "aws-sdk-s3"
 gem "pg", "~> 1.1"
 gem "faker"
 gem "pry-rails"

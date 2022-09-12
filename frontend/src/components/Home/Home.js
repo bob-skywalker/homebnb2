@@ -23,7 +23,7 @@ const Home = () => {
   return (
     <>
       <h2 className='h1-invis'>I am Home component</h2>
-      <Tabs className='tabs' >
+      {/* <Tabs className='tabs' value='tabs'> */}
       <Tab icon={<LandscapeIcon/>} label="Amazing views"  value="Amazing views"/>
         <Tab icon={<ForestIcon/>} label="Treehouses"  value="Treehouses"/>
         <Tab icon={<SurfingIcon/>} label="Surfing"  value="Surfing"/>
@@ -31,7 +31,7 @@ const Home = () => {
         <Tab icon={<CastleIcon/>}  label="Mansions"  value="Mansions"/>
         <Tab icon={<WavesIcon/>} label="Lakefront"  value="Lakefront"/>
         <Tab icon={<BeachAccessIcon/>} label="Beach" value="Beach"/>
-      </Tabs>
+      {/* </Tabs> */}
       <div className='home'>
         <Banner/>
 
