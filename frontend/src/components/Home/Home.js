@@ -59,7 +59,7 @@ const Home = () => {
             <Cards
                 src="https://a0.muscache.com/im/pictures/56b2dc82-ed11-46a4-bf86-eb0bba5c2366.jpg?im_w=720"
                 title="3 Bedroom Flat in Los Angeles"
-                description="Get yourself a peace of mind with our Superhost listing in LA"
+                description="Get yourself a peace of mind with our Superhost listing in LA "
                 price="$130/night"
             />
             <Cards
@@ -74,7 +74,7 @@ const Home = () => {
                 description="Superhost with great amenities and a fabolous shopping complex nearby"
                 price="$70/night"
             />
-            
+
         </div>
       </div>
     </>

@@ -2,18 +2,19 @@ class CreateListings < ActiveRecord::Migration[7.0]
   def change
     create_table :listings do |t|
       t.string :title, null:false , index:{unique: true}
+      t.string :summary, null: false
       t.string :description, null: false
       t.string :street_address, null: false
       t.string :city, null: false
       t.string :state, null: false
       t.integer :zip_code, null:false
-      t.float :star, null:false 
+      t.float :star, null:false
       t.string :country, null: false
       t.string :region, null: false
       t.string :property_type, null: false
-      t.string :location, null:false 
+      t.string :location, null:false
       t.string :currency, null: false, default: 'USD'
-      t.float :price, null: false
+      t.string :price, null: false
       t.float :other_fees
       t.string :other_fees_type
       t.integer :num_beds, null:false

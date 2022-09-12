@@ -55,14 +55,14 @@ ApplicationRecord.transaction do
 
     alex = User.create!(
       username: 'alexander',
-      email: "alexander@homebnb.com", 
+      email: "alexander@homebnb.com",
       password: "123456"
   )
 
     darren = User.create!(
       username: 'darren',
-      email: "darren@homebnb.com", 
-      password: "123456", 
+      email: "darren@homebnb.com",
+      password: "123456",
   )
 
     bob = User.create!(
@@ -89,6 +89,7 @@ ApplicationRecord.transaction do
 
     l1 = Listing.create!(
       title: 'Oakhurst,California',
+      summary: 'Best place in town with the best scenary views.',
       description: 'Minutes south of Yosemite, and 5 minutes from bass lake, lies a one of a kind retreat reflecting the invitation of the natural environment into its design.',
       street_address: '3452 Snowfine Ct',
       city: 'Oakhurst',
@@ -100,7 +101,7 @@ ApplicationRecord.transaction do
       property_type: 'Treehouses',
       location: '31.1232,-123.1231',
       currency: "USD",
-      price: 250,
+      price: '$250/night',
       other_fees:55,
       other_fees_type:'cleaning fee',
       num_beds: 3,
@@ -111,6 +112,7 @@ ApplicationRecord.transaction do
 
     l2 = Listing.create!(
       title: 'Tahoe City,California',
+      summary: 'Spaces that are more than just a place to sleep.',
       description: 'Minutes south of Yosemite, and 5 minutes from bass lake, lies a one of a kind retreat reflecting the invitation of the natural environment into its design.',
       street_address: '3452 Snowfine Ct',
       city: 'Oakhurst',
@@ -122,7 +124,7 @@ ApplicationRecord.transaction do
       property_type: 'Surfing',
       location: '21.1232,-123.1231',
       currency: "USD",
-      price: 250,
+      price: '$220/night',
       other_fees:55,
       other_fees_type:'cleaning fee',
       num_beds: 3,
@@ -133,6 +135,7 @@ ApplicationRecord.transaction do
 
     l3 = Listing.create!(
       title: 'Pacifica,California',
+      summary: 'Comfortable private places, with room for friends or family.',
       description: 'Step out of the little castle, you’re 1-2 minutes away from popular sea bowl bar/entertainment center, nick’s rockaway seashore restaurant for pacifica’s most famous crab sandwich!',
       street_address: '5231 Alter St',
       city: 'Pacifica',
@@ -144,7 +147,7 @@ ApplicationRecord.transaction do
       property_type: 'Windmills',
       location: '11.1232,-53.1231',
       currency: "USD",
-      price: 155,
+      price: '$155/night',
       other_fees:25,
       other_fees_type:'cleaning fee',
       num_beds: 9,
@@ -155,6 +158,7 @@ ApplicationRecord.transaction do
 
     l4 = Listing.create!(
       title: 'Riverside,California',
+      summary: 'Get yourself a peace of mind with our Superhost listing in LA',
       description: 'Wonderful place to visit and plentyful of food!',
       street_address: '131 Bobcat St',
       city: 'Riverside',
@@ -166,7 +170,7 @@ ApplicationRecord.transaction do
       property_type: 'Mansions',
       location: '61.1232,-23.1231',
       currency: "USD",
-      price: 125,
+      price: '$125/night',
       other_fees:25,
       other_fees_type:'cleaning fee',
       num_beds: 5,
@@ -178,6 +182,7 @@ ApplicationRecord.transaction do
 
     l5 = Listing.create!(
       title: 'Zephyr Cove,Nevada',
+      summary: 'Enjoy the amazing sights of the bay with this stunning penthouse',
       description: 'This is a beautiful beachfront, 3 bedroom cozy family cabin/home located in Marla Bay Zephyr Cove. The bonus room is only available in the Summer months as there is no heat in this room.',
       street_address: '3623 Zephyr St',
       city: 'Zephyr Cove',
@@ -189,7 +194,7 @@ ApplicationRecord.transaction do
       property_type: 'Treehouses',
       location: '42.1232,13.1231',
       currency: "USD",
-      price: 125,
+      price: '$150/night',
       other_fees:25,
       other_fees_type:'cleaning fee',
       num_beds: 6,
@@ -210,7 +215,7 @@ ApplicationRecord.transaction do
       value: 3,
       comment: "This is the best place in town!"
   )
-  
+
   # Review 2
   r2 = Review.create!(
       listing_id: l4.id,
@@ -223,7 +228,7 @@ ApplicationRecord.transaction do
       value: 5,
       comment: "Wow. I didn't expect this place to be so good. omg omg I am shooketh!"
   )
-  
+
   # Review 3
   r3 = Review.create!(
       listing_id: l1.id,
@@ -236,7 +241,7 @@ ApplicationRecord.transaction do
       value: 4,
       comment: "this is the spot , guys ! pick here"
   )
-  
+
   # Review 4
   r4 = Review.create!(
       listing_id: l2.id,

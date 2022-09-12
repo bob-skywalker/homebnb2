@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_024107) do
 
   create_table "listings", force: :cascade do |t|
     t.string "title", null: false
+    t.string "summary", null: false
     t.string "description", null: false
     t.string "street_address", null: false
     t.string "city", null: false
@@ -55,7 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_024107) do
     t.string "property_type", null: false
     t.string "location", null: false
     t.string "currency", default: "USD", null: false
-    t.float "price", null: false
+    t.string "price", null: false
     t.float "other_fees"
     t.string "other_fees_type"
     t.integer "num_beds", null: false
