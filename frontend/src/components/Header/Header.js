@@ -14,8 +14,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import ProfileButton from '../Navigation/ProfileButton';
-
-
+import Button from '@mui/material/Button';
 
 
 const Header = () => {
@@ -60,7 +59,7 @@ const Header = () => {
                   </button>
                   <div className='dropdown-menu'>
                     {
-                      sessionUser ? (<button onClick={logout}>Log Out</button>) : ([<LoginFormModal showLogIn={showLogIn} setShowLogIn={setShowLogIn} setSignUp={setSignUp}/>,<SignupFormModal showSignUp={showSignUp}  setSignUp={setSignUp} setShowLogIn={setShowLogIn}/>])
+                      sessionUser ? (<Button onClick={logout}>Log Out</Button>) : ([<LoginFormModal showLogIn={showLogIn} setShowLogIn={setShowLogIn} setSignUp={setSignUp}/>,<SignupFormModal showSignUp={showSignUp}  setSignUp={setSignUp} setShowLogIn={setShowLogIn}/>])
                     }
                   </div>
               </div>

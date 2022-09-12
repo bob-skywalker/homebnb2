@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
 import SignupFormPage from '../SignupFormPage';
+import { Button } from '@mui/material';
 
 function SignupFormModal({showSignUp,setSignUp,setShowLogIn}) {
   const [showModal, setShowModal] = useState(false);
@@ -13,7 +14,7 @@ function SignupFormModal({showSignUp,setSignUp,setShowLogIn}) {
 
   return (
     <>
-      <button onClick={() => setSignUp(true)}>Sign up</button>
+      <Button onClick={() => setSignUp(true)}>Sign up</Button>
       {showSignUp && (
         <Modal onClose={() => setSignUp(false)}>
           <SignupFormPage setSignUp={setSignUp} setShowLogIn={setShowLogIn}/>

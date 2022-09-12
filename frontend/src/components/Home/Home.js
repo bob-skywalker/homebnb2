@@ -14,7 +14,7 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 const Home = () => {
   return (
     <>
-      <p className='h1-invis'>I am Home component</p>
+      <h2 className='h1-invis'>I am Home component</h2>
       <Tabs className='tabs' >
       <Tab icon={<LandscapeIcon/>} label="Amazing views"  value="Amazing views"/>
         <Tab icon={<ForestIcon/>} label="Treehouses"  value="Treehouses"/>
