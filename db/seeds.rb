@@ -14,7 +14,7 @@ ApplicationRecord.transaction do
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('listings')
-
+    ApplicationRecord.connection.reset_pk_sequence!('reviews')
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
@@ -23,14 +23,69 @@ ApplicationRecord.transaction do
       password: 'password'
     )
 
+    tianshu = User.create!(
+      username: "tianshu",
+      email: 'tianshu@homebnb.com',
+      password: "123456"
+  )
+
+    jeff = User.create!(
+      username: "jeff",
+      email: 'jeff@homebnb.com',
+      password: "123456"
+  )
+
+    taowei = User.create!(
+      username: "taowei",
+      email: 'taowei@homebnb.com',
+      password: "123456"
+  )
+
+    daniel = User.create!(
+      username: "daniel",
+      email: 'daniel@homebnb.com',
+      password: "123456"
+    )
+
+    zuzu = User.create!(
+      username: 'zuzu',
+      email: 'zuzu@homebnb.com',
+      password: '123456'
+    )
+
+    alex = User.create!(
+      username: 'alexander',
+      email: "alexander@homebnb.com", 
+      password: "123456"
+  )
+
+    darren = User.create!(
+      username: 'darren',
+      email: "darren@homebnb.com", 
+      password: "123456", 
+  )
+
+    bob = User.create!(
+      username: 'bob',
+      email: 'bob@homebnb.com',
+      password: '123456'
+    )
+
+    john = User.create!(
+      username: 'john',
+      email: 'john@homebnb.com',
+      password: '123456'
+    )
+
+
     # More users
-    10.times do
-      User.create!({
-        username: Faker::Internet.unique.username(specifier: 3),
-        email: Faker::Internet.unique.email,
-        password: 'password'
-      })
-    end
+    # 10.times do
+    #   User.create!({
+    #     username: Faker::Internet.unique.username(specifier: 3),
+    #     email: Faker::Internet.unique.email,
+    #     password: 'password'
+    #   })
+    # end
 
     l1 = Listing.create!(
       title: 'Oakhurst,California',
@@ -50,7 +105,7 @@ ApplicationRecord.transaction do
       other_fees_type:'cleaning fee',
       num_beds: 3,
       num_baths: 2,
-      host_id: 3,
+      host_id: tianshu.id,
       is_posted: true
     )
 
@@ -72,7 +127,7 @@ ApplicationRecord.transaction do
       other_fees_type:'cleaning fee',
       num_beds: 3,
       num_baths: 2,
-      host_id: 3,
+      host_id: taowei.id,
       is_posted: true
     )
 
@@ -94,7 +149,7 @@ ApplicationRecord.transaction do
       other_fees_type:'cleaning fee',
       num_beds: 9,
       num_baths: 3,
-      host_id: 1,
+      host_id: darren.id,
       is_posted: true
     )
 
@@ -116,10 +171,84 @@ ApplicationRecord.transaction do
       other_fees_type:'cleaning fee',
       num_beds: 5,
       num_baths: 3,
-      host_id: 3,
+      host_id: bob.id,
       is_posted: true
     )
     #test
+
+    l5 = Listing.create!(
+      title: 'Zephyr Cove,Nevada',
+      description: 'This is a beautiful beachfront, 3 bedroom cozy family cabin/home located in Marla Bay Zephyr Cove. The bonus room is only available in the Summer months as there is no heat in this room.',
+      street_address: '3623 Zephyr St',
+      city: 'Zephyr Cove',
+      state: 'NV',
+      zip_code: 89448,
+      star:4.68,
+      country:'USA',
+      region:'North America',
+      property_type: 'Treehouses',
+      location: '42.1232,13.1231',
+      currency: "USD",
+      price: 125,
+      other_fees:25,
+      other_fees_type:'cleaning fee',
+      num_beds: 6,
+      num_baths: 5,
+      host_id: tianshu.id,
+      is_posted: true
+    )
+
+  # Review 1
+  r1 = Review.create!(
+      listing_id: l2.id,
+      reviewer_id: zuzu.id,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 4,
+      location: 5,
+      check_in: 5,
+      value: 3,
+      comment: "This is the best place in town!"
+  )
+  
+  # Review 2
+  r2 = Review.create!(
+      listing_id: l4.id,
+      reviewer_id: daniel.id,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 4,
+      check_in: 5,
+      value: 5,
+      comment: "Wow. I didn't expect this place to be so good. omg omg I am shooketh!"
+  )
+  
+  # Review 3
+  r3 = Review.create!(
+      listing_id: l1.id,
+      reviewer_id: tianshu.id,
+      cleanliness: 5,
+      accuracy: 5,
+      communication: 5,
+      location: 5,
+      check_in: 4,
+      value: 4,
+      comment: "this is the spot , guys ! pick here"
+  )
+  
+  # Review 4
+  r4 = Review.create!(
+      listing_id: l2.id,
+      reviewer_id: jeff.id,
+      cleanliness: 5,
+      accuracy: 4,
+      communication: 5,
+      location: 5,
+      check_in: 5,
+      value: 5,
+      comment: "i love this place and i would highly recommend !"
+  )
 
     puts "Done!"
   end

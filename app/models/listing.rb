@@ -1,2 +1,11 @@
 class Listing < ApplicationRecord
+    validates :title, presence: true, uniqueness: true 
+
+    validates :description, :street_address, :city, :state, :zip_code, :star, :country, :region, :property_type, :location, :currency, :price, :other_fees, :other_fees_type, :num_beds, :num_baths, :host_id, presence: true 
+
+    belongs_to :host, 
+        foreign_key: :host_id,
+        class_name: :User
+
+
 end
