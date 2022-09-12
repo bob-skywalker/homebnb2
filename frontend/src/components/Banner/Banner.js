@@ -1,11 +1,13 @@
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import './Banner.css'
 import Search from './Search';
 
 
 const Banner = () => {
   const [searchBar, setSearchBar] = useState(false);
+  const history = useHistory();
 
   return (
     <div className='banner'>
@@ -21,7 +23,7 @@ const Banner = () => {
           <h4>
             Find your favourite hideout places near you.
           </h4>
-          <Button variant='contained'>Let's Explore</Button>
+          <Button variant='contained' onClick={()=>history.push('/search')}>Let's Explore</Button>
       </div>
     </div>
   )

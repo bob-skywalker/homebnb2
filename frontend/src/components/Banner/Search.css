@@ -38,7 +38,8 @@
     background-color: #ff7779;
     color:white;
     width:579px;
-    border:none
+    border:none;
+    height:40px
 }
 
 .search > button:hover{
