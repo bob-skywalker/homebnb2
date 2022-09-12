@@ -12,7 +12,7 @@ export const receiveReviews = (reviews) => {
 export const receiveReview = (review) => {
     return({
         type: RECEIVE_REVIEW,
-        review 
+        review
     })
 }
 
@@ -24,7 +24,7 @@ export const removeReview = (reviewId) => {
 }
 
 export const getReview = (reviewId) => state => {
-    return state.reviews ? state.reviews[reviewId] : null 
+    return state.reviews ? state.reviews[reviewId] : null
 }
 
 export const getReviews = state => {
@@ -81,7 +81,7 @@ export const updateReview = (review) => async dispatch => {
 }
 
 export const deleteReview = (reviewId) => async dispatch => {
-    const res = await fetch(`/api/reviews/${review.id}`, {
+    const res = await fetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     })
 
@@ -98,19 +98,19 @@ const reviewReducer = (state={},action) => {
     const nextState = {...state};
 
     switch( action.type ){
-        case RECEIVE_REVIEWS: 
+        case RECEIVE_REVIEWS:
             return {...nextState, ...action.reviews}
 
-        case RECEIVE_REVIEW: 
+        case RECEIVE_REVIEW:
             nextState[action.review.id] = action.review
             return nextState
 
-        case REMOVE_REVIEW: 
+        case REMOVE_REVIEW:
             delete nextState[action.reviewId]
             return nextState
 
-        default: 
-            return state 
+        default:
+            return state
     }
 }
 

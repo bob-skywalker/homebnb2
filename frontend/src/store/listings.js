@@ -19,12 +19,12 @@ export const receiveListing = (listing) => {
 export const removeListing = (listingId) => {
     return ({
         type: REMOVE_LISTING,
-        listing
+        listingId
     })
 }
 
 export const getListing = (listingId) => state => {
-    return state.listings ? state.listings[listingId] : null 
+    return state.listings ? state.listings[listingId] : null
 }
 
 export const getListings = state => {
@@ -70,14 +70,15 @@ const listingsReducer = (state={}, action) => {
 
     switch(action.type){
         case RECEIVE_LISTINGS:
-            return {...nextState, ...action.listings} 
+            return {...nextState, ...action.listings}
         case RECEIVE_LISTING:
             nextState[action.listing.id] = action.listing
-        case REMOVE_LISTING: 
+            return nextState
+        case REMOVE_LISTING:
             delete nextState[action.listingId]
             return nextState
         default:
-            return state 
+            return state
     }
 }
 

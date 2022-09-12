@@ -1,5 +1,5 @@
 import { Card, Tab, Tabs } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Banner from '../Banner/Banner'
 import Cards from '../Card/Cards'
 import './Home.css'
@@ -10,8 +10,16 @@ import WindPowerIcon from '@mui/icons-material/WindPower';
 import CastleIcon from '@mui/icons-material/Castle';
 import WavesIcon from '@mui/icons-material/Waves';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import {useDispatch, useSelector} from 'react-redux';
+import { fetchListings, getListings } from '../../store/listings'
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const listings = useSelector(getListings)
+  useEffect(()=>{
+    dispatch(fetchListings())
+  },[])
+
   return (
     <>
       <h2 className='h1-invis'>I am Home component</h2>
@@ -26,6 +34,7 @@ const Home = () => {
       </Tabs>
       <div className='home'>
         <Banner/>
+
         <div className='home_section'>
           <Cards
           src="https://a0.muscache.com/im/pictures/c4c92198-fb3a-4c4b-bbb6-3aa8af8f7e73.jpg?im_w=720"
@@ -33,20 +42,21 @@ const Home = () => {
           description="Best place in town with the best scenary views."
           price='$150/night'
           />
-          <Cards
-           src="https://a0.muscache.com/im/pictures/0d07f1c2-4eab-44db-a2f0-f3df6e78f232.jpg?im_w=720"
-           title="San Diego Unique stays"
-           description="Spaces that are more than just a place to sleep."
-           price='$120/night'/>
-          <Cards
-          src="https://a0.muscache.com/im/pictures/fdb46962-10c1-45fc-a228-d0b055411448.jpg?im_w=720"
-          title="Have the Entire home"
-          description="Comfortable private places, with room for friends or family."
-          price='$200/night'
+            <Cards
+              src="https://a0.muscache.com/im/pictures/0d07f1c2-4eab-44db-a2f0-f3df6e78f232.jpg?im_w=720"
+              title="San Diego Unique stays"
+              description="Spaces that are more than just a place to sleep."
+              price='$120/night'/>
+            <Cards
+              src="https://a0.muscache.com/im/pictures/fdb46962-10c1-45fc-a228-d0b055411448.jpg?im_w=720"
+              title="Have the Entire home"
+              description="Comfortable private places, with room for friends or family."
+              price='$200/night'
           />
         </div>
+
         <div className='home_section'>
-        <Cards
+            <Cards
                 src="https://a0.muscache.com/im/pictures/56b2dc82-ed11-46a4-bf86-eb0bba5c2366.jpg?im_w=720"
                 title="3 Bedroom Flat in Los Angeles"
                 description="Get yourself a peace of mind with our Superhost listing in LA"
@@ -64,6 +74,7 @@ const Home = () => {
                 description="Superhost with great amenities and a fabolous shopping complex nearby"
                 price="$70/night"
             />
+            
         </div>
       </div>
     </>

@@ -31,11 +31,11 @@ const SearchResult = ({
 
             <div className='searchResult-bottom'>
                 <div className='searchResult-stars'>
-                    
+
                     <p>
-                        <Rating 
-                            name='read-only' 
-                            value={star} 
+                        <Rating
+                            name='read-only'
+                            value={star}
                             precision={.5}
                             />
                     </p>
