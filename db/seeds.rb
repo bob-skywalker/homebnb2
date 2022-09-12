@@ -5,7 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-ApplicationRecord.transaction do
+
+require 'open-uri'
+
+
+# ApplicationRecord.transaction do
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
     User.destroy_all
@@ -109,6 +113,9 @@ ApplicationRecord.transaction do
       host_id: tianshu.id,
       is_posted: true
     )
+
+    file1 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1.jpg")
+    l1.photo.attach(io: file1, filename: "home1.jpg")
 
     l2 = Listing.create!(
       title: 'Tahoe City,California',
@@ -256,4 +263,4 @@ ApplicationRecord.transaction do
   )
 
     puts "Done!"
-  end
+  # end

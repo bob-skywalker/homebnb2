@@ -1,20 +1,18 @@
 class Api::ListingsController < ApplicationController
   def index
     @listings = Listing.all
-    render json: @listings
-
-    # render :index
+    render :index
   end
 
   def create
     @listing = Listing.create!(listing_params)
-    # render :show
+    render :show
   end
 
   def show
     @listing = Listing.find(params[:id])
-    # render :show
-    render json: @listing
+    render :show
+    # render json: @listing
   end
 
   private

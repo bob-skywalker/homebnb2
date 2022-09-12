@@ -36,7 +36,7 @@ const Home = () => {
         <Banner/>
 
         <div className='home_section'>
-
+          
           <Cards
           src="https://a0.muscache.com/im/pictures/c4c92198-fb3a-4c4b-bbb6-3aa8af8f7e73.jpg?im_w=720"
           title="5 Bedroom Mansion in Pacifica"
