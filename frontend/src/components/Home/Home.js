@@ -38,6 +38,7 @@ const Home = () => {
         <div className='home_section'>
           {listings.map(listing=>{
                     return <Cards
+                    id={listing.id}
                     src={listing.photo}
                     title={listing.title}
                     description={listing.summary}
