@@ -5,8 +5,10 @@
     "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "^5.10.3",
+    "mapbox-gl": "^2.10.0",
     "next": "^12.3.0",
-    "react-date-range": "^1.4.0"
+    "react-date-range": "^1.4.0",
+    "react-map-gl": "^7.0.19"
   },
   "name": "homebnb2",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",

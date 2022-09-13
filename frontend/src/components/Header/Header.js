@@ -46,7 +46,8 @@ const Header = () => {
               value={searchInput}
               onChange={(e)=> setSearchInput(e.target.value)}
               type='text'
-              placeholder='Start your search'/>
+              placeholder='Start your search'
+              />
               <SearchIcon className='searchIcon' />
             </div>
 

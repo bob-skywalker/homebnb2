@@ -4,6 +4,8 @@ import { Button } from '@mui/material'
 import SearchResult from '../SearchResult/SearchResult'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchListings, getListings } from '../../store/listings'
+
+
 const SearchPage = () => {
   const dispatch = useDispatch();
   const listings = useSelector(getListings)
@@ -48,6 +50,8 @@ const SearchPage = () => {
             price = {listing.price}
           />
         })}
+
+
             {/* <SearchResult
                 img="https://image.insider.com/585029a0dd0895bc548b4b8b?width=750&format=jpeg&auto=webp"
                 location="Private room in center of New York City"
@@ -58,7 +62,7 @@ const SearchPage = () => {
                 total="$650 total"
                 getLabelText='Fair'
             /> */}
-        </div>
+      </div>
 
   )
 }
