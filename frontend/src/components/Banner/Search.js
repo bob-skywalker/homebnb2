@@ -8,7 +8,7 @@ import { Button } from '@mui/material'
 import { Router, useHistory } from 'react-router-dom'
 
 //date range component
-const Search = ({searchInput}) => {
+const Search = () => {
   const[startDate,setStartDate] = useState(new Date());
   const[endDate, setEndDate] = useState(new Date());
   const history = useHistory();
