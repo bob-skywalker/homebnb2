@@ -19,3 +19,17 @@
     margin: 5px !important;
 }
 
+.SearchPage{
+    display: flex;
+}
+
+.SearchPage-left{
+    width: 60%;
+    padding:30px;
+    height: calc(100vh-150px);
+    overflow: scroll;
+}
+
+.SearchPage-right{
+    width: 50%;
+}
