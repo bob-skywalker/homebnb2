@@ -36,8 +36,20 @@ const Home = () => {
         <Banner/>
 
         <div className='home_section'>
-          
-          <Cards
+          {listings.map(listing=>{
+                    return <Cards
+                    src={listing.photo}
+                    title={listing.title}
+                    description={listing.summary}
+                    price={listing.price}
+                    height="720"
+                    width="480"
+                    />
+                })}
+        </div>
+      </div>
+    </>
+          /* <Cards
           src="https://a0.muscache.com/im/pictures/c4c92198-fb3a-4c4b-bbb6-3aa8af8f7e73.jpg?im_w=720"
           title="5 Bedroom Mansion in Pacifica"
           description="Best place in town with the best scenary views."
@@ -54,7 +66,7 @@ const Home = () => {
               description="Comfortable private places, with room for friends or family."
               price='$200/night'
           />
-        </div>
+
 
         <div className='home_section'>
             <Cards
@@ -74,11 +86,7 @@ const Home = () => {
                 title="1 Bedroom apartment"
                 description="Superhost with great amenities and a fabolous shopping complex nearby"
                 price="$70/night"
-            />
-
-        </div>
-      </div>
-    </>
+            /> */
   )
 }
 

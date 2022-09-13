@@ -1,6 +1,9 @@
 .home_section{
     display: flex;
     padding-top: 20px;
+    /* flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
 }
 
 .h1-invis{

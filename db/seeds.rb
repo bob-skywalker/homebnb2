@@ -12,8 +12,9 @@ require 'open-uri'
 # ApplicationRecord.transaction do
     puts "Destroying tables..."
     # Unnecessary if using `rails db:seed:replant`
+    Review.destroy_all
+    Listing.destroy_all
     User.destroy_all
-
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
     ApplicationRecord.connection.reset_pk_sequence!('users')
@@ -114,8 +115,9 @@ require 'open-uri'
       is_posted: true
     )
 
-    file1 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1.jpg")
+    file1 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
     l1.photo.attach(io: file1, filename: "home1.jpg")
+
 
     l2 = Listing.create!(
       title: 'Tahoe City,California',
@@ -139,6 +141,8 @@ require 'open-uri'
       host_id: taowei.id,
       is_posted: true
     )
+    file2 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
+    l2.photo.attach(io: file2, filename: "home1.jpg")
 
     l3 = Listing.create!(
       title: 'Pacifica,California',
@@ -162,6 +166,8 @@ require 'open-uri'
       host_id: darren.id,
       is_posted: true
     )
+    file3 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
+    l3.photo.attach(io: file3, filename: "home1.jpg")
 
     l4 = Listing.create!(
       title: 'Riverside,California',
@@ -185,6 +191,9 @@ require 'open-uri'
       host_id: bob.id,
       is_posted: true
     )
+    file4 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
+    l4.photo.attach(io: file4, filename: "home12.jpg")
+
     #test
 
     l5 = Listing.create!(
@@ -209,6 +218,35 @@ require 'open-uri'
       host_id: tianshu.id,
       is_posted: true
     )
+    file5 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
+    l5.photo.attach(io: file5, filename: "home13.jpg")
+
+
+    l6 = Listing.create!(
+      title: 'Sonoma,California',
+      summary: 'Enjoy the casual opulence of majestic wine country on seven private acres located in the rolling hills',
+      description: 'This memorable estate offers the best of peaceful wine country living and is conveniently located just minutes away from the historic Sonoma Square and a 45-minute drive from the Golden Gate bridge.',
+      street_address: '4212 Boboa Ct',
+      city: 'Sonoma',
+      state: 'CA',
+      zip_code: 94123,
+      star:4.58,
+      country:'USA',
+      region:'North America',
+      property_type: 'Beach',
+      location: '142.1232,133.1231',
+      currency: "USD",
+      price: '$150/night',
+      other_fees:25,
+      other_fees_type:'cleaning fee',
+      num_beds: 8,
+      num_baths: 3,
+      host_id: darren.id,
+      is_posted: true
+    )
+    file6 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
+    l6.photo.attach(io: file6, filename: "home14.jpg")
+
 
   # Review 1
   r1 = Review.create!(
