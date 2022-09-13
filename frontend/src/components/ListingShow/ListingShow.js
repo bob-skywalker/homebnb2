@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { fetchListing, getListing } from "../../store/listings";
 import {Rating} from "@mui/material";
 import ReactPhotoGrid from "react-photo-grid";
-
+import './ListingShow.css'
 
 
 
@@ -29,7 +29,7 @@ export const ListingShow = () => {
   return (
     <>
       <h1>{listing.title}</h1>
-      <div>
+      <div className="image-grid">
       <Rating
         name='read-only'
         value={listing.star}

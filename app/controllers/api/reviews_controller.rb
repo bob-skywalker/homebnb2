@@ -1,11 +1,12 @@
 class Api::ReviewsController < ApplicationController
-  # before_action :require_logged_in
+  before_action :require_logged_in
+  wrap_parameters include: Review.attribute_name + [:reviewId]
 
   def create
     @review = Review.new(review_params)
     @review[:review_id] = current_user.id
 
-    if @review.save
+    if @review.save!
       render :show
     else
       render json: @review.errors.full_messages, status: 422
@@ -13,12 +14,10 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-    @review = current_user.reviews.find_by(id: params[:id])
+    @review = Review.find(params[:id])
 
-    if !@review
-      render json: ["Cannot edit this review"], status: :unprocessable_entity
-    elsif @review.update(review_params)
-        render :show
+    if @review.update(review_params)
+      render :show
     else
         render json: @review.errors.full_messages, status: 422
     end
@@ -35,14 +34,25 @@ class Api::ReviewsController < ApplicationController
       end
     end
 
+    def index
+      @reviews = Review.all
+
+      render :index
+    end
+
     def show
-      @review = Review.find(params[:id])
-      render json:@review
+      @review = Review.find_by(listing_id: params[:id], reviewer_id: params[:id])
+
+      if @review
+        render :show
+      else
+        render json: {}
+      end
     end
 
     def index
       @reviews = Review.all
-      render json: @reviews
+      render :index
     end
 
     private
