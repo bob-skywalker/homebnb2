@@ -115,7 +115,7 @@ require 'open-uri'
       is_posted: true
     )
 
-    file1 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
+    file1 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1.png")
     l1.photo.attach(io: file1, filename: "home1.jpg")
 
 
@@ -141,8 +141,8 @@ require 'open-uri'
       host_id: taowei.id,
       is_posted: true
     )
-    file2 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
-    l2.photo.attach(io: file2, filename: "home1.jpg")
+    file2 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home2.png")
+    l2.photo.attach(io: file2, filename: "home2.jpg")
 
     l3 = Listing.create!(
       title: 'Pacifica,California',
@@ -166,8 +166,8 @@ require 'open-uri'
       host_id: darren.id,
       is_posted: true
     )
-    file3 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
-    l3.photo.attach(io: file3, filename: "home1.jpg")
+    file3 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home3.png")
+    l3.photo.attach(io: file3, filename: "home3.jpg")
 
     l4 = Listing.create!(
       title: 'Riverside,California',
@@ -191,8 +191,8 @@ require 'open-uri'
       host_id: bob.id,
       is_posted: true
     )
-    file4 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
-    l4.photo.attach(io: file4, filename: "home12.jpg")
+    file4 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home4.png")
+    l4.photo.attach(io: file4, filename: "home4.jpg")
 
     #test
 
@@ -218,8 +218,8 @@ require 'open-uri'
       host_id: tianshu.id,
       is_posted: true
     )
-    file5 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
-    l5.photo.attach(io: file5, filename: "home13.jpg")
+    file5 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home5.png")
+    l5.photo.attach(io: file5, filename: "home5.jpg")
 
 
     l6 = Listing.create!(
@@ -244,8 +244,8 @@ require 'open-uri'
       host_id: darren.id,
       is_posted: true
     )
-    file6 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1_resize.png")
-    l6.photo.attach(io: file6, filename: "home14.jpg")
+    file6 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home6.png")
+    l6.photo.attach(io: file6, filename: "home6.jpg")
 
 
   # Review 1
