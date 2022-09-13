@@ -48,6 +48,7 @@ const SearchPage = () => {
 
           {listings.map(listing=>{
             return <SearchResult
+              id={listing.id}
               img={listing.photo}
               location={listing.state}
               title= {listing.title}
@@ -69,8 +70,8 @@ const SearchPage = () => {
                   getLabelText='Fair'
               /> */}
       </div>
-      <div className='searPage-right'> 
-            <Maps location={[listings.lat, listings.lng]}/>
+      <div className='searPage-right'>
+            {/* <Maps /> */}
       </div>
     </div>
   )

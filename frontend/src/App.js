@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
 import SearchPage from "./components/SearchPage/SearchPage";
+import { ListingShow } from "./components/ListingShow/ListingShow";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <Switch>
           <Route path="/search">
             <SearchPage/>
+          </Route>
+
+          <Route path="/listings/:id">
+            <ListingShow/>
           </Route>
 
           <Route path="/">

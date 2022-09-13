@@ -3,8 +3,10 @@ import './SearchResult.css'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarIcon from '@mui/icons-material/Star';
 import { Rating } from '@mui/material';
+import {Link} from 'react-router-dom';
 
 const SearchResult = ({
+    id,
     img,
     location,
     title,
@@ -18,7 +20,9 @@ const SearchResult = ({
   const [event,setEvent] = useState();
   return (
     <div className='SearchResult'>
-        <img src={img} alt=""/>
+        <Link to={`/listings/${id}`}>
+            <img src={img} alt=""/>
+        </Link>
         <FavoriteBorderIcon className="searchResult__heart" />
 
         <div className='searchResult-info'>
