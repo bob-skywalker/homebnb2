@@ -18,23 +18,21 @@ function App() {
 
         <Switch>
           <Route path="/search">
-            <SearchPage/>
+            <SearchPage />
           </Route>
 
-          <Route path="/listings/:id">
-            <ListingShow/>
+          <Route path="/listings/:listingId">
+            <ListingShow />
           </Route>
 
           <Route path="/">
-            <Home/>
+            <Home />
           </Route>
         </Switch>
 
-        <Footer/>
+        <Footer />
       </Route>
     </>
-
-
   );
 }
 
