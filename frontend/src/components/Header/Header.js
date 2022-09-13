@@ -41,10 +41,10 @@ const Header = () => {
             </div>
 
             <div className='header-center'>
-              <input 
+              <input
               value={searchInput}
-              onChange={(e)=> setSearchInput(e.target.value)} 
-              type='text' 
+              onChange={(e)=> setSearchInput(e.target.value)}
+              type='text'
               placeholder='Start your search'/>
               <SearchIcon className='searchIcon' />
             </div>
