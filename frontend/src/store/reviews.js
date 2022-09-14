@@ -1,3 +1,6 @@
+import { receiveListing, RECEIVE_LISTING } from "./listings";
+
+
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
@@ -23,12 +26,31 @@ export const removeReview = (reviewId) => {
     })
 }
 
-export const getReview = (reviewId) => state => {
-    return state.reviews ? state.reviews[reviewId] : null
+export const getReview = (reviewerId, listingId) => state => {
+    if (!state || !state.reviews) {
+        return null;
+    } else {
+        return Object.values(state.reviews).find((review)=> review.listingId === listingId && review.reviewerId === reviewerId)
+    }
 }
 
-export const getReviews = state => {
-    return state.reviews ? Object.values(state.reviews): []
+export const getReviews = listingId => state => {
+    if (!state || !state.reviews){
+        return []
+    } else {
+        let obj = Object.values(state.reviews).filter((review)=> review.listingId === parseInt(listingId))
+
+        return obj
+    }
+}
+
+export const getAuthorReviews = reviewerId => state =>{
+    if (!state || !state.reviews){
+        return []
+    } else {
+        let av = Object.values(state.reviews).filter((review)=> review.reviewerId === parseInt(reviewerId))
+        return av
+    }
 }
 
 
@@ -41,8 +63,8 @@ export const fetchReviews = () => async dispatch => {
     }
 }
 
-export const fetchReview = (reviewId) => async dispatch => {
-    const res = await fetch(`/api/reviews/${reviewId}`)
+export const fetchReview = (reviewerId,listingId) => async dispatch => {
+    const res = await fetch(`/api/reviews/${listingId}?reviewerId=${reviewerId}`)
 
     if (res.ok){
         const data = await res.json()
@@ -94,10 +116,13 @@ export const deleteReview = (reviewId) => async dispatch => {
 
 
 
-const reviewReducer = (state={},action) => {
+const reviewsReducer = (state={},action) => {
     const nextState = {...state};
 
     switch( action.type ){
+        case RECEIVE_LISTING:
+            return {...nextState, ...action.listing.reviews}
+
         case RECEIVE_REVIEWS:
             return {...nextState, ...action.reviews}
 
@@ -113,5 +138,4 @@ const reviewReducer = (state={},action) => {
             return state
     }
 }
-
-export default reviewReducer
+export default reviewsReducer
