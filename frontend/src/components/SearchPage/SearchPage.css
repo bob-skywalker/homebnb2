@@ -19,17 +19,18 @@
     margin: 5px !important;
 }
 
-/* .SearchPage{
+.SearchPage{
     display: flex;
-} */
-
-/* .SearchPage-left{
-    width: 100%;
-    padding:30px;
-    height: calc(100vh-150px);
-    overflow: scroll;
 }
 
-.SearchPage-right{
-    width: 50%;
-} */
+.SearchPage-left{
+    padding:30px;
+    height: calc(100vh-150px);
+    width: 60vw;
+}
+
+.searPage-right{
+    background: red;
+    width: 40vw;
+    right: 0
+}

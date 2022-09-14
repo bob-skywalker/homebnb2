@@ -10,6 +10,7 @@
     resource :session, only: [:show, :create, :destroy]
     resources :listings
     resources :reviews
+    resources :reservations
   end
   get '*path', to: "static_pages#frontend_index"
 end

@@ -14,13 +14,14 @@ class Api::ReviewsController < ApplicationController
   end
 
   def update
-    @review = Review.find(params[:id])
+    @review = current_user.reviews.find_by(id: params[:id])
 
-    if @review.update(review_params)
+    if !@review
+      render json:["cannot edit this review"], status: :unprocessable_entity
+    elsif @review.update(review_params)
       render :show
     else
-        render json: @review.errors.full_messages, status: 422
-    end
+      render json: @review.errors.full_messages, status: 422
   end
 
     def destroy
@@ -34,31 +35,34 @@ class Api::ReviewsController < ApplicationController
       end
     end
 
-    def index
-      @reviews = Review.all
-
-      render :index
-    end
-
     def show
-      @review = Review.find_by(listing_id: params[:id], reviewer_id: params[:id])
-
-      if @review
-        render :show
-      else
-        render json: {}
-      end
+      @review = Review.find(params[:id])
     end
 
     def index
-      @reviews = Review.all
+      reviews = Review.all
+
+      if params[:reviewId]
+        reviews = reviews.where(id: params[:reviewId])
+      end
+
+      if params[:listingId]
+        reviews = reviews.where(listing_id: params[:listingId])
+      end
+
+      if params[:reviewerId]
+        reviews = reviews.where(reviewer_id: params[:reviewerId])
+      end
+
+      @reviews = reviews.includes(:listing, review)
       render :index
+
     end
 
     private
 
     def review_params
-        snake_case_params!(params[:comment])
+        snake_case_params!(params[:review])
 
         params.require(:review).permit(:listing_id, :reviewer_id, :comment, :cleanliness, :accuracy, :communication, :location, :check_in, :value)
     end

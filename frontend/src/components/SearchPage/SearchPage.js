@@ -70,9 +70,6 @@ const SearchPage = () => {
                   getLabelText='Fair'
               /> */}
       </div>
-      <div className='searPage-right'>
-            {/* <Maps /> */}
-      </div>
     </div>
   )
 }
