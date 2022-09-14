@@ -21,6 +21,7 @@ export const ListingShow = () => {
   const reviewData = useSelector(getReviews(listingId));
   const sessionUser = useSelector((state)=> state.session.user)
 
+
   useEffect(() => {
     dispatch(fetchListing(listingId));
   }, [listingId]);
@@ -37,11 +38,10 @@ export const ListingShow = () => {
   if (!listing) return null;
 
   const location = {
+    address: listing?.streetAddress,
     lat: listing.lat,
     lng: listing.lng,
   }
-  console.log(listing['street_address'])
-
 
   return (
     <>
@@ -56,7 +56,7 @@ export const ListingShow = () => {
         />
         </div>
         <ReactPhotoGrid data={[listing.photo,listing.photo,listing.photo,listing.photo]}/>
-        <h2 className='map-h2'>Come Visit Us At Our Campus</h2>
+        <h2 className='map-h2'>Where you'll be</h2>
         <Maps location={location} />
       </div>
     </>
