@@ -35,11 +35,13 @@ export const ListingShow = () => {
   ]
 
   if (!listing) return null;
+
   const location = {
-    address: '1600 Amphitheatre Parkway, Mountain View, california.',
-    lat: 37.42216,
-    lng: -122.08427,
+    lat: listing.lat,
+    lng: listing.lng,
   }
+  console.log(listing['street_address'])
+
 
   return (
     <>
