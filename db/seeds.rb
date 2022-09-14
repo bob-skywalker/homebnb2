@@ -33,6 +33,8 @@ require 'open-uri'
       email: 'tianshu@homebnb.com',
       password: "123456"
   )
+    file7 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/mj-profile.jpg")
+    tianshu.photo.attach(io: file7, filename: "mj-profile.jpg")
 
     jeff = User.create!(
       username: "jeff",
@@ -95,7 +97,7 @@ require 'open-uri'
     l1 = Listing.create!(
       title: 'Oakhurst,California',
       summary: 'Best place in town with the best scenary views.',
-      description: 'Minutes south of Yosemite, and 5 minutes from bass lake, lies a one of a kind retreat reflecting the invitation of the natural environment into its design.',
+      description: 'We invite you to stay and experience the convenient location within walking distance to award winning restaurants, boutique shopping, café & bakeries in the charming and historic village of Half Moon Bay, golden sand state beaches, waves & sunsets, easy access to San Francisco, (SFO) International Airport, Fishermans Wharf, Fitzgerald Marine Reserve, Pescadero, Santa Cruz, Stanford University, the Headquarters of Apple, Google, Facebook, World-class golf, Purisima Creek Redwoods Preserve, Top Rated Hiking and Biking, Harley Farms, and many other local attractions. For those wishing to simply relax, the Nantucket Whale Inn is the perfect place. Relax in your room, in the living room or outside near the gas fire pit in the garden area.',
       street_address: '3452 Snowfine Ct',
       city: 'Oakhurst',
       state: 'CA',
@@ -123,7 +125,9 @@ require 'open-uri'
     l2 = Listing.create!(
       title: 'Tahoe City,California',
       summary: 'Spaces that are more than just a place to sleep.',
-      description: 'Minutes south of Yosemite, and 5 minutes from bass lake, lies a one of a kind retreat reflecting the invitation of the natural environment into its design.',
+      description: 'Our home is adjacent to the historic Applegate Trail in Phoenix Oregon, less than five minutes away from exit 24 or exit 21 on Interstate 5. Phoenix is a small community seven miles North of downtown Ashland, four miles south of Medford, and eight miles east of historic Jacksonville. We are in the heart of the Rogue Valley wine country and the famous Harry and David pear orchards. We offer one or two bedrooms with private bath in a spacious house.
+
+      Guests access our beautiful in ground swimming pool and hot tub from their private room(s). For music let Pandora do the work or plug in your own to the stereo and you have a high end experience at a Super Eight motel price. We can accommodate one to four people in the same party and we only host one party at a time. We offer one or two bedrooms with high end firm mattresses, down comforter or whatever it takes to make you feel totally cared for after a long stretch on I-5. Our guests park in our driveway. We do not charge a cleaning fee, we hope you realize these savings when making your booking decisions.',
       street_address: '3452 Snowfine Ct',
       city: 'Oakhurst',
       state: 'CA',
@@ -149,7 +153,7 @@ require 'open-uri'
     l3 = Listing.create!(
       title: 'Pacifica,California',
       summary: 'Comfortable private places, with room for friends or family.',
-      description: 'Step out of the little castle, you’re 1-2 minutes away from popular sea bowl bar/entertainment center, nick’s rockaway seashore restaurant for pacifica’s most famous crab sandwich!',
+      description: 'A French country home sitting on a rocky bluff with a beautiful view overlooking the Yakima Valley. If you like to hike, the surrounding orchards offers beautiful views. The Wilridge Winery and Cowiche Brewing are 5 minutes away. Yakima County has a plethora of wineries and breweries. If you are attending the Modern Day Sniper class we are 5 minutes away from the meeting point. Snow skiing, boating and river rafting are within an hours drive. Sit on the patio and listen to the coyotes howl.',
       street_address: '5231 Alter St',
       city: 'Pacifica',
       state: 'CA',
@@ -175,7 +179,7 @@ require 'open-uri'
     l4 = Listing.create!(
       title: 'Riverside,California',
       summary: 'Get yourself a peace of mind with our Superhost listing in LA',
-      description: 'Wonderful place to visit and plentyful of food!',
+      description: 'We have access to laundry first come first serve for guests. A small vending fridge and microwave area on 2nd floor. As well as a guest access breakfast nook off of the main kitchen. We are in the process of fully licensing for a full custom breakfast service, so we cannot allow guests access to main kitchen space at this time. We have a great outdoor covered patio and numerous outdoor seating options for Lounging and full cook out. Guests are welcome to grill out in our outdoor kitchen space. The great room and main dining room in lower level are reserved for private party booking, but guests are welcome to the office space for zoom meetings, and last minute work needs. Printer is available.',
       street_address: '131 Bobcat St',
       city: 'Riverside',
       state: 'CA',
@@ -203,7 +207,7 @@ require 'open-uri'
     l5 = Listing.create!(
       title: 'Zephyr Cove,Nevada',
       summary: 'Enjoy the amazing sights of the bay with this stunning penthouse',
-      description: 'This is a beautiful beachfront, 3 bedroom cozy family cabin/home located in Marla Bay Zephyr Cove. The bonus room is only available in the Summer months as there is no heat in this room.',
+      description: 'You are welcome to enjoy your meals in your room, on the patio or at our kitchen table with or without us. Feel free to use the shared living room with dual reclining couch for relaxing and reading, or sit outside in the garden or at the Little Free Library. Climb the Treehouse! The newly-remodeled shared bath is small, but there is room for your toiletries in the cabinet and the pan-shower head is delightful and hot. We also have a new, outdoor toilet and beautiful redwood outdoor shower! There is not a TV in your room, but feel free to join in my TV watching in the evenings - hope you like comedies and medical dramas! Netflix, Hulu and more are available with Wifi. The warm pool is available by reservation as we need time to heat the water. Our bedroom and office are not open to guests, thanks.',
       street_address: '3623 Zephyr St',
       city: 'Zephyr Cove',
       state: 'NV',
@@ -230,7 +234,7 @@ require 'open-uri'
     l6 = Listing.create!(
       title: 'Sonoma,California',
       summary: 'Enjoy the casual opulence of majestic wine country on seven private acres located in the rolling hills',
-      description: 'This memorable estate offers the best of peaceful wine country living and is conveniently located just minutes away from the historic Sonoma Square and a 45-minute drive from the Golden Gate bridge.',
+      description: 'This memorable estate offers the best of peaceful wine country living and is conveniently located just minutes away from the historic Sonoma Square and a 45-minute drive from the Golden Gate bridge. Located 10 minutes from downtown Bend, there are endless activities to see and do year round. Depending on the season you can enjoy top notch snow skiing, golfing, fishing, hiking, water rafting, canoeing, kayaking, and even personal guided tours for the adventurous.',
       street_address: '4212 Boboa Ct',
       city: 'Sonoma',
       state: 'CA',

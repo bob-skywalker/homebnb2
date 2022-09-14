@@ -4,4 +4,14 @@ json.extract! @listing, :id, :title, :description, :street_address, :city, :stat
         json.photo @listing.photo.url
     else
         json.photo ""
-    end 
+    end
+
+    json.extract! @listing.host, :username
+    json.extract! @listing.host, :email
+
+
+    if @listing.host.photo.attached?
+        json.profile_photo @listing.host.photo.url
+    else
+        json.profile_photo ""
+    end

@@ -1,5 +1,5 @@
 import { receiveListing, RECEIVE_LISTING } from "./listings";
-
+import csrfFetch from "./csrf";
 
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
@@ -54,8 +54,8 @@ export const getAuthorReviews = reviewerId => state =>{
 }
 
 
-export const fetchReviews = () => async dispatch => {
-    const res = await fetch(`/api/reviews`)
+export const fetchReviews = (listingId) => async dispatch => {
+    const res = await csrfFetch(`/api/reviews?listingId=${listingId}`)
 
     if (res.ok){
         const data = await res.json()
@@ -64,7 +64,7 @@ export const fetchReviews = () => async dispatch => {
 }
 
 export const fetchReview = (reviewerId,listingId) => async dispatch => {
-    const res = await fetch(`/api/reviews/${listingId}?reviewerId=${reviewerId}`)
+    const res = await csrfFetch(`/api/reviews/${listingId}?reviewerId=${reviewerId}`)
 
     if (res.ok){
         const data = await res.json()
@@ -73,7 +73,7 @@ export const fetchReview = (reviewerId,listingId) => async dispatch => {
 }
 
 export const createReview = (review) => async dispatch => {
-    const res = await fetch(`/api/reviews`,{
+    const res = await csrfFetch(`/api/reviews`,{
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
@@ -88,7 +88,7 @@ export const createReview = (review) => async dispatch => {
 }
 
 export const updateReview = (review) => async dispatch => {
-    const res = await fetch(`/api/reviews/${review.id}`,{
+    const res = await csrfFetch(`/api/reviews/${review.id}`,{
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -103,7 +103,7 @@ export const updateReview = (review) => async dispatch => {
 }
 
 export const deleteReview = (reviewId) => async dispatch => {
-    const res = await fetch(`/api/reviews/${reviewId}`, {
+    const res = await csrfFetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE'
     })
 

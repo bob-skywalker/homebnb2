@@ -1,17 +1,17 @@
 class User < ApplicationRecord
   has_secure_password
 
-  validates :username, 
-    uniqueness: true, 
-    length: { in: 3..30 }, 
+  validates :username,
+    uniqueness: true,
+    length: { in: 3..30 },
     format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
-  validates :email, 
-    uniqueness: true, 
-    length: { in: 3..255 }, 
+  validates :email,
+    uniqueness: true,
+    length: { in: 3..255 },
     format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :session_token, presence: true, uniqueness: true
   validates :password, length: { in: 6..255 }, allow_nil: true
-  
+
   before_validation :ensure_session_token
 
 
@@ -22,6 +22,10 @@ class User < ApplicationRecord
   has_many :listings,
     foreign_key: :host_id,
     class_name: :Listing
+
+  
+  has_one_attached :photo
+
 
   def self.find_by_credentials(credential, password)
     field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username

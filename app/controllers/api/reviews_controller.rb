@@ -1,10 +1,10 @@
 class Api::ReviewsController < ApplicationController
   before_action :require_logged_in
-  wrap_parameters include: Review.attribute_name + [:reviewId]
+  wrap_parameters include: Review.attribute_names + [:reviewId]
 
   def create
     @review = Review.new(review_params)
-    @review[:review_id] = current_user.id
+    @review[:reviewer_id] = current_user.id
 
     if @review.save!
       render :show
@@ -22,6 +22,7 @@ class Api::ReviewsController < ApplicationController
       render :show
     else
       render json: @review.errors.full_messages, status: 422
+    end
   end
 
     def destroy
@@ -42,19 +43,19 @@ class Api::ReviewsController < ApplicationController
     def index
       reviews = Review.all
 
-      if params[:reviewId]
-        reviews = reviews.where(id: params[:reviewId])
+      if params[:review_id]
+        reviews = reviews.where(id: params[:review_id])
       end
 
-      if params[:listingId]
-        reviews = reviews.where(listing_id: params[:listingId])
+      if params[:listing_id]
+        reviews = reviews.where(listing_id: params[:listing_id])
       end
 
-      if params[:reviewerId]
-        reviews = reviews.where(reviewer_id: params[:reviewerId])
+      if params[:reviewer_id]
+        reviews = reviews.where(reviewer_id: params[:reviewer_id])
       end
 
-      @reviews = reviews.includes(:listing, review)
+      @reviews = reviews.includes(:listing, :reviewer)
       render :index
 
     end
@@ -62,7 +63,6 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        snake_case_params!(params[:review])
 
         params.require(:review).permit(:listing_id, :reviewer_id, :comment, :cleanliness, :accuracy, :communication, :location, :check_in, :value)
     end

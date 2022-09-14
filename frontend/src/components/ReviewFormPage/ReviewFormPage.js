@@ -21,6 +21,7 @@ const ReviewFormPage = () => {
     const listingData = useSelector(getListing(listingId));
     const sessionUser = useSelector((state)=> state.session.user);
     const [showLoginModal, setLoginModal] = useState(false);
+    const [signUp,setSignUp] = useState(false);
     const reviewData = useSelector(
         sessionUser ? getReview(sessionUser.id, +listingId) : getReview(null)
     );
@@ -99,10 +100,6 @@ const ReviewFormPage = () => {
         dispatch(fetchListing(listingId));
     },[listingId]);
 
-    useEffect(()=>{
-        if (sessionUser)
-        dispatch(fetchReview(listingId,sessionUser.id))
-    },[sessionUser]);
 
     useEffect(()=>{
         if (reviewData) {
@@ -120,7 +117,7 @@ const ReviewFormPage = () => {
         return null;
     }
 
-
+ console.log(errors)
 
   return (
     <>
@@ -165,8 +162,9 @@ const ReviewFormPage = () => {
                     Post Review
                 </button>
                 <LoginFormModal
-                    showLoginModal={showLoginModal}
-                    setLoginModal={setLoginModal}
+                    showLogIn={showLoginModal}
+                    setShowLogIn={setLoginModal}
+                    setSignUp = {setSignUp}
                 />
             </form>
         </div>

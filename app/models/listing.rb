@@ -4,7 +4,7 @@ class Listing < ApplicationRecord
     validates :description, :street_address, :city, :state, :zip_code, :star, :country, :region, :property_type, :lat, :lng, :currency, :price, :other_fees, :other_fees_type, :num_beds, :num_baths, :host_id, :is_posted, presence: true
 
     #AWS
-    has_one_attached :photo, dependent: :destroy
+    has_one_attached :photo
 
 
     belongs_to :host,
@@ -15,4 +15,8 @@ class Listing < ApplicationRecord
         foreign_key: :listing_id,
         class_name: :Review,
         dependent: :destroy
+
+    def average_rating
+        5
+    end
 end
