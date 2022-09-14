@@ -41,6 +41,7 @@ const SearchResult = ({
                             name='read-only'
                             value={star}
                             precision={.5}
+                            readOnly
                             />
                     </p>
                 </div>

@@ -49,7 +49,8 @@ export const ListingShow = () => {
         <Rating
           name='read-only'
           value={listing.star}
-          precision={0.5}
+          precision={0.1}
+          readOnly
         />
         </div>
         <ReactPhotoGrid data={[listing.photo,listing.photo,listing.photo,listing.photo]}/>
