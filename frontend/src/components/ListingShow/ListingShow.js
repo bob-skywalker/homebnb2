@@ -8,6 +8,9 @@ import ReactPhotoGrid from "react-photo-grid";
 import './ListingShow.css'
 import { getReviews } from "../../store/reviews";
 import ReviewFormPage from "../ReviewFormPage/ReviewFormPage";
+import Maps from "../Maps/Maps";
+
+
 
 
 
@@ -32,19 +35,27 @@ export const ListingShow = () => {
   ]
 
   if (!listing) return null;
+  const location = {
+    address: '1600 Amphitheatre Parkway, Mountain View, california.',
+    lat: 37.42216,
+    lng: -122.08427,
+  }
 
   return (
     <>
-      <h1>{listing.title}</h1>
-      <div className="image-grid">
-      <Rating
-        name='read-only'
-        value={listing.star}
-        precision={0.5}
-      />
+      <div className="list-container">
+        <h1>{listing.title}</h1>
+        <div className="image-grid">
+        <Rating
+          name='read-only'
+          value={listing.star}
+          precision={0.5}
+        />
+        </div>
+        <ReactPhotoGrid data={[listing.photo,listing.photo,listing.photo,listing.photo]}/>
+        <h2 className='map-h2'>Come Visit Us At Our Campus</h2>
+        <Maps location={location} />
       </div>
-      <ReactPhotoGrid data={[listing.photo,listing.photo,listing.photo,listing.photo]}/>
-
     </>
   );
 };
