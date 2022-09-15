@@ -125,7 +125,7 @@ require 'open-uri'
       title: 'Oakhurst,California',
       summary: 'Best place in town with the best scenary views.',
       description: 'We invite you to stay and experience the convenient location within walking distance to award winning restaurants, boutique shopping, café & bakeries in the charming and historic village of Half Moon Bay, golden sand state beaches, waves & sunsets, easy access to San Francisco, (SFO) International Airport, Fishermans Wharf, Fitzgerald Marine Reserve, Pescadero, Santa Cruz, Stanford University, the Headquarters of Apple, Google, Facebook, World-class golf, Purisima Creek Redwoods Preserve, Top Rated Hiking and Biking, Harley Farms, and many other local attractions. For those wishing to simply relax, the Nantucket Whale Inn is the perfect place. Relax in your room, in the living room or outside near the gas fire pit in the garden area.',
-      street_address: '3452 Snowfine Ct',
+      street_address: '5672 Joshua View',
       city: 'Oakhurst',
       state: 'CA',
       zip_code: 93644,

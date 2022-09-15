@@ -13,6 +13,14 @@ import Search from "../Banner/Search";
 import {Box, TextField} from '@mui/material';
 import {DateRangePicker, DateRange} from '@mui/lab';
 import RangePicker from "../RangePicker/RangePicker";
+import WifiIcon from '@mui/icons-material/Wifi';
+import LocalParkingIcon from '@mui/icons-material/LocalParking';
+import FreeBreakfastIcon from '@mui/icons-material/FreeBreakfast';
+import FireplaceIcon from '@mui/icons-material/Fireplace';
+import CableIcon from '@mui/icons-material/Cable';
+import SevereColdIcon from '@mui/icons-material/SevereCold';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+import CheckroomIcon from '@mui/icons-material/Checkroom';
 
 
 
@@ -75,6 +83,25 @@ export const ListingShow = () => {
               <p>{listing.email}</p>
               </div>
               <img alt="profile-pic" className="profile-photo" src={listing.profilePhoto} />
+            </div>
+            <div>
+              <div className="misc">Amenities</div>
+                <div className="misc-container">
+                  <div className="misc-left">
+                    <div><WifiIcon/> Wifi</div>
+                    <div><LocalParkingIcon/> Free Parking</div>
+                    <div><FreeBreakfastIcon/> Breakfast</div>
+                    <div><FireplaceIcon/> Indoor fireplace</div>
+                  </div>
+                  <div className="misc-right">
+                    <div><CableIcon/> Cable</div>
+                    <div><SevereColdIcon/> Air Condition</div>
+                    <div><LiveTvIcon/> TV / Monitor</div>
+                    <div><CheckroomIcon/> Hangers</div>
+                  </div>
+                </div>
+
+
             </div>
             <ReviewFormPage listing={listing} />
           </div>
