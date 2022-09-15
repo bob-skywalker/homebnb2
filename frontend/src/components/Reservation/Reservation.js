@@ -5,6 +5,7 @@ import { fetchReservations, getReservations } from '../../store/reservation';
 import UpcomingIcon from '@mui/icons-material/Upcoming';
 import FlightIcon from '@mui/icons-material/Flight';
 import { useLocation } from 'react-router-dom';
+import { fetchListings, getListings } from '../../store/listings';
 
 
 const Reservation = () => {
@@ -12,10 +13,14 @@ const Reservation = () => {
 
   useEffect(()=>{
     dispatch(fetchReservations())
+    // listingIds.forEach(id => dispatch(fetchListing(id)))
+    dispatch(fetchListings())
   },[])
 
   let res = useSelector(state=> state.reservations)
   let results = Object.values(res)
+  // const listingIds = // loop through res, grab all listing ids
+  // useSelector(state => state.listings)
 
   return (
     <div className='ReservationPage'>
@@ -27,8 +32,12 @@ const Reservation = () => {
         </div>
       </div>
       {results.map(reser=>{
-        return <p>{reser.id}</p>
-      })}
+        return(
+        <>
+          <p>{reser.listingId}</p>
+          <img src={reser.photoUrl} />
+        </>
+      )})}
     </div>
   )
 }

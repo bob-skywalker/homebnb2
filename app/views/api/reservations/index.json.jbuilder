@@ -2,6 +2,8 @@
     @reservations.each do |reservation|
         json.set! reservation.id do
             json.partial! 'reservation', reservation: reservation
+            json.photo_url reservation.listing.photo.url
+            json.extract! reservation.listing , :title 
         end
     end
 
