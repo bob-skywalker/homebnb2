@@ -13,7 +13,8 @@ import {
 import './ReviewFormPage.css';
 import LoginFormModal from '../LoginFormModal';
 import StarRating from '../StarRating/StarRating';
-import { Avatar, Divider, Grid, Paper } from '@mui/material';
+import { Avatar, Divider, Grid, Paper, Rating } from '@mui/material';
+import { Star } from '@material-ui/icons';
 
 
 const ReviewFormPage = ({listing}) => {
@@ -29,7 +30,7 @@ const ReviewFormPage = ({listing}) => {
         sessionUser ? getReview(sessionUser.id, +listingId) : getReview(null)
     );
     const [errors, setErrors] = useState([]);
-    const [cleanliness,setCleanliness] = useState(0);
+    const [cleanliness,setCleanliness] = useState(5);
     const [accuracy, setAccuracy] = useState(1);
     const [communication, setCommunication] = useState(1);
     const [location, setLocation] = useState(1);
@@ -153,6 +154,7 @@ const ReviewFormPage = ({listing}) => {
                                             <Grid>
                                                 <h4 style={{margin: 0, textAlign: "left"}}>{review.username}</h4>
                                                 <p style={{textAlign: "left"}}>{review.comment}</p>
+                                                <Rating value={review.cleanliness} precision={0.5} readOnly />
                                                 <p style={{textAlign: "left", color: "gray"}}>
                                                     posted on {review.createdAt.slice(0,10)}
                                                 </p>

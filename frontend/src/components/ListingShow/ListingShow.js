@@ -106,7 +106,7 @@ export const ListingShow = () => {
             <ReviewFormPage listing={listing} />
           </div>
           <div className="content-right">
-            <RangePicker/>
+            <RangePicker listing={listing}/>
           </div>
         </div>
         <h2 className='map-h2'>Where you'll be</h2>

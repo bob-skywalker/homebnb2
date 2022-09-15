@@ -6,16 +6,40 @@ import "react-date-range/dist/theme/default.css";
 import { Box, Button, TextField } from "@mui/material";
 import { PeopleOutline } from "@material-ui/icons";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
-import { useHistory, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { getListing } from "../../store/listings";
+import Reservation from "../Reservation/Reservation";
+import { createReservation } from "../../store/reservation";
+
 
 const RangePicker = () => {
+  const sessionUser = useSelector(state => state.session.user)
   const { listingId } = useParams();
+  const [numGuest,setNumGuest] = useState(1);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const history = useHistory();
   const listing = useSelector(getListing(listingId));
+  const dispatch = useDispatch();
+
+  const dayDiff = () => {
+    return (endDate.getTime() - startDate.getTime()) / 86400000;
+  };
+
+  let res = {
+    user_id: sessionUser.id,
+    listing_id: parseInt(listingId),
+    num_guests: numGuest,
+    start_Date: startDate,
+    end_Date: endDate,
+    payment: listing.price * dayDiff()
+  }
+
+  console.log(res)
+
+
+
   // const [dateRange, setDateRanges] = useState(0);
   // const [selectionRanges, setSelectionRanges] = useState({
   //   startDate: startDate,
@@ -28,6 +52,10 @@ const RangePicker = () => {
     endDate: endDate,
     key: "selection",
   };
+
+  // const handleSubmitButton = {
+  //   dispatch(createReservation())
+  // }
 
   // useEffect(()=>{
   //   setSelectionRanges(selectionRange)
@@ -46,10 +74,21 @@ const RangePicker = () => {
 
     // setDateRanges(days);
   }
+  const handleSubmit= e => {
+    e.preventDefault();
+    res = {
+      user_id: sessionUser.id,
+      listing_id: parseInt(listingId),
+      num_guests: numGuest,
+      start_date: startDate,
+      end_date: endDate,
+      payment: listing.price * dayDiff()}
+      dispatch(createReservation(res));
+      history.push('/reservation')
+  }
 
-  const dayDiff = () => {
-    return (endDate.getTime() - startDate.getTime()) / 86400000;
-  };
+
+
 
   return (
     <>
@@ -65,10 +104,10 @@ const RangePicker = () => {
           Number of guests
           <PeopleOutlineIcon />
         </h2>
-        <input defaultValue={2} type="number" />
-        <Button variant="outlined" onClick={() => history.push("/search")}>
-          Reserve
-        </Button>
+        <input onChange={e=> setNumGuest(e.target.value)} defaultValue={1} type="number" />
+        <button onClick={handleSubmit}>
+           Reserve
+        </button>
         <div className="price-calculator">
           <p className="warning">You won't be charged yet</p>
           <div className="price-sums">
