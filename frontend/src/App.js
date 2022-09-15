@@ -9,6 +9,7 @@ import Banner from "./components/Banner/Banner";
 import Footer from "./components/Footer/Footer";
 import SearchPage from "./components/SearchPage/SearchPage";
 import { ListingShow } from "./components/ListingShow/ListingShow";
+import Reservation from "./components/Reservation/Reservation";
 
 function App() {
   return (
@@ -25,9 +26,15 @@ function App() {
             <ListingShow />
           </Route>
 
+          <Route exact path='/reservation'>
+            <Reservation/>
+          </Route>
+
           <Route path="/">
             <Home />
           </Route>
+
+
         </Switch>
 
         <Footer />
