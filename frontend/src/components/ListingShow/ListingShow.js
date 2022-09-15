@@ -63,17 +63,17 @@ export const ListingShow = () => {
             readOnly
           />
         </div>
-        <img src={listing.photo}/>
+        <img alt="listingPhoto" src={listing.photo}/>
         <div className="content-container">
           <div className="content-left">
             <h2>Description</h2>
-            <p>{listing.description}</p>
+            <p className="listing-info">{listing.description}</p>
             <div className="host-info">
               <div>
-              <h3>Hosted by {listing.username}</h3>
+              <h2>Hosted by {listing.username}</h2>
               <p>{listing.email}</p>
               </div>
-              <img className="profile-photo" src={listing.profilePhoto} />
+              <img alt="profile-pic" className="profile-photo" src={listing.profilePhoto} />
             </div>
             <ReviewFormPage listing={listing} />
           </div>

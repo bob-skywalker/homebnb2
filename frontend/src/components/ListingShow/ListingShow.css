@@ -12,6 +12,7 @@
 
 .host-info{
         display: flex;
+        line-height: 2;
         justify-content: space-between;
         padding-top: 20px;
         border-top: 1px solid gray;
@@ -31,11 +32,15 @@
 }
 
 .profile-photo{
-        border-radius:66px;
+        border-radius:76px;
         width: 150px;
         height: 150px;
         align-items: center;
         justify-content: center;
         position: relative;
-        transform: translateY(-9%);
+        /* transform: translateY(-%); */
+}
+
+.listing-info{
+        line-height: 2;
 }
