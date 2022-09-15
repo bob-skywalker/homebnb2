@@ -42,7 +42,7 @@ const Home = () => {
                     src={listing.photo}
                     title={listing.title}
                     description={listing.summary}
-                    price={listing.price}
+                    price={`$${listing.price} per night`}
                     height="720"
                     width="480"
                     />

@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 export const RECEIVE_RESERVATIONS = 'RECEIVE_RESERVATIONS';
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
 export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
@@ -32,7 +34,7 @@ export const getReservations = state => {
 
 
 export const fetchReservations = () => async dispatch => {
-    const res = await fetch(`/api/reservations`)
+    const res = await csrfFetch(`/api/reservations`)
 
     if (res.ok){
         const data = await res.json()
@@ -41,7 +43,7 @@ export const fetchReservations = () => async dispatch => {
 }
 
 export const fetchReservation = (reservationId) => async dispatch => {
-    const res = await fetch(`api/reservations/${reservationId}`)
+    const res = await csrfFetch(`api/reservations/${reservationId}`)
 
     if (res.ok){
         const data = await res.json();
@@ -50,7 +52,7 @@ export const fetchReservation = (reservationId) => async dispatch => {
 }
 
 export const createReservation = (reservation) => async dispatch => {
-    const res = await fetch (`/api/reservations`,{
+    const res = await csrfFetch(`/api/reservations`,{
         method: 'POST',
         headers: {
             'Content-Type' : 'application/json'
@@ -65,7 +67,7 @@ export const createReservation = (reservation) => async dispatch => {
 }
 
 export const updateReservation = (reservation) => async dispatch => {
-    const res = await fetch(`/api/reservations/${reservation.id}`,{
+    const res = await csrfFetch(`/api/reservations/${reservation.id}`,{
         method: 'PATCH',
         headers: {
             'Content-Type' : 'application/json'
@@ -79,7 +81,7 @@ export const updateReservation = (reservation) => async dispatch => {
 }
 
 export const deleteReservation = (reservationId) => async dispatch => {
-    const res = await fetch (`/api/reservations/${reservationId}`,{
+    const res = await csrfFetch(`/api/reservations/${reservationId}`,{
         method: 'DELETE'
     });
 

@@ -54,7 +54,7 @@ const SearchPage = () => {
               title= {listing.title}
               description= {listing.description}
               star = {listing.star}
-              price = {listing.price}
+              price = {`$${listing.price}/night`}
             />
           })}
 

@@ -30,7 +30,7 @@ class Api::ReservationsController < ApplicationController
 
     private
     def reservation_params
-        snake_case_params!(params[:reservation])
+        # snake_case_params!(params[:reservation])
 
         params.require(:reservation).permit(:listing_id, :user_id, :num_guests, :start_date, :end_date, :payment)
     end

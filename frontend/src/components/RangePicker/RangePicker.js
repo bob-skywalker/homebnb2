@@ -40,6 +40,7 @@ const RangePicker = () => {
             onChange={handleSelect}
             minDate = {new Date()}
             />
+            {console.log((selectionRange.endDate.getTime()-selectionRange.startDate.getTime()) / 86400000)}
             <h2>
               Number of guests
               <PeopleOutlineIcon/>
@@ -52,7 +53,7 @@ const RangePicker = () => {
             <div className='price-calculator'>
               <p className='warning'>You won't be charged yet</p>
               <div className='price-sums'>
-                <h3>{listing.price}</h3>
+                <h3>{`$${listing.price}/night`}</h3>
                 <h3>${listing.price}</h3>
               </div>
               <div></div>

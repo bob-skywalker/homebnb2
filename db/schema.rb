@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_14_172442) do
     t.float "lat", null: false
     t.float "lng", null: false
     t.string "currency", default: "USD", null: false
-    t.string "price", null: false
+    t.float "price", null: false
     t.float "other_fees"
     t.string "other_fees_type"
     t.integer "num_beds", null: false

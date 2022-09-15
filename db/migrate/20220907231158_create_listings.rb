@@ -15,7 +15,7 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.float :lat, null:false
       t.float :lng, null:false
       t.string :currency, null: false, default: 'USD'
-      t.string :price, null: false
+      t.float :price, null: false
       t.float :other_fees
       t.string :other_fees_type
       t.integer :num_beds, null:false
