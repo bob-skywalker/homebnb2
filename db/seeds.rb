@@ -80,11 +80,18 @@ require 'open-uri'
       password: "123456"
   )
 
+    file12 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/alex.jpg")
+    alex.photo.attach(io: file12, filename:"alex.png")
+
     darren = User.create!(
       username: 'darren',
       email: "darren@homebnb.com",
       password: "123456",
   )
+
+    file13 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/darren.jpg")
+    darren.photo.attach(io: file13, filename:"darren.jpg")
+
 
     bob = User.create!(
       username: 'bob',
@@ -92,11 +99,17 @@ require 'open-uri'
       password: '123456'
     )
 
+    file14 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/bob.jpg")
+    bob.photo.attach(io: file14, filename:"bob.jpg")
+
     john = User.create!(
       username: 'john',
       email: 'john@homebnb.com',
       password: '123456'
     )
+
+    file15 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/john.jpg")
+    john.photo.attach(io: file15, filename:"john.png")
 
 
     # More users
@@ -128,7 +141,7 @@ require 'open-uri'
       other_fees_type:'cleaning fee',
       num_beds: 3,
       num_baths: 2,
-      host_id: tianshu.id,
+      host_id: bob.id,
       is_posted: true
     )
 
@@ -210,7 +223,7 @@ require 'open-uri'
       other_fees_type:'cleaning fee',
       num_beds: 5,
       num_baths: 3,
-      host_id: daniel.id,
+      host_id: darren.id,
       is_posted: true
     )
     file4 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home4.png")
@@ -238,7 +251,7 @@ require 'open-uri'
       other_fees_type:'cleaning fee',
       num_beds: 6,
       num_baths: 5,
-      host_id: tianshu.id,
+      host_id: jeff.id,
       is_posted: true
     )
     file5 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home5.png")
@@ -265,7 +278,7 @@ require 'open-uri'
       other_fees_type:'cleaning fee',
       num_beds: 8,
       num_baths: 3,
-      host_id: jeff.id,
+      host_id: alex.id,
       is_posted: true
     )
     file6 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home6.png")
