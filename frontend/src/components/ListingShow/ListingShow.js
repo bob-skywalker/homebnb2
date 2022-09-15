@@ -61,7 +61,7 @@ export const ListingShow = () => {
             readOnly
           />
         </div>
-        <ReactPhotoGrid data={[listing.photo,listing.photo,listing.photo,listing.photo]}/>
+        <img src={listing.photo}/>
         <div className="content-container">
           <div className="content-left">
             <h2>Description</h2>
@@ -72,13 +72,12 @@ export const ListingShow = () => {
               <p>{listing.email}</p>
               </div>
               <img className="profile-photo" src={listing.profilePhoto} />
-
             </div>
+            <ReviewFormPage/>
           </div>
           <div className="content-right">
           </div>
         </div>
-        <ReviewFormPage/>
         <h2 className='map-h2'>Where you'll be</h2>
         <Maps location={location} />
       </div>

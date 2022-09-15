@@ -21,7 +21,7 @@
 .content-left{
         width: 30%;
         padding-top: 100px;
-        padding-left: 230px;
+        transform: translateX(52%);
         padding-bottom: 150px;
 
 }

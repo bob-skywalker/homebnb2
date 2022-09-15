@@ -100,6 +100,11 @@ const ReviewFormPage = () => {
         dispatch(fetchListing(listingId));
     },[listingId]);
 
+    
+    useEffect(()=>{
+        if (sessionUser)
+        dispatch(fetchReview(listingId,sessionUser.id))
+    },[sessionUser]);
 
     useEffect(()=>{
         if (reviewData) {
