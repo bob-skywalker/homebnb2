@@ -23,7 +23,11 @@ class User < ApplicationRecord
     foreign_key: :host_id,
     class_name: :Listing
 
-  
+  has_many :reservations,
+    foreign_key: :user_id,
+    class_name: :Reservation
+
+
   has_one_attached :photo
 
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './RangePicker.css'
 import { DateRangePicker } from 'react-date-range'
 import 'react-date-range/dist/styles.css'
@@ -17,6 +17,13 @@ const RangePicker = () => {
   const[endDate, setEndDate] = useState(new Date())
   const history = useHistory()
   const listing = useSelector(getListing(listingId))
+  const [dateRange,setDateRanges] = useState(0);
+  // const [selectionRanges, setSelectionRanges] = useState({
+  //   startDate: startDate,
+  //   endDate: endDate,
+  //   key: 'selection'
+  // })
+
 
   const selectionRange = {
     startDate: startDate,
@@ -24,12 +31,24 @@ const RangePicker = () => {
     key: 'selection',
   };
 
+  // useEffect(()=>{
+  //   setSelectionRanges(selectionRange)
+  // },[selectionRange])
+
   function handleSelect(ranges){
+    let days
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
+    days = (selectionRange.endDate.getTime() - selectionRange.startDate.getTime()) / 86400000
+    // console.log(selectionRange)
+    // console.log(days)
+
+    setDateRanges(days)
   }
 
-  console.log(selectionRange)
+
+  // console.log(dateRange)
+
 
   return (
     <>
@@ -40,7 +59,7 @@ const RangePicker = () => {
             onChange={handleSelect}
             minDate = {new Date()}
             />
-            {console.log((selectionRange.endDate.getTime()-selectionRange.startDate.getTime()) / 86400000)}
+            {/* {console.log((selectionRange.endDate.getTime()-selectionRange.startDate.getTime()) / 86400000)} */}
             <h2>
               Number of guests
               <PeopleOutlineIcon/>
@@ -54,7 +73,7 @@ const RangePicker = () => {
               <p className='warning'>You won't be charged yet</p>
               <div className='price-sums'>
                 <h3>{`$${listing.price}/night`}</h3>
-                <h3>${listing.price}</h3>
+                <h3 >${listing.price * dateRange}</h3>
               </div>
               <div></div>
             </div>

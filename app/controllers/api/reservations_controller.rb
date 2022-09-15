@@ -10,15 +10,44 @@ class Api::ReservationsController < ApplicationController
         end
     end
 
-    def index
-        @reservations = Reservation.all
 
-        if params[:reservationId]
-            reservations = reservations.where(id: params[:reservationId])
+    def destroy
+        @reservation = Reservation.find_by(id: params[:id])
+
+        if @reservation
+            @reservation.destroy
+            render :show
+        else
+            render json: ['cannot delete this reservation'], status: 404
+        end
+    end
+
+    def update
+        @reservation = current_user.reservations.find_by(id: params[:id])
+
+        # @reservation = Reservation.find(params[:id])
+
+        # @reservation.user_id = current_user.id
+
+        if !@review
+            render json:['cannot edit this reservation!'],
+            status: :unprocessable_entity
+        elsif @review.update(reservation_params)
+            render :show
+        else
+            render json: @review.errors.full_messages, status: 422
+        end
+    end
+
+    def index
+        reservations = Reservation.all
+
+        if params[:reservation_id]
+            reservations = reservations.where(id: params[:reservation_id])
         end
 
-        if params[:userId]
-            reservations = reservations.where(user_id: params[:userId])
+        if params[:user_id]
+            reservations = reservations.where(user_id: params[:user_id])
         end
 
         @reservations = reservations.includes(:listing, :user, :host)

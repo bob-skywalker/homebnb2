@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import "./LoginForm.css";
 import { getCurrentUser } from "../../store/session";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import SignupFormModal from "../SignupFormModal";
 
 function LoginForm({setShowLogIn,setSignUp}) {
@@ -12,7 +12,6 @@ function LoginForm({setShowLogIn,setSignUp}) {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const sessionUser = useSelector(state => state.session.user);
-
   if (sessionUser) return <Redirect to='/search'/>
 
   const handleSubmit = (e) => {

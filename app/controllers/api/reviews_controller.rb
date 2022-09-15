@@ -15,6 +15,8 @@ class Api::ReviewsController < ApplicationController
 
   def update
     @review = current_user.reviews.find_by(id: params[:id])
+    # @review = Review.find(params[:id])
+    # @review.user_id = current_user.id
 
     if !@review
       render json:["cannot edit this review"], status: :unprocessable_entity
@@ -26,10 +28,9 @@ class Api::ReviewsController < ApplicationController
   end
 
     def destroy
-      @review = current_user.reivews.find_by(id: params[:id])
+      @review = current_user.reviews.find_by(id: params[:id])
 
-      if @review
-        @review.destroy
+      if @review && @review.destroy
         render :show
       else
         render json: ["cannot delete this review"], status: 404
