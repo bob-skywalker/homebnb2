@@ -7,14 +7,16 @@ import {
     createReview,
     fetchReview,
     getReview,
+    getReviews,
     updateReview
 } from '../../store/reviews';
 import './ReviewFormPage.css';
 import LoginFormModal from '../LoginFormModal';
 import StarRating from '../StarRating/StarRating';
+import { Avatar, Grid, Paper } from '@mui/material';
 
 
-const ReviewFormPage = () => {
+const ReviewFormPage = ({listing}) => {
     const history = useHistory();
     const dispatch = useDispatch();
     const {listingId} = useParams();
@@ -22,6 +24,7 @@ const ReviewFormPage = () => {
     const sessionUser = useSelector((state)=> state.session.user);
     const [showLoginModal, setLoginModal] = useState(false);
     const [signUp,setSignUp] = useState(false);
+    const reviews = useSelector(getReviews(listingId));
     const reviewData = useSelector(
         sessionUser ? getReview(sessionUser.id, +listingId) : getReview(null)
     );
@@ -34,6 +37,8 @@ const ReviewFormPage = () => {
     const [value, setValue] = useState(1);
     const [comment,setComment] = useState("");
 
+
+    console.log(reviews)
 
     const type = reviewData ? "update" : "create";
 
@@ -100,7 +105,7 @@ const ReviewFormPage = () => {
         dispatch(fetchListing(listingId));
     },[listingId]);
 
-    
+
     useEffect(()=>{
         if (sessionUser)
         dispatch(fetchReview(listingId,sessionUser.id))
@@ -136,7 +141,32 @@ const ReviewFormPage = () => {
             </ul>
 
             <form onSubmit={handleSubmit} className='reviewform'>
-                <h1 id="listName">{listingData.title}</h1>
+                <h2 id="listName">Write a Review!</h2>
+                <div className='comment-section'>
+
+                        {reviews.map(review=>{
+                            return <Paper style={{padding: "40px 20px"}}>
+                                        <Grid container wrap='nowrap' spacing={2}>
+                                            <Grid item>
+                                                <Avatar alt='avatar' src={listing.profilePhoto} />
+                                            </Grid>
+                                            <Grid>
+                                                <h4 style={{margin: 0, textAlign: "left"}}>{review.username}</h4>
+                                                <p style={{textAlign: "left"}}>{review.comment}</p>
+                                                <p style={{textAlign: "left", color: "gray"}}>
+                                                    posted on {review.createdAt}
+                                                </p>
+
+                                            </Grid>
+                                        </Grid>
+                                    </Paper>
+                        })}
+
+                </div>
+
+
+
+
                 <div className='rating'>
                    <StarRating
                     className='rating'

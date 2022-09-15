@@ -1,6 +1,9 @@
+import csrfFetch from "./csrf";
+
 export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS";
 export const RECEIVE_LISTING = "RECEIVE_LISTING";
 export const REMOVE_LISTING = "REMOVE_LISTING";
+
 
 export const receiveListings = (listings) => {
   return {
@@ -32,7 +35,7 @@ export const getListings = (state) => {
 };
 
 export const fetchListings = () => async (dispatch) => {
-  const res = await fetch(`/api/listings`);
+  const res = await csrfFetch(`/api/listings`);
 
   if (res.ok) {
     const data = await res.json();
@@ -41,7 +44,7 @@ export const fetchListings = () => async (dispatch) => {
 };
 
 export const fetchListing = (listingId) => async (dispatch) => {
-  const res = await fetch(`/api/listings/${listingId}`);
+  const res = await csrfFetch(`/api/listings/${listingId}`);
 
   if (res.ok) {
     const data = await res.json();
@@ -50,7 +53,7 @@ export const fetchListing = (listingId) => async (dispatch) => {
 };
 
 export const createListing = (listing) => async (dispatch) => {
-  const res = await fetch(`/api/listings`, {
+  const res = await csrfFetch(`/api/listings`, {
     method: "POST",
     headers: {
       "Cotent-Type": "application/json",

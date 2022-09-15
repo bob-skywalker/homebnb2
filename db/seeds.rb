@@ -37,9 +37,9 @@ require 'open-uri'
     tianshu.photo.attach(io: file7, filename: "mj-profile.jpg")
 
     jeff = User.create!(
-      username: "jeff",
+      username: 'jeff',
       email: 'jeff@homebnb.com',
-      password: "123456"
+      password: '123456'
   )
 
     taowei = User.create!(

@@ -26,6 +26,8 @@ export const ListingShow = () => {
   const [value,setValue] = useState([null,null]);
 
 
+
+
   useEffect(() => {
     dispatch(fetchListing(listingId))
     dispatch(fetchReviews(listingId));
@@ -73,7 +75,7 @@ export const ListingShow = () => {
               </div>
               <img className="profile-photo" src={listing.profilePhoto} />
             </div>
-            <ReviewFormPage/>
+            <ReviewFormPage listing={listing} />
           </div>
           <div className="content-right">
           </div>
