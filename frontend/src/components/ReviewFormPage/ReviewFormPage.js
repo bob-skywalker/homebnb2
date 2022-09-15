@@ -13,7 +13,7 @@ import {
 import './ReviewFormPage.css';
 import LoginFormModal from '../LoginFormModal';
 import StarRating from '../StarRating/StarRating';
-import { Avatar, Grid, Paper } from '@mui/material';
+import { Avatar, Divider, Grid, Paper } from '@mui/material';
 
 
 const ReviewFormPage = ({listing}) => {
@@ -29,7 +29,7 @@ const ReviewFormPage = ({listing}) => {
         sessionUser ? getReview(sessionUser.id, +listingId) : getReview(null)
     );
     const [errors, setErrors] = useState([]);
-    const [cleanliness,setCleanliness] = useState(1);
+    const [cleanliness,setCleanliness] = useState(0);
     const [accuracy, setAccuracy] = useState(1);
     const [communication, setCommunication] = useState(1);
     const [location, setLocation] = useState(1);
@@ -148,17 +148,17 @@ const ReviewFormPage = ({listing}) => {
                             return <Paper style={{padding: "40px 20px"}}>
                                         <Grid container wrap='nowrap' spacing={2}>
                                             <Grid item>
-                                                <Avatar alt='avatar' src={listing.profilePhoto} />
+                                                <Avatar alt='avatar' src={review.reviwerPhoto} style={{transform: 'translateY(42%)'}}/>
                                             </Grid>
                                             <Grid>
                                                 <h4 style={{margin: 0, textAlign: "left"}}>{review.username}</h4>
                                                 <p style={{textAlign: "left"}}>{review.comment}</p>
                                                 <p style={{textAlign: "left", color: "gray"}}>
-                                                    posted on {review.createdAt}
+                                                    posted on {review.createdAt.slice(0,10)}
                                                 </p>
-
                                             </Grid>
                                         </Grid>
+                                        <Divider variant='fullWidth' style={{margin: "30px 0 "}}/>
                                     </Paper>
                         })}
 
@@ -196,11 +196,11 @@ const ReviewFormPage = ({listing}) => {
                 <button type='submit' id="post-review">
                     Post Review
                 </button>
-                <LoginFormModal
+                {(!sessionUser) && <LoginFormModal
                     showLogIn={showLoginModal}
                     setShowLogIn={setLoginModal}
                     setSignUp = {setSignUp}
-                />
+                />}
             </form>
         </div>
     </>

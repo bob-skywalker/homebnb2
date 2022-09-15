@@ -12,6 +12,7 @@ import Maps from "../Maps/Maps";
 import Search from "../Banner/Search";
 import {Box, TextField} from '@mui/material';
 import {DateRangePicker, DateRange} from '@mui/lab';
+import RangePicker from "../RangePicker/RangePicker";
 
 
 
@@ -78,6 +79,7 @@ export const ListingShow = () => {
             <ReviewFormPage listing={listing} />
           </div>
           <div className="content-right">
+            <RangePicker/>
           </div>
         </div>
         <h2 className='map-h2'>Where you'll be</h2>

@@ -33,32 +33,46 @@ require 'open-uri'
       email: 'tianshu@homebnb.com',
       password: "123456"
   )
-    file7 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/mj-profile.jpg")
-    tianshu.photo.attach(io: file7, filename: "mj-profile.jpg")
+    file7 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/tianshu.jpg")
+    tianshu.photo.attach(io: file7, filename: "tianshu.jpg")
+
+
 
     jeff = User.create!(
       username: 'jeff',
       email: 'jeff@homebnb.com',
       password: '123456'
   )
+    file10 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/jeff.jpg")
+    jeff.photo.attach(io: file10, filename:"jeff.jpg")
 
-    taowei = User.create!(
-      username: "taowei",
-      email: 'taowei@homebnb.com',
+
+
+    matt = User.create!(
+      username: 'matt',
+      email: 'matt@homebnb.com',
       password: "123456"
   )
+    file11 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/matt.png")
+    matt.photo.attach(io: file11, filename:"matt.png")
 
     daniel = User.create!(
-      username: "daniel",
+      username: 'daniel',
       email: 'daniel@homebnb.com',
       password: "123456"
     )
 
-    zuzu = User.create!(
-      username: 'zuzu',
-      email: 'zuzu@homebnb.com',
+    file8 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/daniel.png")
+    daniel.photo.attach(io: file8, filename: "daniel.png")
+
+    lulu = User.create!(
+      username: 'lulu',
+      email: 'lulu@homebnb.com',
       password: '123456'
     )
+
+    file9 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/lulu.jpg")
+    lulu.photo.attach(io: file9, filename: "daniel.png")
 
     alex = User.create!(
       username: 'alexander',
@@ -144,7 +158,7 @@ require 'open-uri'
       other_fees_type:'cleaning fee',
       num_beds: 3,
       num_baths: 2,
-      host_id: taowei.id,
+      host_id: matt.id,
       is_posted: true
     )
     file2 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home2.png")
@@ -170,7 +184,7 @@ require 'open-uri'
       other_fees_type:'cleaning fee',
       num_beds: 9,
       num_baths: 3,
-      host_id: darren.id,
+      host_id: lulu.id,
       is_posted: true
     )
     file3 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home3.png")
@@ -196,7 +210,7 @@ require 'open-uri'
       other_fees_type:'cleaning fee',
       num_beds: 5,
       num_baths: 3,
-      host_id: bob.id,
+      host_id: daniel.id,
       is_posted: true
     )
     file4 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home4.png")
@@ -251,7 +265,7 @@ require 'open-uri'
       other_fees_type:'cleaning fee',
       num_beds: 8,
       num_baths: 3,
-      host_id: darren.id,
+      host_id: jeff.id,
       is_posted: true
     )
     file6 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home6.png")
@@ -261,7 +275,7 @@ require 'open-uri'
   # Review 1
   r1 = Review.create!(
       listing_id: l2.id,
-      reviewer_id: zuzu.id,
+      reviewer_id: lulu.id,
       cleanliness: 5,
       accuracy: 5,
       communication: 4,

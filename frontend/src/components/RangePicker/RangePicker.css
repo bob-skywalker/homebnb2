@@ -1,0 +1,6 @@
+.range-picker{
+    position: absolute;
+    top:33px;
+    width: 100vw;
+    position: sticky;
+}

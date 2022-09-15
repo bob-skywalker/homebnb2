@@ -1,6 +1,5 @@
 class Api::ReviewsController < ApplicationController
-  before_action :require_logged_in
-  wrap_parameters include: Review.attribute_names + [:reviewId]
+  # before_action :require_logged_in
 
   def create
     @review = Review.new(review_params)
