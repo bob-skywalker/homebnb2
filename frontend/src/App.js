@@ -18,7 +18,7 @@ function App() {
         <Header />
 
         <Switch>
-          <Route path="/search">
+          <Route path="/search/:query">
             <SearchPage />
           </Route>
 

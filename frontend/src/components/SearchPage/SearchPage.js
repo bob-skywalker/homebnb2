@@ -3,23 +3,35 @@ import './SearchPage.css'
 import { Button } from '@mui/material'
 import SearchResult from '../SearchResult/SearchResult'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchListings, getListings } from '../../store/listings'
+import { fetchListings, fetchQueryListings, getListings } from '../../store/listings'
 import Maps from '../Maps/Maps'
+import { useHistory, useParams } from 'react-router-dom'
 
 
 const SearchPage = () => {
-
-
+  const history = useHistory();
+  const {query} = useParams();
   const dispatch = useDispatch();
   const listings = useSelector(getListings)
   useEffect(()=>{
     dispatch(fetchListings())
-  },[])
+    dispatch(fetchQueryListings(query))
+  },[query])
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    history.push(`/search/${query}`)
+  }
+
+  if (!listings) {return null}
+
+  const filtered = listings.filter(listing=> listing.title === query)
 
 
 
   return (
     <div className='SearchPage'>
+      {console.log(listings)}
       <div className='SearchPage-left'>
           <div className='SearchPage-info'>
             <p>513 hosts · 26 sept to 30 oct · 2 guest</p>
@@ -46,7 +58,9 @@ const SearchPage = () => {
             </Button>
           </div>
 
-          {listings.map(listing=>{
+
+
+          {filtered.length > 0 ? filtered.map(listing=>{
             return <SearchResult
               id={listing.id}
               img={listing.photo}
@@ -56,7 +70,10 @@ const SearchPage = () => {
               star = {listing.star}
               price = {`$${listing.price}/night`}
             />
-          })}
+
+          }): 'Sorry, no results found!'}
+
+
 
 
               {/* <SearchResult

@@ -39,7 +39,7 @@ export const ListingShow = () => {
 
   useEffect(() => {
     dispatch(fetchListing(listingId))
-    dispatch(fetchReviews(listingId));
+    dispatch(fetchReviews(listingId))
   }, [listingId]);
 
 

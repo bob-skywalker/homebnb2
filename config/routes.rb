@@ -11,6 +11,8 @@
     resources :listings
     resources :reviews
     resources :reservations
+
+    get '/search/:query', to: "listings#search"
   end
   get '*path', to: "static_pages#frontend_index"
 end

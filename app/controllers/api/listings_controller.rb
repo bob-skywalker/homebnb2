@@ -1,4 +1,15 @@
 class Api::ListingsController < ApplicationController
+
+  def search
+    query = params[:query]
+    @listing = Listing.where("title ILIKE ? summary ILIKE ?", "%#{query}%", "%#{query}%" )
+    if @listing.length > 0
+      render :index
+    else
+      render :index
+    end 
+  end
+
   def index
     @listings = Listing.all
     render :index

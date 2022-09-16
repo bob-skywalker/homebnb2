@@ -26,6 +26,18 @@ export const removeListing = (listingId) => {
   };
 };
 
+//search thunk action 
+
+export const fetchQueryListings = (query)=> async dispatch => {
+  const res = await csrfFetch(`/api/search/${query}`)
+  if (res.ok){
+    const data = await res.json()
+    dispatch(receiveListings(data))
+  } else {
+    throw res
+  }
+}
+
 export const getListing = (listingId) => (state) => {
   return state.listings ? state.listings[listingId] : null;
 };

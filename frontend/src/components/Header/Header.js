@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ViewHeadlineIcon from '@mui/icons-material/ViewHeadline';
 import { Avatar } from '@mui/material';
-import { Link, Router } from 'react-router-dom';
+import { Link, Router, useHistory } from 'react-router-dom';
 import LoginFormModal from '../LoginFormModal';
 import SignupFormModal from '../SignupFormModal';
 import { useSelector } from 'react-redux';
@@ -15,15 +15,22 @@ import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import ProfileButton from '../Navigation/ProfileButton';
 import Button from '@mui/material/Button';
+import { fetchQueryListings } from '../../store/listings';
 
 
 const Header = () => {
 
+  const history = useHistory();
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [showSignUp, setSignUp] = useState(false);
   const [showLogIn,setShowLogIn] = useState(false);
   const [searchInput, setSearchInput] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    history.push(`/search/${searchInput}`);
+  }
 
   const logout = (e) => {
     e.preventDefault();
@@ -42,12 +49,15 @@ const Header = () => {
             </div>
 
             <div className='header-center'>
-              <input
-              value={searchInput}
-              onChange={(e)=> setSearchInput(e.target.value)}
-              type='text'
-              placeholder='Start your search'
-              />
+              <form onSubmit={handleSubmit}>
+                <input
+                value={searchInput}
+                onChange={(e)=> setSearchInput(e.target.value)}
+                type='text'
+                placeholder='Start your search'
+                />
+                  <button type='submit'>Search</button>
+              </form>
               <SearchIcon className='searchIcon' />
             </div>
 

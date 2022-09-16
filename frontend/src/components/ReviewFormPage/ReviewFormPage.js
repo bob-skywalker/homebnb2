@@ -5,16 +5,19 @@ import {useParams, useHistory} from "react-router-dom";
 import { receiveListing, fetchListing, getListing } from '../../store/listings';
 import {
     createReview,
+    deleteReview,
     fetchReview,
     getReview,
     getReviews,
+    removeReview,
     updateReview
 } from '../../store/reviews';
 import './ReviewFormPage.css';
 import LoginFormModal from '../LoginFormModal';
 import StarRating from '../StarRating/StarRating';
-import { Avatar, Divider, Grid, Paper, Rating } from '@mui/material';
+import { Avatar, Button, Divider, Grid, Paper, Rating } from '@mui/material';
 import { Star } from '@material-ui/icons';
+import { getCurrentUser } from '../../store/session';
 
 
 const ReviewFormPage = ({listing}) => {
@@ -37,6 +40,11 @@ const ReviewFormPage = ({listing}) => {
     const [check_in, setCheck_in] = useState(1);
     const [value, setValue] = useState(1);
     const [comment,setComment] = useState("");
+
+
+
+
+    let reviewButtons;
 
 
     // console.log(reviews)
@@ -110,7 +118,7 @@ const ReviewFormPage = ({listing}) => {
     useEffect(()=>{
         if (sessionUser)
         dispatch(fetchReview(listingId,sessionUser.id))
-    },[sessionUser]);
+    },[sessionUser,listingId,dispatch]);
 
     useEffect(()=>{
         if (reviewData) {
@@ -158,6 +166,11 @@ const ReviewFormPage = ({listing}) => {
                                                 <p style={{textAlign: "left", color: "gray"}}>
                                                     posted on {review.createdAt.slice(0,10)}
                                                 </p>
+                                                {sessionUser.id === review.reviewerId ? reviewButtons= (<>
+                                                    <Button onClick={()=>dispatch(removeReview(review.id))}>
+                                                        DELETE REVIEW
+                                                    </Button>
+                                                </>): <></>}
                                             </Grid>
                                         </Grid>
                                         <Divider variant='fullWidth' style={{margin: "30px 0 "}}/>
