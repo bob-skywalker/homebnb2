@@ -27,6 +27,7 @@ const RangePicker = () => {
     return (endDate.getTime() - startDate.getTime()) / 86400000;
   };
 
+
   let res = {
     user_id: sessionUser.id,
     listing_id: parseInt(listingId),
@@ -36,7 +37,7 @@ const RangePicker = () => {
     payment: listing.price * dayDiff()
   }
 
-  console.log(res)
+  // console.log(res)
 
 
 

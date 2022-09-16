@@ -30,7 +30,7 @@ const Header = () => {
     dispatch(sessionActions.logout());
   };
 
-  console.log(searchInput)
+  // console.log(searchInput)
   return (
     <>
         <div className='header'>

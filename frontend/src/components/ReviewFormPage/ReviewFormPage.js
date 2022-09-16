@@ -39,7 +39,7 @@ const ReviewFormPage = ({listing}) => {
     const [comment,setComment] = useState("");
 
 
-    console.log(reviews)
+    // console.log(reviews)
 
     const type = reviewData ? "update" : "create";
 
@@ -128,7 +128,7 @@ const ReviewFormPage = ({listing}) => {
         return null;
     }
 
- console.log(errors)
+//  console.log(errors)
 
   return (
     <>
