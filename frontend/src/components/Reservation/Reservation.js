@@ -6,6 +6,14 @@ import UpcomingIcon from '@mui/icons-material/Upcoming';
 import FlightIcon from '@mui/icons-material/Flight';
 import { useLocation } from 'react-router-dom';
 import { fetchListings, getListings } from '../../store/listings';
+import Banner from '../Banner/Banner';
+import Cards from '../Card/Cards';
+import SearchResult from '../SearchResult/SearchResult';
+import { DateRangePicker } from "react-date-range";
+
+
+
+
 
 
 const Reservation = () => {
@@ -18,7 +26,7 @@ const Reservation = () => {
   },[])
 
   let res = useSelector(state=> state.reservations)
-  let results = Object.values(res)
+  let results = Object.values(res).reverse()
   // const listingIds = // loop through res, grab all listing ids
   // useSelector(state => state.listings)
 
@@ -35,7 +43,16 @@ const Reservation = () => {
         return(
         <>
           {/* <p>{reser.listingId}</p> */}
-          <img src={reser.photoUrl} />
+          {/* <img src={reser.photoUrl} /> */}
+          <SearchResult
+            id={reser.listingId}
+            img={reser.photoUrl}
+            location={''}
+            title={`${reser.streetAddress}, ${reser.city}, ${reser.state}`}
+            star={reser.star}
+            price= {`Total Charge: $${reser.payment}`}
+          />
+
         </>
       )})}
     </div>

@@ -11,9 +11,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getListing } from "../../store/listings";
 import Reservation from "../Reservation/Reservation";
 import { createReservation } from "../../store/reservation";
+import LoginFormModal from "../LoginFormModal";
 
 
 const RangePicker = () => {
+
+  const [showLoginModal, setLoginModal] = useState(false);
+  const [signUp,setSignUp] = useState(false);
+
   let sessionUser = useSelector(state => state.session.user)
   const { listingId } = useParams();
   const [numGuest,setNumGuest] = useState(1);
@@ -116,6 +121,11 @@ const RangePicker = () => {
         <button onClick={handleSubmit}>
            Reserve
         </button>
+        {(!sessionUser) && <LoginFormModal
+          showLogIn = {showLoginModal}
+          setShowLogIn= {setLoginModal}
+          setSignUp={setSignUp}
+        />}
         <div className="price-calculator">
           <p className="warning">You won't be charged yet</p>
           <div className="price-sums">
