@@ -56,18 +56,21 @@
 
 
 .price-calculator{
-    position: relative;
-    transform: translateY(180%);
+    position: absolute;
+    transform: translateY(190%);
+    display: flex;
+    justify-content: space-between;
+    width:579px;
+    color: rgb(83, 83, 83);
 }
 
 .warning{
-    transform: translate(8%,-250%);
     color: rgb(83, 83, 83);
 }
 
 .price-sums{
     color: rgb(83, 83, 83);
-    transform: translate(-20%,-100%);
+    /* transform: translate(-20%,-100%); */
 
     width: 39%;
     display: flex;
