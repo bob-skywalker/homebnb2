@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import SearchPage from "./components/SearchPage/SearchPage";
 import { ListingShow } from "./components/ListingShow/ListingShow";
 import Reservation from "./components/Reservation/Reservation";
+import SearchAll from "./components/SearchAll/SearchAll";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Header />
 
         <Switch>
-          <Route path="/search/:query">
+          <Route exact path="/search/:query">
             <SearchPage />
           </Route>
 
@@ -28,6 +29,10 @@ function App() {
 
           <Route exact path='/reservation'>
             <Reservation/>
+          </Route>
+
+          <Route path='/search'>
+            <SearchAll/>
           </Route>
 
           <Route path="/">
