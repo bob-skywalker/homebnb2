@@ -34,7 +34,7 @@ const Reservation = () => {
       {results.map(reser=>{
         return(
         <>
-          <p>{reser.listingId}</p>
+          {/* <p>{reser.listingId}</p> */}
           <img src={reser.photoUrl} />
         </>
       )})}
