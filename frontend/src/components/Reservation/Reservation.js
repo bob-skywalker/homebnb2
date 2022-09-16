@@ -10,6 +10,7 @@ import Banner from '../Banner/Banner';
 import Cards from '../Card/Cards';
 import SearchResult from '../SearchResult/SearchResult';
 import { DateRangePicker } from "react-date-range";
+import './Reservation.css';
 
 
 
@@ -47,7 +48,7 @@ const Reservation = () => {
           <SearchResult
             id={reser.listingId}
             img={reser.photoUrl}
-            location={''}
+            location={`Reservation For ${reser.numGuests} Guests`}
             title={`${reser.streetAddress}, ${reser.city}, ${reser.state}`}
             star={reser.star}
             price= {`Total Charge: $${reser.payment}`}
