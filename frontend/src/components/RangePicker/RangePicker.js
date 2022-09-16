@@ -14,7 +14,7 @@ import { createReservation } from "../../store/reservation";
 
 
 const RangePicker = () => {
-  const sessionUser = useSelector(state => state.session.user)
+  let sessionUser = useSelector(state => state.session.user)
   const { listingId } = useParams();
   const [numGuest,setNumGuest] = useState(1);
   const [startDate, setStartDate] = useState(new Date());
@@ -27,9 +27,10 @@ const RangePicker = () => {
     return (endDate.getTime() - startDate.getTime()) / 86400000;
   };
 
+  // if(!sessionUser) sessionUser = {id: 0};
 
   let res = {
-    user_id: sessionUser.id,
+    user_id: !sessionUser ? 0 : sessionUser.id,
     listing_id: parseInt(listingId),
     num_guests: numGuest,
     start_Date: startDate,
@@ -65,6 +66,8 @@ const RangePicker = () => {
   function handleSelect(ranges) {
     // console.log('hello')
     // let days;
+
+
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
     // days =
@@ -76,6 +79,8 @@ const RangePicker = () => {
     // setDateRanges(days);
   }
   const handleSubmit= e => {
+    if (res.user_id !== 0) {
+
     e.preventDefault();
     res = {
       user_id: sessionUser.id,
@@ -86,7 +91,9 @@ const RangePicker = () => {
       payment: listing.price * dayDiff()}
       dispatch(createReservation(res));
       history.push('/reservation')
-  }
+  } else {
+    history.push('/login')
+  }}
 
 
 
