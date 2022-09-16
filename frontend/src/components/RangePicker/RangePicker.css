@@ -1,8 +1,8 @@
 .range-picker{
     position: absolute;
-    top:33px;
+    top:-4rem;
     width: 100vw;
-    position: sticky;
+    /* position: sticky; */
 }
 
 .range-picker > h2{
@@ -61,14 +61,15 @@
 }
 
 .warning{
-    transform: translate(10%,-250%);
+    transform: translate(8%,-250%);
     color: rgb(83, 83, 83);
 }
 
 .price-sums{
     color: rgb(83, 83, 83);
-    transform: translateY(-100%);
-    width: 28%;
+    transform: translate(-20%,-100%);
+
+    width: 39%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
