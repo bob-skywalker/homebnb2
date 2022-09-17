@@ -90,7 +90,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_14_172442) do
     t.integer "accuracy", null: false
     t.integer "communication", null: false
     t.integer "location", null: false
-    t.integer "check_in", null: false
     t.integer "value", null: false
     t.string "comment", null: false
     t.datetime "created_at", null: false

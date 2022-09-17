@@ -21,7 +21,7 @@ const SearchResult = ({
   return (
     <div className='SearchResult'>
         <Link to={`/listings/${id}`}>
-            <img src={img} alt=""/>
+            <img class='search-img-block' src={img} alt=""/>
         </Link>
         <FavoriteBorderIcon className="searchResult__heart" />
 

@@ -18,6 +18,7 @@ import StarRating from '../StarRating/StarRating';
 import { Avatar, Button, Divider, Grid, Paper, Rating } from '@mui/material';
 import { Star } from '@material-ui/icons';
 import { getCurrentUser } from '../../store/session';
+import ReviewBlock from './ReviewBlock';
 
 
 const ReviewFormPage = ({listing}) => {
@@ -37,7 +38,7 @@ const ReviewFormPage = ({listing}) => {
     const [accuracy, setAccuracy] = useState(1);
     const [communication, setCommunication] = useState(1);
     const [location, setLocation] = useState(1);
-    const [check_in, setCheck_in] = useState(1);
+    const [checkIn, setCheckIn] = useState(1);
     const [value, setValue] = useState(1);
     const [comment,setComment] = useState("");
 
@@ -63,7 +64,7 @@ const ReviewFormPage = ({listing}) => {
                     accuracy,
                     communication,
                     location,
-                    check_in,
+                    checkIn,
                     value,
                     comment,
                     listing_id: listingId,
@@ -87,7 +88,7 @@ const ReviewFormPage = ({listing}) => {
                     accuracy,
                     communication,
                     location,
-                    check_in,
+                    checkIn,
                     value,
                     comment
                 })).catch(
@@ -126,7 +127,7 @@ const ReviewFormPage = ({listing}) => {
             setAccuracy(reviewData.accuracy);
             setCommunication(reviewData.communication);
             setLocation(reviewData.location);
-            setCheck_in(reviewData.check_in);
+            setCheckIn(reviewData.checkIn);
             setValue(reviewData.value);
             setComment(reviewData.comment)
         }
@@ -154,27 +155,7 @@ const ReviewFormPage = ({listing}) => {
                 <div className='comment-section'>
 
                         {reviews.map(review=>{
-                            return <Paper style={{padding: "40px 20px"}}>
-                                        <Grid container wrap='nowrap' spacing={2}>
-                                            <Grid item>
-                                                <Avatar alt='avatar' src={review.reviwerPhoto} style={{transform: 'translateY(42%)'}}/>
-                                            </Grid>
-                                            <Grid>
-                                                <h4 style={{margin: 0, textAlign: "left"}}>{review.username}</h4>
-                                                <p style={{textAlign: "left"}}>{review.comment}</p>
-                                                <Rating value={review.cleanliness} precision={0.5} readOnly />
-                                                <p style={{textAlign: "left", color: "gray"}}>
-                                                    posted on {review.createdAt.slice(0,10)}
-                                                </p>
-                                                {sessionUser.id === review.reviewerId ? reviewButtons= (<>
-                                                    <Button onClick={()=>dispatch(removeReview(review.id))}>
-                                                        DELETE REVIEW
-                                                    </Button>
-                                                </>): <></>}
-                                            </Grid>
-                                        </Grid>
-                                        <Divider variant='fullWidth' style={{margin: "30px 0 "}}/>
-                                    </Paper>
+                            return <ReviewBlock review={review} sessionUser={sessionUser}    />
                         })}
 
                 </div>
@@ -193,8 +174,8 @@ const ReviewFormPage = ({listing}) => {
                     setCommunication = {setCommunication}
                     location = {location}
                     setLocation = {setLocation}
-                    check_in = {check_in}
-                    setCheck_in = {setCheck_in}
+                    checkIn = {checkIn}
+                    setCheckIn = {setCheckIn}
                     value = {value}
                     setValue = {setValue}
                    />
@@ -208,7 +189,7 @@ const ReviewFormPage = ({listing}) => {
                     ></textarea>
                 </div>
 
-                <button type='submit' id="post-review">
+                <button type='submit' id="post-review" >
                     Post Review
                 </button>
                 {(!sessionUser) && <LoginFormModal

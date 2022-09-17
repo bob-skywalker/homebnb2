@@ -13,9 +13,9 @@
     opacity: 0.8;
 }
 
-.SearchResult > img{
-    height: 200px;
-    width: 350px;
+.SearchResult > .search-img-block{
+    height: 480px;
+    width: 720px;
     border-radius: 10px;
     overflow: hidden;
 }

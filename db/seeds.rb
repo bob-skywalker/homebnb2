@@ -293,7 +293,6 @@ require 'open-uri'
       accuracy: 5,
       communication: 4,
       location: 5,
-      check_in: 5,
       value: 3,
       comment: "This is the best place in town!"
   )
@@ -306,7 +305,6 @@ require 'open-uri'
       accuracy: 5,
       communication: 5,
       location: 4,
-      check_in: 5,
       value: 5,
       comment: "Wow. I didn't expect this place to be so good. omg omg I am shooketh!"
   )
@@ -319,7 +317,6 @@ require 'open-uri'
       accuracy: 5,
       communication: 5,
       location: 5,
-      check_in: 4,
       value: 4,
       comment: "this is the spot , guys ! pick here"
   )
@@ -332,7 +329,6 @@ require 'open-uri'
       accuracy: 4,
       communication: 5,
       location: 5,
-      check_in: 5,
       value: 5,
       comment: "i love this place and i would highly recommend !"
   )

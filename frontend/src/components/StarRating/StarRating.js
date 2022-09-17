@@ -20,6 +20,7 @@ const StarRating = ({
    const [hover,setHover] = useState(null)
 
 
+
   return (
     <div>
     {[...Array(5)].map((star,i)=> {
@@ -31,7 +32,9 @@ const StarRating = ({
                 name='rating'
                 value={ratingValue}
                 onClick={()=>
-                setCleanliness(ratingValue)}
+                setCleanliness(ratingValue)
+                
+            }
                 />
                 <FaStar
                 className='star'

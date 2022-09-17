@@ -7,10 +7,9 @@ class CreateReviews < ActiveRecord::Migration[7.0]
       t.integer :accuracy, null: false
       t.integer :communication, null: false
       t.integer :location, null: false
-      t.integer :check_in, null: false
       t.integer :value, null: false
       t.string :comment, null: false
-      
+
       t.timestamps
     end
   end
