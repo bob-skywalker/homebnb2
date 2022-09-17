@@ -25,7 +25,7 @@ const SearchPage = () => {
 
   if (!listings) {return null}
 
-  const filtered = listings.filter(listing=> listing.title === query)
+  const filtered = listings.filter(listing=> listing.title.toLowerCase().includes(query))
 
 
 
