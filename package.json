@@ -24,6 +24,7 @@
     "lib": "lib"
   },
   "scripts": {
+    "start": "react-scripts start",
     "build": "npm install --prefix frontend && npm run build --prefix frontend"
   },
   "repository": {
@@ -39,5 +40,6 @@
   "engines": {
     "node": "16.x"
   },
-  "homepage": "https://github.com/bob-skywalker/homebnb2#readme"
+  "homepage": "https://github.com/bob-skywalker/homebnb2#readme",
+  "devDependencies": {}
 }
