@@ -33,7 +33,7 @@ const SearchAll = () => {
     <div className='SearchPage'>
       <div className='SearchPage-left'>
           <div className='SearchPage-info'>
-            <p>513 hosts · 26 sept to 30 oct · 2 guest</p>
+            <p>513 hosts · 26 sept to 30 oct · 3 guest</p>
             <h1>Stays nearby</h1>
             <Button
             variant='outlined'>
