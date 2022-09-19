@@ -40,7 +40,7 @@ const ReviewFormPage = ({listing}) => {
     const [location, setLocation] = useState(1);
     const [checkIn, setCheckIn] = useState(1);
     const [value, setValue] = useState(1);
-    const [comment,setComment] = useState("");
+    const [comment,setComment] = useState("Please Leave a Review");
 
 
 
