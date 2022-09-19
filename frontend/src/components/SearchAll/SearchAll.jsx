@@ -31,7 +31,6 @@ const SearchAll = () => {
 
   return (
     <div className='SearchPage'>
-      {console.log(listings)}
       <div className='SearchPage-left'>
           <div className='SearchPage-info'>
             <p>513 hosts · 26 sept to 30 oct · 2 guest</p>

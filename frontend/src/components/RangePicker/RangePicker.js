@@ -43,7 +43,6 @@ const RangePicker = () => {
     payment: listing.price * dayDiff()
   }
 
-  // console.log(res)
 
 
 
