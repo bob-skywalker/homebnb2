@@ -42,7 +42,6 @@ function App() {
 
         </Switch>
 
-        {/* <Footer /> */}
       </Route>
     </>
   );
