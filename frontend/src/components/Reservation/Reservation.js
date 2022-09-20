@@ -18,13 +18,14 @@ import './Reservation.css';
 
 
 const Reservation = () => {
+  const reservations = useSelector(getReservations)
   const dispatch = useDispatch();
 
   useEffect(()=>{
     dispatch(fetchReservations())
     // listingIds.forEach(id => dispatch(fetchListing(id)))
     dispatch(fetchListings())
-  },[])
+  },[reservations])
 
   let res = useSelector(state=> state.reservations)
   let results = Object.values(res).reverse()

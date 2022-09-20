@@ -117,19 +117,21 @@ const RangePicker = () => {
           <PeopleOutlineIcon />
         </h2>
         <input onChange={e=> setNumGuest(e.target.value)} defaultValue={1} type="number" />
-        <button onClick={handleSubmit}>
-           Reserve
-        </button>
-        {(!sessionUser) && <LoginFormModal
-          showLogIn = {showLoginModal}
-          setShowLogIn= {setLoginModal}
-          setSignUp={setSignUp}
-        />}
-        <div className="price-calculator">
-          {/* <p className="warning">You won't be charged yet</p> */}
+        <div className="price-cal-box">
+          <button onClick={handleSubmit}>
+            Reserve
+          </button>
+          {(!sessionUser) && <LoginFormModal
+            showLogIn = {showLoginModal}
+            setShowLogIn= {setLoginModal}
+            setSignUp={setSignUp}
+          />}
+          <div className="price-calculator">
+            {/* <p className="warning">You won't be charged yet</p> */}
 
-            <h3>{`$${listing.price}/night`}</h3>
-            <h3 className="final-price">${listing.price * dayDiff()}</h3>
+              <h3>{`$${listing.price}/night`}</h3>
+              <h3 className="final-price">${listing.price * dayDiff()}</h3>
+          </div>
         </div>
       </div>
     </>

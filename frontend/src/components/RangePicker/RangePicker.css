@@ -32,12 +32,18 @@
     outline-width: 0;
 }
 
+.price-cal-box{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
 
-.range-picker > button{
+
+.price-cal-box > button{
     font-size: larger;
     position: absolute;
     left: 0;
-    top: 457px;
+    top: 227px;
     text-transform: inherit !important;
     background-color: #ff7779;
     color:white;
@@ -57,7 +63,7 @@
 
 .price-calculator{
     position: absolute;
-    transform: translateY(190%);
+    transform: translateY(220%);
     display: flex;
     justify-content: space-between;
     width:579px;
