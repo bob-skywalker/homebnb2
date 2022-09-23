@@ -43,13 +43,15 @@ const Reservation = () => {
           <Tab icon={<UpcomingIcon/>} label='Upcoming Reservations' value="Upcoming Reservations"/>
         </div>
       </div>
+      {console.log(reservations)}
       {results.map(reser=>{
         return(
         <>
           {/* <p>{reser.listingId}</p> */}
           {/* <img src={reser.photoUrl} /> */}
           <SearchResult
-            id={reser.listingId}
+            reserId={reser.id}
+            listingId={reser.listingId}
             img={reser.photoUrl}
             location={`Reservation For ${reser.numGuests} Guests`}
             title={`${reser.streetAddress}, ${reser.city}, ${reser.state}`}

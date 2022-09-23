@@ -29,6 +29,7 @@ const SearchAll = () => {
 
 
 
+
   return (
     <div className='SearchPage'>
       <div className='SearchPage-left'>
