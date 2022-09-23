@@ -88,7 +88,7 @@ export const ListingShow = () => {
               <div className="misc">Amenities</div>
                 <div className="misc-container">
                   <div className="misc-left">
-                    <div><WifiIcon/> Wifi</div>
+                    <div><WifiIcon/> Free Wifi</div>
                     <div><LocalParkingIcon/> Free Parking</div>
                     <div><FreeBreakfastIcon/> Breakfast</div>
                     <div><FireplaceIcon/> Indoor fireplace</div>
