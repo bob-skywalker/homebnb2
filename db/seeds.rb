@@ -23,7 +23,7 @@ require 'open-uri'
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
-      username: 'Demo-lition',
+      username: 'Demo-User',
       email: 'demo@user.io',
       password: 'password'
     )

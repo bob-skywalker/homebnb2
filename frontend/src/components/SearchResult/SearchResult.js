@@ -3,7 +3,9 @@ import './SearchResult.css'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarIcon from '@mui/icons-material/Star';
 import { Rating } from '@mui/material';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { removeReservation } from '../../store/reservation';
 
 const SearchResult = ({
     id,
@@ -17,7 +19,9 @@ const SearchResult = ({
     getLabelText
 
 }) => {
+  const {reservationId} = useParams();
   const [event,setEvent] = useState();
+  const dispatch = useDispatch();
   return (
     <div className='SearchResult'>
         <Link to={`/listings/${id}`}>
@@ -48,6 +52,7 @@ const SearchResult = ({
                 <div className='searchResults-price'>
                     <h2>{price}</h2>
                     <p>{total}</p>
+                    <button onClick={()=> dispatch(removeReservation(reservationId))}>Delete Reservation</button>
                 </div>
             </div>
         </div>
