@@ -72,7 +72,7 @@ require 'open-uri'
     )
 
     file9 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/lulu.jpg")
-    lulu.photo.attach(io: file9, filename: "daniel.png")
+    lulu.photo.attach(io: file9, filename: "lulu.png")
 
     alex = User.create!(
       username: 'alexander',

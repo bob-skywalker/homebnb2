@@ -8,6 +8,7 @@ import { deleteReview, removeReview } from '../../store/reviews';
 const ReviewBlock = ({review, sessionUser}) => {
   const dispatch = useDispatch();
   let reviewButtons;
+  console.log(review)
 
   if(!sessionUser) return null;
 
@@ -22,7 +23,7 @@ const ReviewBlock = ({review, sessionUser}) => {
     <Paper style={{padding: "40px 20px"}}>
                                         <Grid container wrap='nowrap' spacing={2}>
                                             <Grid item>
-                                                <Avatar alt='avatar' src={review.reviwerPhoto} style={{transform: 'translateY(42%)'}}/>
+                                                <Avatar alt='avatar' src={review.reviewerPhoto} style={{transform: 'translateY(42%)'}}/>
                                             </Grid>
                                             <Grid>
                                                 <h4 style={{margin: 0, textAlign: "left"}}>{review.username}</h4>
