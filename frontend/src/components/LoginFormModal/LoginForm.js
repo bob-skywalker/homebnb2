@@ -38,7 +38,7 @@ function LoginForm({setShowLogIn,setSignUp}) {
     setShowLogIn(false);
     setSignUp(false);
     dispatch(sessionActions.login({
-      credential:"Demo-lition",
+      credential:"Demo-User",
       password:'password'
     }))
   }

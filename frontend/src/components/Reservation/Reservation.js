@@ -12,23 +12,25 @@ import SearchResult from '../SearchResult/SearchResult';
 import { DateRangePicker } from "react-date-range";
 import './Reservation.css';
 
-
+ 
 
 
 
 
 const Reservation = () => {
-  const reservations = useSelector(getReservations)
+  const sessionUser = useSelector(state => state.session.user)
+  const reservations = useSelector(getReservations).filter((reservation)=> reservation.userId ? reservation.userId === sessionUser.id : null)
   const dispatch = useDispatch();
 
+  console.log(reservations)
   useEffect(()=>{
     dispatch(fetchReservations())
     // listingIds.forEach(id => dispatch(fetchListing(id)))
     dispatch(fetchListings())
-  },[reservations])
+  },[])
 
   let res = useSelector(state=> state.reservations)
-  let results = Object.values(res).reverse()
+  let results = Object.values(reservations).reverse()
   // const listingIds = // loop through res, grab all listing ids
   // useSelector(state => state.listings)
 
@@ -41,13 +43,15 @@ const Reservation = () => {
           <Tab icon={<UpcomingIcon/>} label='Upcoming Reservations' value="Upcoming Reservations"/>
         </div>
       </div>
+      {console.log(reservations)}
       {results.map(reser=>{
         return(
         <>
           {/* <p>{reser.listingId}</p> */}
           {/* <img src={reser.photoUrl} /> */}
           <SearchResult
-            id={reser.listingId}
+            reserId={reser.id}
+            listingId={reser.listingId}
             img={reser.photoUrl}
             location={`Reservation For ${reser.numGuests} Guests`}
             title={`${reser.streetAddress}, ${reser.city}, ${reser.state}`}

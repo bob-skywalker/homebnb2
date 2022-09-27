@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validates :listing_id, :reviewer_id, :comment, presence: true
+    validates :listing_id, :reviewer_id,  presence: true
 
     validates :cleanliness, :accuracy, :communication, :location, :value, presence:true, inclusion: {in:(1..5)}
 

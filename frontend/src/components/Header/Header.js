@@ -27,6 +27,7 @@ const Header = () => {
   const [showLogIn,setShowLogIn] = useState(false);
   const [searchInput, setSearchInput] = useState('');
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     history.push(`/search/${searchInput}`);
@@ -35,6 +36,7 @@ const Header = () => {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
+    history.push(`/`)
   };
 
   return (
@@ -70,7 +72,7 @@ const Header = () => {
                   </button>
                   <div className='dropdown-menu'>
                     {
-                      sessionUser ? (<Button onClick={logout}>Log Out</Button>) : ([<LoginFormModal showLogIn={showLogIn} setShowLogIn={setShowLogIn} setSignUp={setSignUp}/>,<SignupFormModal showSignUp={showSignUp}  setSignUp={setSignUp} setShowLogIn={setShowLogIn}/>])
+                      sessionUser ? ([<Button onClick={()=> history.push(`/reservation`)}>My Reservation</Button>,<Button onClick={logout}>Log Out</Button>]) : ([<LoginFormModal showLogIn={showLogIn} setShowLogIn={setShowLogIn} setSignUp={setSignUp}/>,<SignupFormModal showSignUp={showSignUp}  setSignUp={setSignUp} setShowLogIn={setShowLogIn}/>])
                     }
                   </div>
               </div>
