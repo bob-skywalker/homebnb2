@@ -1,5 +1,5 @@
 .card{
-    padding-left: 20px;
+    padding-left: 0px;
     margin: 10px;
     border-radius: 10px;
     overflow: hidden;
@@ -8,6 +8,11 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+}
+
+.card-img {
+    width: 720px;
+    height: 480px;
 }
 
 .card:hover{
@@ -29,10 +34,9 @@
     min-width: 300px;
     min-height: 200px;
     width: 100%;
-    
+
 }
 
 .card > .card-info{
     font-size: 20px;
 }
-
