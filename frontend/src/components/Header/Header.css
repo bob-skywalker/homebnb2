@@ -120,3 +120,15 @@ a{
 a:hover{
     background-color:rgb(246, 246, 246);
 }
+
+
+.search-bar{
+    border: none;
+    outline-width: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.search-bar-button{
+    display: none;
+}

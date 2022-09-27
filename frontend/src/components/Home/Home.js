@@ -12,6 +12,7 @@ import WavesIcon from '@mui/icons-material/Waves';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import {useDispatch, useSelector} from 'react-redux';
 import { fetchListings, getListings } from '../../store/listings'
+import { useHistory } from 'react-router-dom'
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -20,17 +21,18 @@ const Home = () => {
     dispatch(fetchListings())
   },[])
 
+  const history = useHistory();
+
   return (
     <>
       <h2 className='h1-invis'>I am Home component</h2>
-      {/* <Tabs className='tabs' value='tabs'> */}
-      <Tab icon={<LandscapeIcon/>} label="Amazing views"  value="Amazing views"/>
-        <Tab icon={<ForestIcon/>} label="Treehouses"  value="Treehouses"/>
+      <div>
+        <Tab icon={<LandscapeIcon/>} label="Amazing views"  value="Amazing views" onClick={() => history.push('/search')}/>
+        <Tab icon={<WavesIcon/>} label="Lakefront"  value="Lakefront" onClick={()=> history.push(`/search/tahoe`)}/>
         <Tab icon={<SurfingIcon/>} label="Surfing"  value="Surfing"/>
-        <Tab icon={<WindPowerIcon/>} label="Windmills"  value="Windmills"/>
-        <Tab icon={<CastleIcon/>}  label="Mansions"  value="Mansions"/>
-        <Tab icon={<WavesIcon/>} label="Lakefront"  value="Lakefront"/>
+        <Tab icon={<WindPowerIcon/>} label="Windmills"  value="Windmills" onClick={()=> history.push(`/search/pacifica`)}/>
         <Tab icon={<BeachAccessIcon/>} label="Beach" value="Beach"/>
+      </div>
       {/* </Tabs> */}
       <div className='home'>
         <Banner/>

@@ -76,42 +76,38 @@ export const ListingShow = () => {
         <div className="content-container">
           <div className="content-left">
             <h2>Description</h2>
-            <p className="listing-info">{listing.description}</p>
-            <div className="host-info">
-              <div>
-              <h2>Hosted by {listing.username}</h2>
-              <p>{listing.email}</p>
-              </div>
-              <img alt="profile-pic" className="profile-photo" src={listing.profilePhoto} />
-            </div>
-            <div>
-              <div className="misc">Amenities</div>
-                <div className="misc-container">
-                  <div className="misc-left">
-                    <div><WifiIcon/> Free Wifi</div>
-                    <div><LocalParkingIcon/> Free Parking</div>
-                    <div><FreeBreakfastIcon/> Breakfast</div>
-                    <div><FireplaceIcon/> Indoor fireplace</div>
+              <p className="listing-info">{listing.description}</p>
+                <div className="host-info">
+                  <div>
+                    <h2>Hosted by {listing.username}</h2>
+                      <p>{listing.email}</p>
                   </div>
-                  <div className="misc-right">
-                    <div><CableIcon/> Cable</div>
-                    <div><SevereColdIcon/> Air Condition</div>
-                    <div><LiveTvIcon/> TV / Monitor</div>
-                    <div><CheckroomIcon/> Hangers</div>
-                  </div>
+                  <img alt="profile-pic" className="profile-photo" src={listing.profilePhoto} />
                 </div>
-
-
-            </div>
-            <ReviewFormPage listing={listing} />
-          </div>
-          <div className="content-right">
-            <RangePicker listing={listing}/>
+                    <div className="misc">Amenities</div>
+                      <div className="misc-container">
+                        <div className="misc-left">
+                          <div><WifiIcon/> Free Wifi</div>
+                          <div><LocalParkingIcon/> Free Parking</div>
+                          <div><FreeBreakfastIcon/> Breakfast</div>
+                          <div><FireplaceIcon/> Indoor fireplace</div>
+                        </div>
+                        <div className="misc-right">
+                          <div><CableIcon/> Cable</div>
+                          <div><SevereColdIcon/> Air Condition</div>
+                          <div><LiveTvIcon/> TV / Monitor</div>
+                          <div><CheckroomIcon/> Hangers</div>
+                        </div>
+                      </div>
+                      <ReviewFormPage listing={listing} />
+                    </div>
+                    <div className="content-right">
+                      <RangePicker listing={listing}/>
+                    </div>
           </div>
         </div>
-        <h2 className='map-h2'>Where you'll be</h2>
-        <Maps location={location} />
-      </div>
+          <h2 className='map-h2'>Where you'll be</h2>
+          <Maps location={location} />
     </>
   );
 };

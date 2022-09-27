@@ -49,13 +49,13 @@ const Header = () => {
 
             <div className='header-center'>
               <form onSubmit={handleSubmit}>
-                <input
+                <input className='search-bar'
                 value={searchInput}
                 onChange={(e)=> setSearchInput(e.target.value)}
                 type='text'
                 placeholder='Start your search'
                 />
-                  <button type='submit'>Search</button>
+                  <button className='search-bar-button' type='submit'>Search</button>
               </form>
               <SearchIcon className='searchIcon' />
             </div>

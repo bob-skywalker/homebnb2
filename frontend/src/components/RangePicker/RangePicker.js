@@ -118,13 +118,14 @@ const RangePicker = () => {
         </h2>
         <input onChange={e=> setNumGuest(e.target.value)} defaultValue={1} type="number" />
         <div className="price-cal-box">
-          <button onClick={handleSubmit}>
+          {(sessionUser) && (<button onClick={handleSubmit}>
             Reserve
-          </button>
+          </button>)}
           {(!sessionUser) && <LoginFormModal
             showLogIn = {showLoginModal}
             setShowLogIn= {setLoginModal}
             setSignUp={setSignUp}
+            
           />}
           <div className="price-calculator">
             {/* <p className="warning">You won't be charged yet</p> */}
