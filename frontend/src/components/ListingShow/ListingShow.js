@@ -21,6 +21,10 @@ import CableIcon from '@mui/icons-material/Cable';
 import SevereColdIcon from '@mui/icons-material/SevereCold';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
+import { id } from "date-fns/locale";
+
+
+
 
 
 
@@ -34,6 +38,7 @@ export const ListingShow = () => {
 
   const [value,setValue] = useState([null,null]);
 
+  console.log(listing)
 
 
 
@@ -45,12 +50,12 @@ export const ListingShow = () => {
 
 
 
-  var imageData = [
-  "http://via.placeholder.com/400x400/",
-  "http://via.placeholder.com/500x700/",
-  "http://via.placeholder.com/600x500/",
-  "http://via.placeholder.com/600x800/"
-  ]
+  // var imageData = [
+  // "http://via.placeholder.com/400x400/",
+  // "http://via.placeholder.com/500x700/",
+  // "http://via.placeholder.com/600x500/",
+  // "http://via.placeholder.com/600x800/"
+  // ]
 
   if (!listing) return null;
 
@@ -60,19 +65,34 @@ export const ListingShow = () => {
     lng: listing.lng,
   }
 
+
+  function enlargeImg(e){
+    // console.log(id)
+    // let theImage = document.querySelector(id);
+    // theImage.width = theImage.width * 2;
+    // theImage.height = theImage.height * 2;
+    e.target.width = e.target.width * 2;
+  };
+
   return (
     <>
       <div className="list-container">
         <h1>{listing.title}</h1>
-        <div className="image-grid">
+        <div>
           <Rating
             name='read-only'
             value={listing.star}
             precision={0.1}
             readOnly
           />
+        </div >
+        <div className="img-grid">
+          {listing.photo.map((pho,i) => {
+            return <figure className={`gallery__item gallery__item--${i+1}`}>
+                    <img id={`img-${i+1}`} className='gallery__img' alt={`${i+1}`} src={pho} onClick={e => enlargeImg(e)}></img>
+                  </figure>
+          })}
         </div>
-        <img alt="listingPhoto" src={listing.photo}/>
         <div className="content-container">
           <div className="content-left">
             <h2>Description</h2>
@@ -102,7 +122,7 @@ export const ListingShow = () => {
                       <ReviewFormPage listing={listing} />
                     </div>
                     <div className="content-right">
-                      <RangePicker listing={listing}/>
+                      <RangePicker className='rangePicker' listing={listing} sx={{width: '40%'}}/>
                     </div>
           </div>
         </div>

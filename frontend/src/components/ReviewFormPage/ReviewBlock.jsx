@@ -10,9 +10,8 @@ const ReviewBlock = ({review, sessionUser}) => {
   let reviewButtons;
   console.log(review)
 
-  if(!sessionUser) return null;
 
-  if (review.reviewerId == sessionUser.id) {
+  if (sessionUser && review.reviewerId === sessionUser.id) {
 
     reviewButtons = (<>
         <Button onClick={()=> dispatch(deleteReview(review.id))}>Delete Review</Button>

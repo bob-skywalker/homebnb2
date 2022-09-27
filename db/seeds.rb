@@ -145,8 +145,14 @@ require 'open-uri'
       is_posted: true
     )
 
-    file1 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home1.png")
-    l1.photo.attach(io: file1, filename: "home1.jpg")
+    li11 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li17.jpg'), filename:'li17.jpg'}
+    li12 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li12.jpg'), filename:'li12.jpg'}
+    li13 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li13.jpg'), filename:'li13.jpg'}
+    li14 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li14.jpg'), filename:'li14.jpg'}
+    li15 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li15.jpg'), filename:'li15.jpg'}
+    li16 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li16.jpg'), filename:'li16.jpg'}
+
+    l1.photos.attach([li11,li12,li13,li14,li15,li16])
 
 
     l2 = Listing.create!(
@@ -175,7 +181,7 @@ require 'open-uri'
       is_posted: true
     )
     file2 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home2.png")
-    l2.photo.attach(io: file2, filename: "home2.jpg")
+    l2.photos.attach(io: file2, filename: "home2.jpg")
 
     l3 = Listing.create!(
       title: 'Pacifica,California',
@@ -201,7 +207,7 @@ require 'open-uri'
       is_posted: true
     )
     file3 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home3.png")
-    l3.photo.attach(io: file3, filename: "home3.jpg")
+    l3.photos.attach(io: file3, filename: "home3.jpg")
 
     l4 = Listing.create!(
       title: 'Riverside,California',
@@ -227,7 +233,7 @@ require 'open-uri'
       is_posted: true
     )
     file4 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home4.png")
-    l4.photo.attach(io: file4, filename: "home4.jpg")
+    l4.photos.attach(io: file4, filename: "home4.jpg")
 
     #test
 
@@ -255,7 +261,7 @@ require 'open-uri'
       is_posted: true
     )
     file5 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home5.png")
-    l5.photo.attach(io: file5, filename: "home5.jpg")
+    l5.photos.attach(io: file5, filename: "home5.jpg")
 
 
     l6 = Listing.create!(
@@ -282,7 +288,7 @@ require 'open-uri'
       is_posted: true
     )
     file6 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home6.png")
-    l6.photo.attach(io: file6, filename: "home6.jpg")
+    l6.photos.attach(io: file6, filename: "home6.jpg")
 
 
   # Review 1

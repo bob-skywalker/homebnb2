@@ -48,7 +48,7 @@ const ReviewFormPage = ({listing}) => {
     let reviewButtons;
 
 
-    // console.log(reviews)
+    console.log(reviews)
 
     const type = reviewData ? "update" : "create";
 
