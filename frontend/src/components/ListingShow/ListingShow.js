@@ -21,7 +21,9 @@ import CableIcon from '@mui/icons-material/Cable';
 import SevereColdIcon from '@mui/icons-material/SevereCold';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
-import { id } from "date-fns/locale";
+import ModalImage from "react-modal-image";
+
+
 
 
 
@@ -34,7 +36,13 @@ export const ListingShow = () => {
   const dispatch = useDispatch();
   const listing = useSelector(getListing(listingId));
   const reviewData = useSelector(getReviews(listingId));
-  const sessionUser = useSelector((state)=> state.session.user)
+  const sessionUser = useSelector((state)=> state.session.user);
+
+  const [isOpen, setIsOpen] = useState(true);
+
+  const closeLightbox = () => {
+    setIsOpen(false);
+  };
 
   const [value,setValue] = useState([null,null]);
 
@@ -88,9 +96,22 @@ export const ListingShow = () => {
         </div >
         <div className="img-grid">
           {listing.photo.map((pho,i) => {
-            return <figure className={`gallery__item gallery__item--${i+1}`}>
-                    <img id={`img-${i+1}`} className='gallery__img' alt={`${i+1}`} src={pho} onClick={e => enlargeImg(e)}></img>
-                  </figure>
+            return (
+
+                    <figure className={`gallery__item gallery__item--${i+1}`}>
+{/*
+                      <img
+                        id={`img-${i+1}`}
+                        className='gallery__img'
+                        alt={`${i+1}`}
+                        src={pho}
+                        >
+                      </img> */}
+
+                    <ModalImage className='gallery__img' small={pho} large={pho} hideDownload={true} key={i}/>
+                    </figure>
+
+                    )
           })}
         </div>
         <div className="content-container">
