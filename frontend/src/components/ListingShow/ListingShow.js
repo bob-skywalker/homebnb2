@@ -46,10 +46,6 @@ export const ListingShow = () => {
 
   const [value,setValue] = useState([null,null]);
 
-  console.log(listing)
-
-
-
   useEffect(() => {
     dispatch(fetchListing(listingId))
     dispatch(fetchReviews(listingId))

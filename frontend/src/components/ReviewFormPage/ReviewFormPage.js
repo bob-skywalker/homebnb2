@@ -162,7 +162,7 @@ const ReviewFormPage = ({listing}) => {
 
 
 
-
+            <div className='form-bottom'>
                 <div className='rating'>
                    <StarRating
                     className='rating'
@@ -190,13 +190,14 @@ const ReviewFormPage = ({listing}) => {
                 </div>
 
                 <button type='submit' id="post-review" >
-                    Post Review
+                    Post a Review
                 </button>
                 {(!sessionUser) && <LoginFormModal
                     showLogIn={showLoginModal}
                     setShowLogIn={setLoginModal}
                     setSignUp = {setSignUp}
                 />}
+            </div>
             </form>
         </div>
     </>

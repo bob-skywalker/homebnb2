@@ -11,6 +11,7 @@ import Cards from '../Card/Cards';
 import SearchResult from '../SearchResult/SearchResult';
 import { DateRangePicker } from "react-date-range";
 import './Reservation.css';
+import ReservationResult from './ReservationResult';
 
  
 
@@ -35,6 +36,7 @@ const Reservation = () => {
   // const listingIds = // loop through res, grab all listing ids
   // useSelector(state => state.listings)
 
+
   return (
     <div className='ReservationPage'>
       <div className='Reservation-left'>
@@ -45,15 +47,14 @@ const Reservation = () => {
         </div>
       </div>
       {results.map(reser=>{
-        console.log(reser)  
         return(
         <>
           {/* <p>{reser.listingId}</p> */}
           {/* <img src={reser.photoUrl} /> */}
-          <SearchResult
+          <ReservationResult
             reserId={reser.id}
             listingId={reser.listingId}
-            img={reser.photoUrl}
+            img={reser.photoUrl[0]}
             location={`Reservation For ${reser.numGuests} Guests`}
             title={`${reser.streetAddress}, ${reser.city}, ${reser.state}`}
             star={reser.star}

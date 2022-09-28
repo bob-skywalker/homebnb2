@@ -22,12 +22,15 @@ require 'open-uri'
     ApplicationRecord.connection.reset_pk_sequence!('reviews')
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
-    
-    User.create!(
+
+    demo = User.create!(
       username: 'Demo-User',
       email: 'demo@user.io',
       password: 'password'
     )
+
+    file0 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/demo-user.jpg")
+    demo.photo.attach(io: file0, filename: "demo-user.jpg")
 
     tianshu = User.create!(
       username: "tianshu",

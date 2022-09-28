@@ -69,7 +69,8 @@ const Header = () => {
               <div className='dropdown'>
                   <button className='link'>
                     <ViewHeadlineIcon />
-                    <Avatar  />
+                    {(sessionUser) && <Avatar src='https://i.postimg.cc/br5kzQ2J/pexels-pixabay-220453.jpg' />}
+                    {(!sessionUser && <Avatar/>)}
                   </button>
                   <div className='dropdown-menu'>
                     {
