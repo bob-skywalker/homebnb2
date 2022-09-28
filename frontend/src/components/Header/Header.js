@@ -27,6 +27,7 @@ const Header = () => {
   const [showLogIn,setShowLogIn] = useState(false);
   const [searchInput, setSearchInput] = useState('');
 
+  console.log(sessionUser)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -68,7 +69,7 @@ const Header = () => {
               <div className='dropdown'>
                   <button className='link'>
                     <ViewHeadlineIcon />
-                    <Avatar />
+                    <Avatar  />
                   </button>
                   <div className='dropdown-menu'>
                     {

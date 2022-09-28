@@ -147,7 +147,7 @@ export const ListingShow = () => {
                     </div>
           </div>
         </div>
-          <h2 className='map-h2'>Where you'll be</h2>
+          <h4 className='map-h2'>Where you'll be</h4>
           <Maps location={location} />
     </>
   );

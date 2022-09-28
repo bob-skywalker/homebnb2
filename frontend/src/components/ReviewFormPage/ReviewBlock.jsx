@@ -2,6 +2,7 @@ import React from 'react'
 import { Avatar, Button, Divider, Grid, Paper, Rating } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { deleteReview, removeReview } from '../../store/reviews';
+import './ReviewBlock.css'
 
 
 
@@ -22,9 +23,9 @@ const ReviewBlock = ({review, sessionUser}) => {
     <Paper style={{padding: "40px 20px"}}>
                                         <Grid container wrap='nowrap' spacing={2}>
                                             <Grid item>
-                                                <Avatar alt='avatar' src={review.reviewerPhoto} style={{transform: 'translateY(42%)'}}/>
+                                                <Avatar alt='avatar' src={review.reviewerPhoto}/>
                                             </Grid>
-                                            <Grid>
+                                            <Grid className='comment-content'>
                                                 <h4 style={{margin: 0, textAlign: "left"}}>{review.username}</h4>
                                                 <p style={{textAlign: "left"}}>{review.comment}</p>
                                                 <Rating value={review.cleanliness} precision={0.5} readOnly />

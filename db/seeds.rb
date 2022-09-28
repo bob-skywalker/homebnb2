@@ -22,6 +22,7 @@ require 'open-uri'
     ApplicationRecord.connection.reset_pk_sequence!('reviews')
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
+    
     User.create!(
       username: 'Demo-User',
       email: 'demo@user.io',
@@ -180,8 +181,15 @@ require 'open-uri'
       host_id: matt.id,
       is_posted: true
     )
-    file2 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home2.png")
-    l2.photos.attach(io: file2, filename: "home2.jpg")
+    li21 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li21.jpg'), filename:'li21.jpg'}
+    li22 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li22.jpg'), filename:'li22.jpg'}
+    li23 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li23.jpg'), filename:'li23.jpg'}
+    li24 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li24.jpg'), filename:'li24.jpg'}
+    li25 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li25.jpg'), filename:'li25.jpg'}
+    li26 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li26.jpg'), filename:'li26.jpg'}
+
+    l2.photos.attach([li21,li22,li23,li24,li25,li26])
+
 
     l3 = Listing.create!(
       title: 'Pacifica,California',
@@ -206,8 +214,15 @@ require 'open-uri'
       host_id: lulu.id,
       is_posted: true
     )
-    file3 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home3.png")
-    l3.photos.attach(io: file3, filename: "home3.jpg")
+    li31 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li31.jpg'), filename:'li31.jpg'}
+    li32 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li32.jpg'), filename:'li32.jpg'}
+    li33 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li33.jpg'), filename:'li33.jpg'}
+    li34 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li34.jpg'), filename:'li34.jpg'}
+    li35 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li35.jpg'), filename:'li35.jpg'}
+    li36 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li36.jpg'), filename:'li36.jpg'}
+
+    l3.photos.attach([li31,li32,li33,li34,li35,li36])
+
 
     l4 = Listing.create!(
       title: 'Riverside,California',
@@ -232,8 +247,14 @@ require 'open-uri'
       host_id: darren.id,
       is_posted: true
     )
-    file4 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home4.png")
-    l4.photos.attach(io: file4, filename: "home4.jpg")
+    li41 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li41.jpg'), filename:'li41.jpg'}
+    li42 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li42.jpg'), filename:'li42.jpg'}
+    li43 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li43.jpg'), filename:'li43.jpg'}
+    li44 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li44.jpg'), filename:'li44.jpg'}
+    li45 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li45.jpg'), filename:'li45.jpg'}
+    li46 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li46.jpg'), filename:'li46.jpg'}
+
+    l4.photos.attach([li41,li42,li43,li44,li45,li46])
 
     #test
 
@@ -260,8 +281,15 @@ require 'open-uri'
       host_id: jeff.id,
       is_posted: true
     )
-    file5 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home5.png")
-    l5.photos.attach(io: file5, filename: "home5.jpg")
+    li51 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li51.jpg'), filename:'li51.jpg'}
+    li52 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li52.jpg'), filename:'li52.jpg'}
+    li53 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li53.jpg'), filename:'li53.jpg'}
+    li54 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li54.jpg'), filename:'li54.jpg'}
+    li55 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li55.jpg'), filename:'li55.jpg'}
+    li56 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li56.jpg'), filename:'li56.jpg'}
+
+    l5.photos.attach([li51,li52,li53,li54,li55,li56])
+
 
 
     l6 = Listing.create!(
@@ -287,8 +315,15 @@ require 'open-uri'
       host_id: alex.id,
       is_posted: true
     )
-    file6 = URI.open("https://homebnb-seed.s3.us-west-1.amazonaws.com/home6.png")
-    l6.photos.attach(io: file6, filename: "home6.jpg")
+
+    li61 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li61.jpg'), filename:'li61.jpg'}
+    li62 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li62.jpg'), filename:'li62.jpg'}
+    li63 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li63.jpg'), filename:'li63.jpg'}
+    li64 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li64.jpg'), filename:'li64.jpg'}
+    li65 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li65.jpg'), filename:'li65.jpg'}
+    li66 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li66.jpg'), filename:'li66.jpg'}
+
+    l6.photos.attach([li61,li62,li63,li64,li65,li66])
 
 
   # Review 1
