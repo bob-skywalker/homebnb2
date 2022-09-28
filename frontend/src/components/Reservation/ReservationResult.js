@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './ReservationResult.css'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarIcon from '@mui/icons-material/Star';
-import { Rating } from '@mui/material';
+import { Button, Rating } from '@mui/material';
 import {Link, useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteReservation, removeReservation } from '../../store/reservation';
@@ -31,11 +31,13 @@ const ReservationResult = ({
         <Link to={`/listings/${listingId}`}>
             <img class='search-img-block' src={img} alt=""/>
         </Link>
-        <FavoriteBorderIcon className="searchResult__heart" />
 
         <div className='searchResult-info'>
             <div className='searchResult-infotop'>
-                <p>{location}</p>
+                <div className='search-title'>
+                    <p>{location}</p>
+                    <FavoriteBorderIcon className="searchResult__heart" />
+                </div>
                 <h3>{title}</h3>
                 <p>____</p>
                 <p>{description}</p>
@@ -56,7 +58,7 @@ const ReservationResult = ({
                 <div className='searchResults-price'>
                     <h2>{price}</h2>
                     <p>{total}</p>
-                    <button onClick={()=> dispatch(deleteReservation(reserId))}>Delete Reservation</button>
+                    <Button onClick={()=> dispatch(deleteReservation(reserId))}>Delete Reservation</Button>
                 </div>
             </div>
         </div>

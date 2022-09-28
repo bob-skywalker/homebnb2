@@ -28,6 +28,7 @@ const RangePicker = () => {
   const listing = useSelector(getListing(listingId));
   const dispatch = useDispatch();
 
+
   const dayDiff = () => {
     return (endDate.getTime() - startDate.getTime()) / 86400000;
   };
@@ -131,7 +132,7 @@ const RangePicker = () => {
             {/* <p className="warning">You won't be charged yet</p> */}
 
               <h3>{`$${listing.price}/night`}</h3>
-              <h3 className="final-price">${listing.price * dayDiff()}</h3>
+              <h3 className="final-price">${Math.round(listing.price * dayDiff())}</h3>
           </div>
         </div>
       </div>

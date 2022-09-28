@@ -1,23 +1,41 @@
 import React from 'react'
-import { Avatar, Button, Divider, Grid, Paper, Rating } from '@mui/material';
+import { Avatar, Button, Dialog, Divider, Grid, Paper, Rating } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { deleteReview, removeReview } from '../../store/reviews';
+import { deleteReview, removeReview, updateReview } from '../../store/reviews';
 import './ReviewBlock.css'
+import { useState } from 'react';
+import { Pane, PlusIcon } from 'evergreen-ui';
 
 
 
-const ReviewBlock = ({review, sessionUser}) => {
+
+
+const ReviewBlock = ({review, sessionUser, setShowReview}) => {
   const dispatch = useDispatch();
   let reviewButtons;
-  console.log(review)
+  let editButtons;
+  const [isShown, setIsShown] = useState(false);
+
+
+
 
 
   if (sessionUser && review.reviewerId === sessionUser.id) {
 
     reviewButtons = (<>
-        <Button onClick={()=> dispatch(deleteReview(review.id))}>Delete Review</Button>
+        <Button onClick={()=> dispatch(deleteReview(review.id))}>
+            Delete Review
+        </Button>
+        <Button onClick={()=> setShowReview(prevValue => !prevValue)}>
+            Edit Review
+        </Button>
     </>)
+
+
   } else reviewButtons= (<></>)
+
+
+
 
   return (
     <Paper style={{padding: "40px 20px"}}>
@@ -32,7 +50,7 @@ const ReviewBlock = ({review, sessionUser}) => {
                                                 <p style={{textAlign: "left", color: "gray"}}>
                                                     posted on {review.createdAt.slice(0,10)}
                                                 </p>
-                                                {reviewButtons}
+                                                {[reviewButtons,editButtons]}
                                             </Grid>
                                         </Grid>
                                         <Divider variant='fullWidth' style={{margin: "30px 0 "}}/>
