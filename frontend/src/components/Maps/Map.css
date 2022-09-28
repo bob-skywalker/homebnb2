@@ -5,10 +5,16 @@
     padding-left: 10px;
     text-align: center;
   }
+  
+  .map{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 
   .google-map {
-    width: 70vw;
+    width: 80vw;
     height: 60vh;
   }
 

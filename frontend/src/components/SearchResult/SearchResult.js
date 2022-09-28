@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { deleteReservation, removeReservation } from '../../store/reservation';
 
 const SearchResult = ({
+    id,
     reserId,
     listingId,
     img,
@@ -25,7 +26,7 @@ const SearchResult = ({
   const dispatch = useDispatch();
   return (
     <div className='SearchResult'>
-        <Link to={`/listings/${listingId}`}>
+        <Link to={`/listings/${id}`}>
             <img class='search-img-block' src={img} alt=""/>
         </Link>
         <FavoriteBorderIcon className="searchResult__heart" />
@@ -53,7 +54,6 @@ const SearchResult = ({
                 <div className='searchResults-price'>
                     <h2>{price}</h2>
                     <p>{total}</p>
-                    <button onClick={()=> dispatch(deleteReservation(reserId))}>Delete Reservation</button>
                 </div>
             </div>
         </div>

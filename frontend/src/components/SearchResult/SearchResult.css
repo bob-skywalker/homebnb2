@@ -13,12 +13,13 @@
     opacity: 0.8;
 }
 
-.SearchResult > .search-img-block{
+.search-img-block{
     height: 480px;
     width: 720px;
-    border-radius: 10px;
+    border-radius: 10px; 
     overflow: hidden;
 }
+
 
 .searchResult-info{
     display: flex;
