@@ -125,7 +125,7 @@ const RangePicker = () => {
             showLogIn = {showLoginModal}
             setShowLogIn= {setLoginModal}
             setSignUp={setSignUp}
-            
+
           />}
           <div className="price-calculator">
             {/* <p className="warning">You won't be charged yet</p> */}

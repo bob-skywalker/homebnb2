@@ -5,7 +5,7 @@ import StarIcon from '@mui/icons-material/Star';
 import { Rating } from '@mui/material';
 import {Link, useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { removeReservation } from '../../store/reservation';
+import { deleteReservation, removeReservation } from '../../store/reservation';
 
 const SearchResult = ({
     reserId,
@@ -53,7 +53,7 @@ const SearchResult = ({
                 <div className='searchResults-price'>
                     <h2>{price}</h2>
                     <p>{total}</p>
-                    <button onClick={()=> dispatch(removeReservation(reserId))}>Delete Reservation</button>
+                    <button onClick={()=> dispatch(deleteReservation(reserId))}>Delete Reservation</button>
                 </div>
             </div>
         </div>

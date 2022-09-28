@@ -13,6 +13,7 @@ class Api::ReservationsController < ApplicationController
 
     def destroy
         @reservation = Reservation.find_by(id: params[:id])
+        
 
         if @reservation
             @reservation.destroy

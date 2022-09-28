@@ -20,9 +20,10 @@ import './Reservation.css';
 const Reservation = () => {
   const sessionUser = useSelector(state => state.session.user)
   const reservations = useSelector(getReservations).filter((reservation)=> reservation.userId ? reservation.userId === sessionUser.id : null)
+
+
   const dispatch = useDispatch();
 
-  console.log(reservations)
   useEffect(()=>{
     dispatch(fetchReservations())
     // listingIds.forEach(id => dispatch(fetchListing(id)))
@@ -43,8 +44,8 @@ const Reservation = () => {
           <Tab icon={<UpcomingIcon/>} label='Upcoming Reservations' value="Upcoming Reservations"/>
         </div>
       </div>
-      {console.log(reservations)}
       {results.map(reser=>{
+        console.log(reser)  
         return(
         <>
           {/* <p>{reser.listingId}</p> */}
