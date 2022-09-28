@@ -52,6 +52,7 @@ const Reservation = () => {
           {/* <p>{reser.listingId}</p> */}
           {/* <img src={reser.photoUrl} /> */}
           <ReservationResult
+            reser = {reser}
             reserId={reser.id}
             listingId={reser.listingId}
             img={reser.photoUrl[0]}

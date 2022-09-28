@@ -1,3 +1,5 @@
 .comment-content{
     transform: translateX(8%);
+    overflow-wrap: anywhere;
+    margin-right: 25px;
 }
