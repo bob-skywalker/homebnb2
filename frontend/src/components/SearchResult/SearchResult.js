@@ -29,14 +29,16 @@ const SearchResult = ({
         <Link to={`/listings/${id}`}>
             <img class='search-img-block' src={img} alt=""/>
         </Link>
-        <FavoriteBorderIcon className="searchResult__heart" />
 
         <div className='searchResult-info'>
             <div className='searchResult-infotop'>
-                <p>{location}</p>
+                <div className='search-title'>
+                    <p>{location}</p>
+                    <FavoriteBorderIcon className="searchResult__heart" />
+                </div>
                 <h3>{title}</h3>
                 <p>____</p>
-                <p>{description}</p>
+                <p className='description'>{description}</p>
             </div>
 
             <div className='searchResult-bottom'>
