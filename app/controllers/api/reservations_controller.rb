@@ -13,7 +13,7 @@ class Api::ReservationsController < ApplicationController
 
     def destroy
         @reservation = Reservation.find_by(id: params[:id])
-        
+
 
         if @reservation
             @reservation.destroy
@@ -25,7 +25,7 @@ class Api::ReservationsController < ApplicationController
 
     def update
         @reservation = Reservation.find_by(id: params[:id])
-
+        # debugger
         # @reservation = Reservation.find(params[:id])
 
         # @reservation.user_id = current_user.id
@@ -33,7 +33,7 @@ class Api::ReservationsController < ApplicationController
         if !@reservation
             render json:['cannot edit this reservation!'],
             status: :unprocessable_entity
-        elsif @reservation.update(reservation_params)
+        elsif @reservation.update!(reservation_params)
             render :show
         else
             render json: @reservation.errors.full_messages, status: 422

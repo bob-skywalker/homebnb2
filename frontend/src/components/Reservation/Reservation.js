@@ -31,7 +31,7 @@ const Reservation = () => {
     dispatch(fetchListings())
   },[])
 
-  let res = useSelector(state=> state.reservations)
+  // let res = useSelector(state=> state.reservations)
   let results = Object.values(reservations).reverse()
   // const listingIds = // loop through res, grab all listing ids
   // useSelector(state => state.listings)
