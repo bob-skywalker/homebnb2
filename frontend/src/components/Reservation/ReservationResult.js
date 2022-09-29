@@ -4,10 +4,18 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import StarIcon from '@mui/icons-material/Star';
 import { Button, Rating } from '@mui/material';
 import {Link, useParams} from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteReservation, removeReservation, updateReservation } from '../../store/reservation';
 import { Pane, Dialog } from 'evergreen-ui'
-import { DateRangePicker } from '@mui/lab';
+import RangePicker from '../RangePicker/RangePicker';
+import { getListing } from '../../store/listings';
+import { Calendar } from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
+import { DateRangePicker } from 'react-date-range';
+
+
+
 
 
 const ReservationResult = ({
@@ -37,16 +45,30 @@ const ReservationResult = ({
   const [isShown, setIsShown]  = useState(false);
 
 
+
+
   let start = startDate.slice(0,10)
   let end = endDate.slice(0,10)
 
- 
+
 
   const[newNumGuest,setNewNumGuest] = useState(numGuests);
-  const[newStartDate,setNewStartDate] = useState(start);
-  const[newEndDate,setNewEndDate] = useState(end);
+  const[newStartDate,setNewStartDate] = useState(new Date());
+  const[newEndDate,setNewEndDate] = useState(new Date());
 
 
+  const dayDiff = () => {
+    return (newEndDate.getTime() - newStartDate.getTime()) / 86400000
+  }
+
+  const listDay1 = new Date(startDate);
+
+  const listDay2 = new Date(endDate);
+
+
+  const totalPrice = () => {
+    return (payment / ((listDay2 - listDay1 ) / 86400000)) * dayDiff()
+  }
 
 
 
@@ -61,13 +83,29 @@ const ReservationResult = ({
         id,
         userId,
         numGuests: newNumGuest,
-        startDate,
-        endDate,
-        payment
+        startDate: newStartDate,
+        endDate: newEndDate,
+        payment: totalPrice(),
     }))
   }
 
-  
+
+
+
+  const selectionRange = {
+    startDate: newStartDate,
+    endDate: newEndDate,
+    key: 'selection',
+  }
+
+  function handleSelect(ranges){
+    console.log(ranges)
+    setNewStartDate(ranges.selection.startDate);
+    setNewEndDate(ranges.selection.endDate);
+  }
+
+
+
 
 
 
@@ -88,7 +126,7 @@ const ReservationResult = ({
                 <p>____</p>
                 <p>{`Your Reservation is confirmed.`}</p>
                 <p>{` For ${start} to ${end}`}</p>
-                
+
             </div>
 
             <div className='searchResult-bottom'>
@@ -108,19 +146,21 @@ const ReservationResult = ({
                     <p>{total}</p>
                     <div className='buttons'>
                     <Button onClick={()=> dispatch(deleteReservation(id))}>Delete Reservation</Button>
-                    <>                    
-                        <Pane>
+                    <>
+                        <Pane >
                             <Dialog
                                 isShown={isShown}
                                 title="Change My Reservation"
                                 onCloseComplete={() => setIsShown(false)}
                                 confirmLabel="Update Reservation"
                                 onConfirm={handleSubmit}
+                                width='700px'
                             >
                             <div className='form-container'>
                                 <form className="register-form-1">
+                                    <div className='form-top'>
                                     <label>
-                                    <span className='form-span'>Number of Guests </span>    
+                                    <span className='form-span'>Number of Guests </span>
                                     <input
                                         className="form-field"
                                         type="number"
@@ -130,30 +170,14 @@ const ReservationResult = ({
                                         required
                                     />
                                     </label>
+                                    <span className='form-span'><h3>{`New Total: $${Math.round(totalPrice())}`}</h3></span>
+                                    </div>
                                     <label>
-                                    <span className='form-span'>Start Date </span>    
-                                    <input
-                                        className="form-field"
-                                        type="text"
-                                        placeholder="number of guests"
-                                        value={newStartDate}
-                                        onChange={e=> setNewStartDate(e.target.value)}
-                                        required
+                                    <DateRangePicker
+                                        ranges={[selectionRange]}
+                                        onChange={handleSelect}
+                                        minDate={new Date()}
                                     />
-                                    </label>
-                                    <label>
-                                    <span className='form-span'>End Date </span>    
-                                    <input
-                                        className="form-field"
-                                        type="text"
-                                        placeholder="number of guests"
-                                        value={newEndDate}
-                                        onChange={e=> setNewEndDate(e.target.value)}
-                                        required
-                                    />
-                                    </label>
-                                    <label>
-                                    <span className='form-span'><h3>{price}</h3></span>    
                                     </label>
                                 </form>
                                 </div>
@@ -161,7 +185,7 @@ const ReservationResult = ({
 
                             <Button onClick={() => setIsShown(true)}>Edit Reservation</Button>
                         </Pane>
-                        </>
+                    </>
                     </div>
                 </div>
             </div>

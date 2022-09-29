@@ -65,7 +65,7 @@ const Reservation = () => {
             streetAddress = {reser.streetAddress}
             title = {reser.title}
             star={reser.star}
-            price= {`Total Charge: $${reser.payment}`}
+            price= {`Total Charge: $${Math.round(reser.payment)}`}
           />
 
         </>
