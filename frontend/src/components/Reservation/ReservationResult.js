@@ -7,6 +7,7 @@ import {Link, useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteReservation, removeReservation, updateReservation } from '../../store/reservation';
 import { Pane, Dialog } from 'evergreen-ui'
+import { DateRangePicker } from '@mui/lab';
 
 
 const ReservationResult = ({
@@ -26,7 +27,8 @@ const ReservationResult = ({
     star,
     price,
     total,
-    getLabelText
+    getLabelText,
+    streetAddress
 
 }) => {
   const {reservationId} = useParams();
@@ -52,7 +54,7 @@ const ReservationResult = ({
 
   const handleSubmit = (e) => {
     // e.preventDefault();
-
+    setIsShown(false)
     dispatch(updateReservation({
         ...reser,
         listingId,
@@ -82,9 +84,11 @@ const ReservationResult = ({
                     <p>{location}</p>
                     <FavoriteBorderIcon className="searchResult__heart" />
                 </div>
-                <h3>{title}</h3>
+                <h3>{`${streetAddress}, ${title}`}</h3>
                 <p>____</p>
-                <p>{description}</p>
+                <p>{`Your Reservation is confirmed.`}</p>
+                <p>{` For ${start} to ${end}`}</p>
+                
             </div>
 
             <div className='searchResult-bottom'>
@@ -102,7 +106,8 @@ const ReservationResult = ({
                 <div className='searchResults-price'>
                     <h2>{price}</h2>
                     <p>{total}</p>
-                    <Button onClick={()=> dispatch(deleteReservation(reserId))}>Delete Reservation</Button>
+                    <div className='buttons'>
+                    <Button onClick={()=> dispatch(deleteReservation(id))}>Delete Reservation</Button>
                     <>                    
                         <Pane>
                             <Dialog
@@ -110,8 +115,10 @@ const ReservationResult = ({
                                 title="Change My Reservation"
                                 onCloseComplete={() => setIsShown(false)}
                                 confirmLabel="Update Reservation"
+                                onConfirm={handleSubmit}
                             >
-                                <form className="create-project-form" onSubmit={handleSubmit}>
+                            <div className='form-container'>
+                                <form className="register-form-1">
                                     <label>
                                     <span className='form-span'>Number of Guests </span>    
                                     <input
@@ -145,13 +152,17 @@ const ReservationResult = ({
                                         required
                                     />
                                     </label>
-                                    <button onClick={handleSubmit}>Update Reservation</button>
+                                    <label>
+                                    <span className='form-span'><h3>{price}</h3></span>    
+                                    </label>
                                 </form>
+                                </div>
                             </Dialog>
 
                             <Button onClick={() => setIsShown(true)}>Edit Reservation</Button>
                         </Pane>
-                    </>
+                        </>
+                    </div>
                 </div>
             </div>
         </div>

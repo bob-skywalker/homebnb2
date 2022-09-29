@@ -62,7 +62,8 @@ const Reservation = () => {
             payment = {reser.payment}
             img={reser.photoUrl[0]}
             location={`Reservation For ${reser.numGuests} Guests`}
-            title={`${reser.streetAddress}, ${reser.city}, ${reser.state}`}
+            streetAddress = {reser.streetAddress}
+            title = {reser.title}
             star={reser.star}
             price= {`Total Charge: $${reser.payment}`}
           />
