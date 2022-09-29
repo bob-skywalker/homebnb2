@@ -24,19 +24,19 @@ class Api::ReservationsController < ApplicationController
     end
 
     def update
-        @reservation = current_user.reservations.find_by(id: params[:id])
+        @reservation = Reservation.find_by(id: params[:id])
 
         # @reservation = Reservation.find(params[:id])
 
         # @reservation.user_id = current_user.id
 
-        if !@review
+        if !@reservation
             render json:['cannot edit this reservation!'],
             status: :unprocessable_entity
-        elsif @review.update(reservation_params)
+        elsif @reservation.update(reservation_params)
             render :show
         else
-            render json: @review.errors.full_messages, status: 422
+            render json: @reservation.errors.full_messages, status: 422
         end
     end
 
@@ -62,6 +62,6 @@ class Api::ReservationsController < ApplicationController
     def reservation_params
         # snake_case_params!(params[:reservation])
 
-        params.require(:reservation).permit(:listing_id, :user_id, :num_guests, :start_date, :end_date, :payment)
+        params.require(:reservation).permit(:id, :listing_id, :user_id, :num_guests, :start_date, :end_date, :payment)
     end
 end

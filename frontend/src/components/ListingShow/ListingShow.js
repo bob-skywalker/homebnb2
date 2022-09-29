@@ -104,7 +104,7 @@ export const ListingShow = () => {
                         >
                       </img> */}
 
-                    <ModalImage className='gallery__img' small={pho} large={pho} hideDownload={true} key={i}/>
+                    <ModalImage className='gallery__img' small={pho} large={pho} hideDownload={true} key={i} showRotate={true}/>
                     </figure>
 
                     )

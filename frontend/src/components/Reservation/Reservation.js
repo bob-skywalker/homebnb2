@@ -36,7 +36,7 @@ const Reservation = () => {
   // const listingIds = // loop through res, grab all listing ids
   // useSelector(state => state.listings)
 
-
+  console.log(results)
   return (
     <div className='ReservationPage'>
       <div className='Reservation-left'>
@@ -53,8 +53,13 @@ const Reservation = () => {
           {/* <img src={reser.photoUrl} /> */}
           <ReservationResult
             reser = {reser}
-            reserId={reser.id}
+            id={reser.id}
             listingId={reser.listingId}
+            userId = {reser.userId}
+            numGuests = {reser.numGuests}
+            startDate = {reser.startDate}
+            endDate = {reser.endDate}
+            payment = {reser.payment}
             img={reser.photoUrl[0]}
             location={`Reservation For ${reser.numGuests} Guests`}
             title={`${reser.streetAddress}, ${reser.city}, ${reser.state}`}

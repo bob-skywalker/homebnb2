@@ -62,7 +62,7 @@ const SearchPage = () => {
           {filtered.length > 0 ? filtered.map(listing=>{
             return <SearchResult
               id={listing.id}
-              img={listing.photo}
+              img={listing.photo[0]}
               location={listing.state}
               title= {listing.title}
               description= {listing.description}
