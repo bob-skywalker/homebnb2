@@ -8,13 +8,13 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    width: 720px;
+    width: 620px;
 
 }
 
 .card-img {
     display: flex;
-    width: 720px;
+    width: 620px    ;
     height: 480px;
     object-fit: cover;
 }
