@@ -96,6 +96,8 @@ const ReservationResult = ({
     <div className="SearchResult">
       <Link to={`/listings/${listingId}`}>
         <img class="search-img-block" src={img} alt="" />
+      </Link>
+
 
       <div className="searchResult-info">
         <div className="searchResult-infotop">
@@ -160,7 +162,6 @@ const ReservationResult = ({
                       </form>
                     </div>
                   </Dialog>
-
                   <Button onClick={() => setIsShown(true)}>
                     Edit Reservation
                   </Button>
@@ -170,7 +171,6 @@ const ReservationResult = ({
           </div>
         </div>
       </div>
-                            </Link>
     </div>
   );
 };
