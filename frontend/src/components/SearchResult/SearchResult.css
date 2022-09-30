@@ -59,6 +59,10 @@
     /* width: 60% */
 }
 
+a{
+    display: flex;
+}
+
 /* .searchResult-bottom{
     display: flex;
     justify-content: space-between;

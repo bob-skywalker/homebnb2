@@ -96,7 +96,6 @@ const ReservationResult = ({
     <div className="SearchResult">
       <Link to={`/listings/${listingId}`}>
         <img class="search-img-block" src={img} alt="" />
-      </Link>
 
       <div className="searchResult-info">
         <div className="searchResult-infotop">
@@ -132,7 +131,7 @@ const ReservationResult = ({
                     confirmLabel="Update Reservation"
                     onConfirm={handleSubmit}
                     width="700px"
-                  >
+                    >
                     <div className="form-container">
                       <form className="register-form-1">
                         <div className="form-top">
@@ -145,7 +144,7 @@ const ReservationResult = ({
                               value={newNumGuest}
                               onChange={(e) => setNewNumGuest(e.target.value)}
                               required
-                            />
+                              />
                           </label>
                           <span className="form-span">
                             <h3>{`New Total: $${Math.round(totalPrice())}`}</h3>
@@ -156,7 +155,7 @@ const ReservationResult = ({
                             ranges={[selectionRange]}
                             onChange={handleSelect}
                             minDate={new Date()}
-                          />
+                            />
                         </label>
                       </form>
                     </div>
@@ -171,6 +170,7 @@ const ReservationResult = ({
           </div>
         </div>
       </div>
+                            </Link>
     </div>
   );
 };

@@ -28,7 +28,6 @@ const SearchResult = ({
     <div className='SearchResult'>
         <Link to={`/listings/${id}`}>
             <img class='search-img-block' src={img} alt=""/>
-        </Link>
 
         <div className='searchResult-info'>
             <div className='searchResult-infotop'>
@@ -59,6 +58,7 @@ const SearchResult = ({
                 </div>
             </div>
         </div>
+                            </Link>
     </div>
   )
 }
