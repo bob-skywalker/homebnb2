@@ -65,7 +65,9 @@ const Header = () => {
 
             <div className='header-right'>
               <p className='header-text'>Become a Host</p>
-              <LanguageIcon className='header-globe'/>
+              <Link to='/search'>
+                <LanguageIcon className='header-globe'/>
+              </Link>
               <div className='dropdown'>
                   <button className='link'>
                     <ViewHeadlineIcon />
