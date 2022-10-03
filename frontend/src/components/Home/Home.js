@@ -23,7 +23,6 @@ const Home = () => {
 
   const history = useHistory();
 
-  console.log(listings)
   return (
     <>
       <h2 className='h1-invis'>I am Home component</h2>

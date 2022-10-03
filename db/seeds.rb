@@ -284,14 +284,15 @@ require 'open-uri'
       host_id: jeff.id,
       is_posted: true
     )
+    li56 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li56.jpg'), filename:'li56.jpg'}
     li51 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li51.jpg'), filename:'li51.jpg'}
     li52 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li52.jpg'), filename:'li52.jpg'}
     li53 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li53.jpg'), filename:'li53.jpg'}
     li54 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li54.jpg'), filename:'li54.jpg'}
     li55 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li55.jpg'), filename:'li55.jpg'}
-    li56 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li56.jpg'), filename:'li56.jpg'}
+    
 
-    l5.photos.attach([li51,li52,li53,li54,li55,li56])
+    l5.photos.attach([li56,li52,li53,li54,li55,li51])
 
 
 
@@ -319,14 +320,15 @@ require 'open-uri'
       is_posted: true
     )
 
-    li61 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li61.jpg'), filename:'li61.jpg'}
+
     li62 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li62.jpg'), filename:'li62.jpg'}
+    li61 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li61.jpg'), filename:'li61.jpg'}
     li63 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li63.jpg'), filename:'li63.jpg'}
     li64 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li64.jpg'), filename:'li64.jpg'}
     li65 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li65.jpg'), filename:'li65.jpg'}
     li66 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li66.jpg'), filename:'li66.jpg'}
 
-    l6.photos.attach([li61,li62,li63,li64,li65,li66])
+    l6.photos.attach([li62,li61,li63,li64,li65,li66])
 
 
     l7 = Listing.create!(
@@ -421,14 +423,14 @@ require 'open-uri'
       is_posted: true
     )
 
+    li93 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li93.jpg'), filename:'li93.jpg'}
     li91 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li91.jpg'), filename:'li91.jpg'}
     li92 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li92.jpg'), filename:'li92.jpg'}
-    li93 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li93.jpg'), filename:'li93.jpg'}
     li94 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li94.jpg'), filename:'li94.jpg'}
     li95 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li95.jpg'), filename:'li95.jpg'}
     li96 = {io: URI.open('https://homebnb-seed.s3.us-west-1.amazonaws.com/li96.jpg'), filename:'li96.jpg'}
 
-    l9.photos.attach([li91,li92,li93,li94,li95,li96])
+    l9.photos.attach([li93,li92,li91,li94,li95,li96])
 
 
 

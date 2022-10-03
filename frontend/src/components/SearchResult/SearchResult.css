@@ -6,7 +6,7 @@
     border-bottom: 1px solid lightgray;
     opacity: 1;
     cursor: pointer;
-
+    width: 100%;    
 }
 /*
 .SearchResult:hover{
@@ -14,11 +14,11 @@
 } */
 
 .search-img-block{
+    display: flex;
     height: 95%;
     width: 650px;
     height: 435px;
     /* border-radius: 10px; */
-    overflow: hidden;
 }
 
 .search-img-block:hover{
@@ -40,7 +40,10 @@
 }
 
 .searchResult-infotop{
-    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    max-width: 95%;
+
 }
 
 .searchResult__heart:hover{
@@ -80,6 +83,7 @@ a{
 }
 
 .description{
-    overflow: hidden scroll;
-    height: 53%;
+    display: flex;
+    overflow-wrap: anywhere;
+    height: 100%;
 }
