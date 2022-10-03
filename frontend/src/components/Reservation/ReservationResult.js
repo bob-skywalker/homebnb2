@@ -103,7 +103,7 @@ const ReservationResult = ({
         <div className="searchResult-infotop">
           <div className="search-title">
             <p>{location}</p>
-            <FavoriteBorderIcon className="searchResult__heart" />
+            {/* <FavoriteBorderIcon className="searchResult__heart" /> */}
           </div>
           <h3>{`${streetAddress}, ${title}`}</h3>
           <p>____</p>
