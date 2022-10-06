@@ -35,7 +35,7 @@ const SearchPage = () => {
           <div className='SearchPage-info'>
             <p>513 hosts · 26 sept to 30 oct · 2 guest</p>
             <h1>Stays nearby</h1>
-            <Button
+            {/* <Button
             variant='outlined'>
               Cancellation Flexibility
             </Button>
@@ -54,7 +54,7 @@ const SearchPage = () => {
             <Button
             variant='outlined'>
               More filters
-            </Button>
+            </Button> */}
           </div>
 
 

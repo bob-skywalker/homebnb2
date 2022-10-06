@@ -28,8 +28,8 @@
     padding-top: 20px;
     border: 1;
     border-radius: 10px;
-    font-weight: 15px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    /* font-weight: 15px; */
+    /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif */
 }
 
 .card > img{
@@ -41,5 +41,5 @@
 }
 
 .card > .card-info{
-    font-size: 20px;
+    /* font-size: 20px; */
 }
