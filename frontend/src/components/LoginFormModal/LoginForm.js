@@ -77,7 +77,7 @@ function LoginForm({setShowLogIn,setSignUp}) {
               required
             />
           </label>
-          <div className="buttons">
+          <div className="login-buttons">
           <button className="login-button" type="submit">Log In</button>
           <button className="demo-button"  onClick={demoUser}>Demo User</button>
           </div>

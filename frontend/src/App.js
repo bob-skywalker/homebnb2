@@ -6,11 +6,11 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import Banner from "./components/Banner/Banner";
-import Footer from "./components/Footer/Footer";
 import SearchPage from "./components/SearchPage/SearchPage";
 import { ListingShow } from "./components/ListingShow/ListingShow";
 import Reservation from "./components/Reservation/Reservation";
 import SearchAll from "./components/SearchAll/SearchAll";
+import Footers from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -39,9 +39,9 @@ function App() {
             <Home />
           </Route>
 
-
         </Switch>
 
+        <Footers/>
       </Route>
     </>
   );

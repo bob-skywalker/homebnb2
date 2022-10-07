@@ -57,6 +57,7 @@
 }
 
 .dropdown-menu{
+    transform: translateX(-55%);
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -73,6 +74,7 @@
 }
 
 .dropdown > .link:focus + .dropdown-menu{
+    transform: translateX(-55%);
     opacity: 1;
     pointer-events:inherit;
     /* width: 100px; */
