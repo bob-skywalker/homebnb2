@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchListings, fetchQueryListings, getListings } from '../../store/listings'
 import Maps from '../Maps/Maps'
 import { useHistory, useParams } from 'react-router-dom'
-
+import Footers from '../Footer/Footer'
 
 const SearchPage = () => {
   const history = useHistory();
@@ -30,6 +30,7 @@ const SearchPage = () => {
 
 
   return (
+    <>
     <div className='SearchPage'>
       <div className='SearchPage-left'>
           <div className='SearchPage-info'>
@@ -87,6 +88,7 @@ const SearchPage = () => {
               /> */}
       </div>
     </div>
+    </>
   )
 }
 

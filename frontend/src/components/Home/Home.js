@@ -13,6 +13,7 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import {useDispatch, useSelector} from 'react-redux';
 import { fetchListings, getListings } from '../../store/listings'
 import { useHistory } from 'react-router-dom'
+import Footers from '../Footer/Footer'
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -51,6 +52,7 @@ const Home = () => {
                 })}
         </div>
       </div>
+      <Footers/>
     </>
           /* <Cards
           src="https://a0.muscache.com/im/pictures/c4c92198-fb3a-4c4b-bbb6-3aa8af8f7e73.jpg?im_w=720"

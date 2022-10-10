@@ -21,12 +21,13 @@
 
 .SearchPage{
     display: flex;
+    max-width: 100%;
 }
 
 .SearchPage-left{
     padding:30px;
     height: calc(100vh-150px);
-    width: 60vw;
+    width: 100vw;
 }
 
 .searPage-right{

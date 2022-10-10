@@ -1,12 +1,12 @@
 .SearchResult{
     display: flex;
-    position: relative;
+    /* position: relative; */
     margin:20px;
     padding: 20px;
     border-bottom: 1px solid lightgray;
     opacity: 1;
     cursor: pointer;
-    width: 100%;    
+    width: 100%;
 }
 /*
 .SearchResult:hover{

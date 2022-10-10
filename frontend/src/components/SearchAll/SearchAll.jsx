@@ -6,6 +6,7 @@ import { fetchListings, fetchQueryListings, getListings } from '../../store/list
 import Maps from '../Maps/Maps'
 import { useHistory, useParams } from 'react-router-dom'
 import './SearchAll.css'
+import Footers from '../Footer/Footer'
 
 
 const SearchAll = () => {
@@ -31,6 +32,7 @@ const SearchAll = () => {
 
 
   return (
+    <>
     <div className='SearchPage'>
       <div className='SearchPage-left'>
           <div className='SearchPage-info'>
@@ -68,6 +70,7 @@ const SearchAll = () => {
               /> */}
       </div>
     </div>
+    </>
   )
 }
 

@@ -22,6 +22,8 @@ import SevereColdIcon from '@mui/icons-material/SevereCold';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
 import ModalImage from "react-modal-image";
+import Footers from '../Footer/Footer'
+
 
 
 
@@ -145,6 +147,7 @@ export const ListingShow = () => {
         </div>
           <h4 className='map-h2'>Where you'll be</h4>
           <Maps location={location} />
+        <Footers/>
     </>
   );
 };

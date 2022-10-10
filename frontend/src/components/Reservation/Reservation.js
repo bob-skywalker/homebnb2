@@ -12,6 +12,7 @@ import SearchResult from '../SearchResult/SearchResult';
 import { DateRangePicker } from "react-date-range";
 import './Reservation.css';
 import ReservationResult from './ReservationResult';
+import Footers from '../Footer/Footer'
 
  
 
@@ -70,6 +71,7 @@ const Reservation = () => {
 
         </>
       )})}
+    <Footers/>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { Rating } from '@mui/material';
 import {Link, useParams} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deleteReservation, removeReservation } from '../../store/reservation';
+import Footers from '../Footer/Footer'
 
 const SearchResult = ({
     id,
@@ -25,6 +26,7 @@ const SearchResult = ({
   const [event,setEvent] = useState();
   const dispatch = useDispatch();
   return (
+    <>
     <div className='SearchResult'>
         <Link to={`/listings/${id}`}>
             <img class='search-img-block' src={img} alt=""/>
@@ -60,6 +62,7 @@ const SearchResult = ({
         </div>
                             </Link>
     </div>
+    </>
   )
 }
 
