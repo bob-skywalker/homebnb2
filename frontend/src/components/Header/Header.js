@@ -16,6 +16,23 @@ import * as sessionActions from '../../store/session';
 import ProfileButton from '../Navigation/ProfileButton';
 import Button from '@mui/material/Button';
 import { fetchQueryListings } from '../../store/listings';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+
+
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
 
 const Header = () => {
@@ -26,6 +43,14 @@ const Header = () => {
   const [showSignUp, setSignUp] = useState(false);
   const [showLogIn,setShowLogIn] = useState(false);
   const [searchInput, setSearchInput] = useState('');
+
+
+  //modal
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+
 
   console.log(sessionUser)
 
@@ -39,6 +64,8 @@ const Header = () => {
     dispatch(sessionActions.logout());
     history.push(`/`)
   };
+
+
 
   return (
     <>
@@ -64,7 +91,25 @@ const Header = () => {
             </div>
 
             <div className='header-right'>
-              <p className='header-text'>Become a Host</p>
+              <p onClick={handleOpen} className='header-text'>Become a Host</p>
+
+              <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            The site isn't accepting new host right now
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            We are sorry, as of right now we are no longer accepting new hosts.
+          </Typography>
+        </Box>
+      </Modal>
+
+
               <Link to='/search'>
                 <LanguageIcon className='header-globe'/>
               </Link>

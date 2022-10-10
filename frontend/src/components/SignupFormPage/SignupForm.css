@@ -42,3 +42,8 @@
 .signup-button{
     border-radius: 20px;
 }
+
+.switch-link:hover{
+    cursor: pointer;
+}
+

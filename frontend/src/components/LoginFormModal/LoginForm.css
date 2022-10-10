@@ -15,12 +15,13 @@
     flex-direction: column;
     justify-content:center;
     align-items: center;
+
 }
 
 .container .title{
     font-family: 'Courier New', Courier, monospace;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
 .container .user-details{
@@ -68,4 +69,8 @@
     background-color: #4CAF50;
     border-radius: 20px;
     color: black;;
+}
+
+.switch-link:hover{
+    cursor: pointer;
 }

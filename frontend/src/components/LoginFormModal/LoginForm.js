@@ -81,7 +81,7 @@ function LoginForm({setShowLogIn,setSignUp}) {
           <button className="login-button" type="submit">Log In</button>
           <button className="demo-button"  onClick={demoUser}>Demo User</button>
           </div>
-          <div className="new-user-link">No Account? <span onClick={handleClick}>Create one</span>
+          <div className="new-user-link">No Account? <span  className="switch-link" onClick={handleClick}>Create one</span>
           </div>
         </form>
       </div>

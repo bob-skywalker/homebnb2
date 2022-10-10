@@ -95,7 +95,7 @@ function SignupFormPage({setShowLogIn,setSignUp}) {
             />
           </label>
           <button className="signup-button" type="submit">Sign Up</button>
-          <div className="new-user-link">Have Account? <span onClick={handleClick}>Log In</span>
+          <div className="new-user-link">Have Account? <span className="switch-link" onClick={handleClick}>Log In</span>
           </div>
         </form>
       </div>
