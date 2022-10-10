@@ -87,7 +87,7 @@ const ReservationResult = ({
   };
 
   function handleSelect(ranges) {
-    console.log(ranges);
+    // console.log(ranges);
     setNewStartDate(ranges.selection.startDate);
     setNewEndDate(ranges.selection.endDate);
   }
@@ -128,7 +128,7 @@ const ReservationResult = ({
                 <Pane>
                   <Dialog
                     isShown={isShown}
-                    title="Change My Reservation"
+                    title= {`Edit Reservation: ${start} to ${end}`}
                     onCloseComplete={() => setIsShown(false)}
                     confirmLabel="Update Reservation"
                     onConfirm={handleSubmit}
@@ -149,15 +149,21 @@ const ReservationResult = ({
                               />
                           </label>
                           <span className="form-span">
-                            <h3>{`New Total: $${Math.round(totalPrice())}`}</h3>
+                            <h4>{`New Total: $${Math.round(totalPrice())}`}</h4>
                           </span>
                         </div>
                         <label>
                           <DateRangePicker
+                            newStartDate={newStartDate}
                             ranges={[selectionRange]}
                             onChange={handleSelect}
                             minDate={new Date()}
+                            // startDate={newStartDate}
+                            // endDate={newEndDate}
                             />
+                            {/* {console.log(new Date())}
+                            {console.log(new Date(startDate),'---')}
+                            {console.log(new Date(endDate),'---')} */}
                         </label>
                       </form>
                     </div>

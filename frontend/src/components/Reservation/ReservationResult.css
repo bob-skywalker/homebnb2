@@ -7,8 +7,9 @@
 
 
 .form-top{
-    transform: translateY(40%);
+    transform: translate(-4%,35%);
     display: flex;
+    justify-content: space-around;
 }
 
 .register-form-1 {
@@ -33,6 +34,7 @@
     font-size: 20px;
     color: rgb(18, 73, 167);
     margin-bottom: 15px;
+
 }
 
 .register-form-1 > input {
