@@ -54,7 +54,7 @@ function SignupFormPage({setShowLogIn,setSignUp}) {
           <ul>
             {errors.map((error) => <li key={error}>{error}</li>)}
           </ul>
-          <label className="user-details">
+          <label className="signup-user-details">
             Email
             <input
               className="input-box"
@@ -64,7 +64,7 @@ function SignupFormPage({setShowLogIn,setSignUp}) {
               required
             />
           </label>
-          <label className="user-details">
+          <label className="signup-user-details">
             Username
             <input
               className="input-box"
@@ -74,7 +74,7 @@ function SignupFormPage({setShowLogIn,setSignUp}) {
               required
             />
           </label>
-          <label className="user-details">
+          <label className="signup-user-details">
             Password
             <input
               className="input-box"
@@ -84,7 +84,7 @@ function SignupFormPage({setShowLogIn,setSignUp}) {
               required
             />
           </label>
-          <label className="user-details">
+          <label className="signup-user-details">
             Confirm Password
             <input
               className="input-box"

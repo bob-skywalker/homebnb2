@@ -1,6 +1,6 @@
 .container{
     margin: 0;
-    padding: 50px;
+    padding: 20px;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
     display: flex;
@@ -18,10 +18,10 @@
 .container .title{
     font-family: 'Courier New', Courier, monospace;
     position: relative;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
-.container .user-details{
+.signup-user-details{
     padding-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -29,12 +29,12 @@
     justify-content: space-between;
 }
 
-.container .user-details input{
-    height: 45px;
+.signup-user-details input{
+    height: 25px;
     width:100%
 }
 
-.user-details .input-box{
+.signup-user-details .input-box{
     border-radius: 5px;
     outline:none;
 }
@@ -46,4 +46,3 @@
 .switch-link:hover{
     cursor: pointer;
 }
-

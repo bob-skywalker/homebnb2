@@ -7,8 +7,12 @@
     top: 0;
     background-color:white;
     width: 100%;
+    z-index: 1;
 }
 
+#modal{
+    z-index: 2;
+}
 
 .header-center{
     display: flex;
