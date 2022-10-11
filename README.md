@@ -48,6 +48,23 @@
 
 * Webpack
 
-## Aplication Preview
 
-**Demo User Login**
+# Aplication Preview
+
+## Homebnb Layout
+
+![HomeBnB Layout](https://media.giphy.com/media/QMwbcGAUAlMPgiicgE/giphy.gif)
+
+## User Leaving Review 
+
+![User-Review](https://media.giphy.com/media/sYQUJ1LF4PvFidPdyg/giphy.gif)
+
+## Make/ Edit Home Reservation 
+
+![Make-Reservation](https://media.giphy.com/media/GVNrcd5jSkAjExseey/giphy.gif)
+
+## Reservation Calendar Range Picker
+
+![Reservation-Ranger-Picker](https://media.giphy.com/media/Nk59brZa7wvF5AZRoY/giphy.gif)
+
+
