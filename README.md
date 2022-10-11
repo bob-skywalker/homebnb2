@@ -1,24 +1,53 @@
-# README
+# Homebnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[homebnb](https://homebnb-airbnb.herokuapp.com/) is a full-stack, multi-functional application clone of Airbnb that uses React and Redux on the front-end and Ruby on Rails, PostgresSQL and AWS S3 on the back-end.
 
-Things you may want to cover:
+**Key Features:**
 
-* Ruby version
+* Leave ratings and reviews on listings
 
-* System dependencies
+* Make reservations on available dates and view all bookings
 
-* Configuration
+* Browse listings by various locations (Google Maps API) and apply search filters with keyword search intergration
 
-* Database creation
+* User authentifiication require users to be logged in to access certain features (e.g. reservations and reviews)
 
-* Database initialization
+* Edit reservation on user reservation page
 
-* How to run the test suite
+## Technologies, Libraries, APIs
 
-* Services (job queues, cache servers, search engines, etc.)
+**APIs:**
 
-* Deployment instructions
+* Google Maps Platform Maps and Places API for dynamic maps and location search
 
-* ...
+**Libraries:**
+
+* React Date Range library for displaying available booking dates on calendar
+
+**Front-end:**
+
+* Javascript
+* React
+* Redux
+* Material UI
+* CSS
+
+**Back-end:**
+
+* Ruby 
+* Ruby on Rails
+* PostgresSQL
+* jBuilder
+
+**Cloud Hosting Services**
+
+* Heroku
+* AWS S3 (Amazon Simple Storage Services)
+
+**Module Bundler** 
+
+* Webpack
+
+## Aplication Preview
+
+**Demo User Login**
