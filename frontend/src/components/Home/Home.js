@@ -32,7 +32,7 @@ const Home = () => {
         <Tab icon={<WavesIcon/>} label="Lakefront"  value="Lakefront" onClick={()=> history.push(`/search/lake`)}/>
         <Tab icon={<SurfingIcon/>} label="Surfing"  value="Surfing" onClick={()=> history.push(`/search/cali`)}/>
         <Tab icon={<WindPowerIcon/>} label="Windmills"  value="Windmills" onClick={()=> history.push(`/search/pacifica`)}/>
-        <Tab icon={<BeachAccessIcon/>} label="Beach" value="Beach" onClick={()=> history.push(`/search/side`)}/>
+        <Tab icon={<BeachAccessIcon/>} label="Beach" value="Beach" onClick={()=> history.push(`/search/surf`)}/>
       </div>
       {/* </Tabs> */}
       <div className='home'>
